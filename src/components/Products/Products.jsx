@@ -1,4 +1,5 @@
 import ProductCard from "./ProductCard/ProductCard";
+import classes from './Products.module.css';
 
 const Products = ({ products }) => {
     let productsCards = products.map(product => 
@@ -6,7 +7,7 @@ const Products = ({ products }) => {
     );
 
     return (
-        <div>
+        <div className={ classes.cards + ' ' + 'container' }>
             { productsCards }
         </div>
     )

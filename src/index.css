@@ -31,13 +31,42 @@ code {
     inherits: true;
     initial-value: #fff;
 }
+
 @property --dark-orange {
     syntax: '<color>';
     inherits: true;
     initial-value: #d0834c;
 }
 
+@property --light-pink {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #FF9191;
+}
+
+@property --red {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #ff3333;
+}
+
+@property --blue {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #0048FF;
+}
+
+@property --purple {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #a633ff;
+}
+
 :root {
     --dark-orange: #d0834c;
-    --white: #fff; 
+    --white: #fff;
+    --light-pink: #FF9191;
+    --red: #ff3333;
+    --blue: #0048FF;
+    --purple: #a633ff;
 }

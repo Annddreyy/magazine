@@ -1,12 +1,45 @@
-const ProductCard = ({ id, title, price, grade, status, favority }) => {
+import classes from './ProductCard.module.css';
+import unfillHeart from './../../../assets/images/heart-icon-unfill.png';
+import fillHeart from './../../../assets/images/heart-icon-fill.png';
+import productImg from './../../../assets/images/product.png';
+import binLogo from './../../../assets/images/bin-logo.png';
+import Star from '../../common/Star/Star';
+
+const ProductCard = ({ title, price, grade, status, favority, imgSrc, setFavourity }) => {
+    let statusClasses = new Map([
+        ['Хит продаж!', classes.statusBlue],
+        ['Скидка!', classes.statusRed],
+        ['Новинка!', classes.statusPurple]
+    ]);
+
+    let stars = [];
+    for (let i = 0; i < 5; i++) {
+        let isFill = i < grade;
+        stars.push( <Star isFill={ isFill }/> );
+    }
+
+    let updateFavority = () => {
+        
+    };
+
     return (
-        <div>
-            <p>{ id }</p>
-            <p>{ title }</p>
-            <p>{ price }</p>
-            <p>{ grade }</p>
-            <p>{ status }</p>
-            <p>{ favority }</p>
+        <div className={ classes.card }>
+            <img src={ imgSrc ? imgSrc : productImg } alt="" />
+            <div className={ classes.isFavourity } onClick={ updateFavority }>
+                <img src={ favority ? fillHeart : unfillHeart } alt="Добавить в избранное" />
+            </div>
+            <div className={ classes.information }>
+                <span className={ classes.title }>{ title }</span>
+                <span className={ classes.status + ' ' + statusClasses.get(status) }>{ status }</span>
+            </div>
+            <div className={ classes.information }>
+                <span className={ classes.price }>{ price } руб.</span>
+                <span>{ stars }</span>
+            </div>
+            <button className={ classes.button }>
+                <span>Добавить в корзину</span>
+                <img src={ binLogo } alt="Добавить в корзину" />
+            </button>
         </div>
     )
 }
