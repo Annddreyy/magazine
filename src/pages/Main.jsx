@@ -1,8 +1,14 @@
-import HeaderContainer from "../components/Header/HeaderContainer"
+import HeaderContainer from "../components/Header/HeaderContainer";
+import ProductsContainer from "../components/Products/ProductsContainer";
+import TopPart from '../components/TopPart/TopPart';
 
 const Main = (props) => {
     return (
-        <HeaderContainer />
+        <div>
+            <HeaderContainer />
+            <TopPart />
+            <ProductsContainer />
+        </div>
     )
 }
 

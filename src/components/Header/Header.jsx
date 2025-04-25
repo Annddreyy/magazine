@@ -17,11 +17,13 @@ const Header = ({ links }) => {
 
     return (
         <header className={ classes.items }>
-            <div className={ classes.item }>
-                <img src={ logo } className={ classes.logo } alt="logo" />
-                { leftLinks }
+            <div className='container'>
+                <nav className={ classes.item }>
+                    <img src={ logo } className={ classes.logo } alt="logo" />
+                    { leftLinks }
+                    <div className={ classes.item }>{ rightLinks }</div>
+                </nav>
             </div>
-            <div className={ classes.item }>{ rightLinks }</div>
         </header>
     )
 };
