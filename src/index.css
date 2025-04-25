@@ -62,6 +62,12 @@ code {
     initial-value: #a633ff;
 }
 
+@property --beige {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #FFE2CE;
+}
+
 :root {
     --dark-orange: #d0834c;
     --white: #fff;
@@ -69,4 +75,5 @@ code {
     --red: #ff3333;
     --blue: #0048FF;
     --purple: #a633ff;
+    --beige: #FFE2CE;
 }

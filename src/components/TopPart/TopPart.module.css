@@ -1,0 +1,15 @@
+.topPart {
+    display: flex;
+    height: 498px;
+    background: url('./../../assets/images/main-part.png');
+}
+
+.item {
+    align-self: center;
+    justify-items: end;
+}
+
+.text {
+    font-size: 18px;
+    width: 40%;
+}

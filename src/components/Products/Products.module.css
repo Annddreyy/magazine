@@ -1,6 +1,6 @@
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: auto;
+    margin-top: 3em;
     gap: 5em;
 }

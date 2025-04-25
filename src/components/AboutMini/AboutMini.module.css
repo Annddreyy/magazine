@@ -1,0 +1,14 @@
+.aboutMini {
+    background-color: var(--beige);
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    padding: 3em 0;
+    gap: 10em;
+}
+
+.items > img {
+    width: 300px;
+}
