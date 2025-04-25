@@ -3,6 +3,7 @@ import classes from './Header.module.css';
 import logo from './../../assets/images/логотип.png'
 
 const Header = ({ links }) => {
+    debugger;
     const leftLinks = links
         .filter(link => !link.isRightLink)
         .map(link => 

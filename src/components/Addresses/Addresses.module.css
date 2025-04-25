@@ -1,0 +1,10 @@
+.items, 
+.items > ol {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.items * {
+    font-style: normal;
+}
