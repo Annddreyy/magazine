@@ -5,7 +5,7 @@ import productImg from './../../../assets/images/product.png';
 import binLogo from './../../../assets/images/bin-logo.png';
 import Star from '../../common/Star/Star';
 
-const ProductCard = ({ title, price, grade, status, favority, imgSrc, setFavourity }) => {
+const ProductCard = ({ id, title, price, grade, status, favority, imgSrc, setFavorityStatus }) => {
     let statusClasses = new Map([
         ['Хит продаж!', classes.statusBlue],
         ['Скидка!', classes.statusRed],
@@ -18,14 +18,14 @@ const ProductCard = ({ title, price, grade, status, favority, imgSrc, setFavouri
         stars.push( <Star isFill={ isFill }/> );
     }
 
-    let updateFavority = () => {
-        
-    };
+    const handleClick = () => {
+        setFavorityStatus(id);
+    }
 
     return (
         <div className={ classes.card }>
             <img src={ imgSrc ? imgSrc : productImg } alt="" />
-            <div className={ classes.isFavourity } onClick={ updateFavority }>
+            <div className={ classes.isFavourity } onClick={ handleClick }>
                 <img src={ favority ? fillHeart : unfillHeart } alt="Добавить в избранное" />
             </div>
             <div className={ classes.information }>

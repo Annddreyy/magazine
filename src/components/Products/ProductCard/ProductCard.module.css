@@ -5,6 +5,8 @@
     flex-direction: column;
     gap: 1em;
 
+    justify-self: center;;
+
     width: 300px;
 }
 

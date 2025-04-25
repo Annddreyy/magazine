@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Products from "./Products";
+import { setFavorityStatus } from "../../redux/productsReducer";
 
 class ProductsContainer extends React.Component {
     render() {
@@ -16,4 +17,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps)(ProductsContainer);
+export default connect(mapStateToProps, { setFavorityStatus })(ProductsContainer);
