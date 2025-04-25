@@ -1,0 +1,21 @@
+.items {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--dark-orange);
+    padding: 2em;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 3em;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--white);
+}
+
+.logo {
+    height: 80px;
+}
