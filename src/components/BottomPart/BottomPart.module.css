@@ -1,0 +1,9 @@
+.items {
+    display: flex;
+    align-items: center;
+    gap: 3em;
+}
+
+.items > img {
+    width: 400px;
+}
