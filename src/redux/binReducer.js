@@ -1,5 +1,6 @@
 const INCREASE_PRODUCT = 'magazine/bin/INCREASE_PRODUCT';
 const DECREASE_PRODUCT = 'magazine/bin/DECREASE_PRODUCT';
+const ADD_PRODUCT = 'magazine/bin/ADD_PRODUCT';
 const DELETE_PRODUCT = 'magazine/bin/DELETE_PRODUCT';
 
 const initialState = {
@@ -34,6 +35,11 @@ const binReducer = (state = initialState, action) => {
                     : product
             )
         };
+    case ADD_PRODUCT:
+        return {
+            ...state,
+            products: [...state.products, action.product]
+        };
     case DELETE_PRODUCT:
         return {
             ...state,
@@ -48,8 +54,11 @@ export const increaseProduct = (productId) => (dispatch) => {
     // TODO - здесь будет запрос на обновление количества в localStorage
     dispatch(increaseProductActionCreator(productId));
 };
-export const  decreaseProduct = (productId) => (dispatch) => {
+export const decreaseProduct = (productId) => (dispatch) => {
     dispatch(decreaseProductActionCreator(productId));
+};
+export const addProduct = (product) => (dispatch) => {
+    dispatch(addProductActionCreator(product));
 };
 export const deleteProduct = (productId) => (dispatch) => {
     dispatch(deleteProductActionCreator(productId));
@@ -57,6 +66,7 @@ export const deleteProduct = (productId) => (dispatch) => {
 
 export const increaseProductActionCreator = (productId) => ({ type: INCREASE_PRODUCT, productId });
 export const decreaseProductActionCreator = (productId) => ({ type: DECREASE_PRODUCT, productId });
+export const addProductActionCreator = (product) => ({ type: ADD_PRODUCT, product });
 export const deleteProductActionCreator = (productId) => ({ type: DELETE_PRODUCT, productId });
 
 export default binReducer;
