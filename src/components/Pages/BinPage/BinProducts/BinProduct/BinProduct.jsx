@@ -1,9 +1,12 @@
+import productDefault from './../../../../../assets/images/product.png';
+import classes from './BinProduct.module.css';
+
 const BinProduct = ({ img, title, price, count}) => {
     const totalPrice = price * count;
     return (
         <tr>
             <td>
-                <img src={ img } alt="" />
+                <img src={ img || productDefault } className={ classes.img } alt="" />
             </td>
             <td>
                 <h3>{ title }</h3>
@@ -12,13 +15,17 @@ const BinProduct = ({ img, title, price, count}) => {
                 <span>{ price } руб.</span>
             </td>
             <td>
-                <span>{ count }</span>
+                <span className={ classes.countBlock }>
+                    <button className={ classes.button }>-</button>
+                    { count }
+                    <button className={ classes.button }>+</button>
+                </span>
             </td>
             <td>
                 <span>{ totalPrice } руб.</span>
             </td>
             <td>
-                <button>x</button>
+                <button className={ classes.button }>x</button>
             </td>
         </tr>
     )

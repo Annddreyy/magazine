@@ -1,0 +1,27 @@
+.img {
+    width: 250px;
+}
+
+.countBlock {
+    display: flex;
+    gap: 1em;
+    width: max-content;
+    border: 1px solid var(--light-gray);
+    border-radius: 100px;
+    padding: 4px 12px;
+    align-items: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--light-gray);
+    width: 20px;
+    height: 20px;
+    outline: none;
+    background-color: transparent;
+    color: var(--light-gray);
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}

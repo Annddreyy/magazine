@@ -1,0 +1,39 @@
+.table {
+    border-collapse: collapse;
+}
+
+.thead > th {
+    border-top: 1px solid var(--dark-gray);
+    border-bottom: 1px solid var(--dark-gray);
+    text-align: left;
+    padding: 1em;
+    font-weight: normal;
+}
+
+.tbody {
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+
+.tbody > tr > * {
+    padding: 0 1em;
+}
+
+.tbody  h3 {
+    font-weight: normal;
+}
+
+.itog {
+    margin: 1em 0;
+    font-size: 28px;
+    font-weight: normal;
+}
+
+.orderButton {
+    background-color: var(--light-pink);
+    color: var(--white);
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    padding: 0.5em 1em;
+}
