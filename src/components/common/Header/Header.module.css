@@ -15,8 +15,24 @@
 }
 
 .link {
+    position: relative;
     text-decoration: none;
     color: var(--white);
+}
+
+.link::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    border-bottom: 1px solid var(--white);
+    transition: all .33s;
+}
+
+.link:hover::before {
+    left: 0;
+    right: 0;
 }
 
 .logo {
