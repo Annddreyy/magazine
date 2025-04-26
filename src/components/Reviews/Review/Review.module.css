@@ -1,0 +1,12 @@
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.left > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
