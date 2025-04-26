@@ -1,0 +1,16 @@
+.items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5em;
+}
+
+.items > img {
+    width: 450px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
