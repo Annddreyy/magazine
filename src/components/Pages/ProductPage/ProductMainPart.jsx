@@ -1,8 +1,7 @@
 import defaultImg from './../../../assets/images/product.png';
 import classes from './ProductMainPart.module.css';
 
-const ProductMainPart = ({ title, img, description, producer, compound }) => {
-    debugger;
+const ProductMainPart = ({ title, description, producer, img, compound }) => {
     return (
         <section className='container'>
             <h2>{ title }</h2>

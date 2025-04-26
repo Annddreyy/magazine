@@ -1,22 +1,29 @@
+import React from "react";
 import { compose } from "redux";
 import ProductMainPart from "./ProductMainPart"
 import { withRouter } from "../../../hoc/withRouter";
 import { connect } from "react-redux";
+import { getProduct } from "../../../redux/productsReducer";
 
-const ProductMainPartContainer = ({ products, params }) => {
-    const product = products.find(product => product.id === +params.productId);
-    return (
-        <ProductMainPart {...product } />
-    )
+class ProductMainPartContainer extends React.Component {
+    componentDidMount() {
+        this.props.getProduct(+this.props.params.productId);
+    }
+    render() {
+        return (
+            <ProductMainPart { ...this.props.product } />
+        )
+    }
 };
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products.products
+        product: state.products.product
     }
 };
+const mapDispatchToProps = { getProduct };
 
 export default compose(
-    connect(mapStateToProps),
+    connect(mapStateToProps, mapDispatchToProps),
     withRouter
 )(ProductMainPartContainer);

@@ -1,4 +1,7 @@
+import { productsAPI } from '../api/api';
+
 const SET_FAVORITY = 'SET_FAVORITY';
+const SET_PRODUCT_INFORMATION = 'SET_PRODUCT_INFORMATION';
 
 const initialState = {
     products: [
@@ -9,7 +12,8 @@ const initialState = {
         { id: 5, title: 'title5', imgSrc: null, price: 200, grade: 1, status: '', favority: false },
         { id: 6, title: 'title4', imgSrc: null, price: 800, grade: 5, status: '', favority: false },
         { id: 7, title: 'title5', imgSrc: null, price: 200, grade: 1, status: '', favority: false }
-    ]
+    ],
+    product: null
 };
 
 const productsReducer = (state = initialState, action) => {
@@ -23,11 +27,22 @@ const productsReducer = (state = initialState, action) => {
                     : product
             )
         };
+    case SET_PRODUCT_INFORMATION:
+        return {
+            ...state,
+            product: action.product
+        };
     default:
         return state;
     }
 };
 
+export const getProduct = (productId) => async(dispatch) => {
+    let product = await productsAPI.getProduct(productId);
+    dispatch(setProductInformation(product));
+};
+
 export const setFavorityStatus = (productId) => ({ type: SET_FAVORITY, productId });
+export const setProductInformation = (product) => ({ type: SET_PRODUCT_INFORMATION, product });
 
 export default productsReducer;
