@@ -6,6 +6,7 @@ import Contacts from './pages/Contacts';
 import About from './pages/About';
 import Reviews from './pages/Reviews';
 import Bin from './pages/Bin';
+import Favority from './pages/Favority';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
             <Route path='/about' element={ <About /> } />
             <Route path='/reviews' element={ <Reviews /> } />
             <Route path='/bin' element={ <Bin /> } />
+            <Route path='/favorites' element={ <Favority /> } />
         </Routes>
     )
 }
