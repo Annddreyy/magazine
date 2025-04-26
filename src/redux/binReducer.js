@@ -1,18 +1,12 @@
+import { getBinProducts, setBinProducts } from '../utils/workingWithLocalStorage';
+
 const INCREASE_PRODUCT = 'magazine/bin/INCREASE_PRODUCT';
 const DECREASE_PRODUCT = 'magazine/bin/DECREASE_PRODUCT';
 const ADD_PRODUCT = 'magazine/bin/ADD_PRODUCT';
 const DELETE_PRODUCT = 'magazine/bin/DELETE_PRODUCT';
 
 const initialState = {
-    products: [
-        { id: 1, title: 'title 1', price: 1470, count: 5 },
-        { id: 2, title: 'title 2', price: 1470, count: 5 },
-        { id: 3, title: 'title 3', price: 1470, count: 5 },
-        { id: 4, title: 'title 4', price: 1470, count: 5 },
-        { id: 5, title: 'title 5', price: 1470, count: 5 },
-        { id: 6, title: 'title 6', price: 1470, count: 5 },
-        { id: 7, title: 'title 7', price: 1470, count: 5 }
-    ]
+    products: getBinProducts()
 };
 
 const binReducer = (state = initialState, action) => {
@@ -50,18 +44,21 @@ const binReducer = (state = initialState, action) => {
     }
 };
 
-export const increaseProduct = (productId) => (dispatch) => {
-    // TODO - здесь будет запрос на обновление количества в localStorage
+export const increaseProduct = (productId) => (dispatch, getState) => {
     dispatch(increaseProductActionCreator(productId));
+    setBinProducts(getState().bin.products);
 };
-export const decreaseProduct = (productId) => (dispatch) => {
+export const decreaseProduct = (productId) => (dispatch, getState) => {
     dispatch(decreaseProductActionCreator(productId));
+    setBinProducts(getState().bin.products);
 };
-export const addProduct = (product) => (dispatch) => {
+export const addProduct = (product) => (dispatch, getState) => {
     dispatch(addProductActionCreator(product));
+    setBinProducts(getState().bin.products);
 };
-export const deleteProduct = (productId) => (dispatch) => {
+export const deleteProduct = (productId) => (dispatch, getState) => {
     dispatch(deleteProductActionCreator(productId));
+    setBinProducts(getState().bin.products);
 };
 
 export const increaseProductActionCreator = (productId) => ({ type: INCREASE_PRODUCT, productId });
