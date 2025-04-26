@@ -1,18 +1,19 @@
 import defaultImg from './../../../assets/images/product.png';
+import classes from './ProductMainPart.module.css';
 
 const ProductMainPart = ({ title, img, description, producer, compound }) => {
     debugger;
     return (
-        <section>
+        <section className='container'>
             <h2>{ title }</h2>
-            <div>
+            <div className={ classes.description }>
                 <img src={ img || defaultImg } alt="" />
-                <div>
-                    <p>Описание:</p>
+                <div className={ classes.text }>
+                    <p className={ classes.title }>Описание:</p>
                     <p>{ description }</p>
-                    <p>Производитель:</p>
+                    <p className={ classes.title }>Производитель:</p>
                     <p>{ producer }</p>
-                    <p>Состав:</p>
+                    <p className={ classes.title }>Состав:</p>
                     <p>{ compound }</p>
                 </div>
             </div>

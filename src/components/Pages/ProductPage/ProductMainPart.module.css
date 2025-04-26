@@ -1,0 +1,15 @@
+.description {
+    display: flex;
+    gap: 5em
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+
+.title {
+    font-weight: bolder;
+}
