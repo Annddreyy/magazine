@@ -5,6 +5,7 @@ import Catalog from './pages/Catalog';
 import Contacts from './pages/Contacts';
 import About from './pages/About';
 import Reviews from './pages/Reviews';
+import Bin from './pages/Bin';
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
             <Route path='/contacts' element={ <Contacts /> } />
             <Route path='/about' element={ <About /> } />
             <Route path='/reviews' element={ <Reviews /> } />
+            <Route path='/bin' element={ <Bin /> } />
         </Routes>
     )
 }

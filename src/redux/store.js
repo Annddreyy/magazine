@@ -3,12 +3,14 @@ import headerReducer from './headerReducer';
 import productsReducer from './productsReducer';
 import footerReducer from './footerReducer';
 import reviewsReducer from './reviewsReducer';
+import binReducer from './binReducer';
 
 const rootReducer = combineReducers({
     header: headerReducer,
     footer: footerReducer,
     products: productsReducer,
-    reviews: reviewsReducer
+    reviews: reviewsReducer,
+    bin: binReducer
 });
 
 const store = createStore(rootReducer);
