@@ -8,9 +8,12 @@ const Products = ({ products, setFavorityStatus }) => {
     );
 
     return (
-        <div className={ classes.cards + ' ' + 'container' }>
-            { productsCards }
-        </div>
+        <section className='container'>
+            <h2>Товары</h2>
+            <div className={ classes.cards }>
+                { productsCards }
+            </div>
+        </section>
     )
 }
 

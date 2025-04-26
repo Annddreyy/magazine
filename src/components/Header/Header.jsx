@@ -3,7 +3,6 @@ import classes from './Header.module.css';
 import logo from './../../assets/images/логотип.png'
 
 const Header = ({ links }) => {
-    debugger;
     const leftLinks = links
         .filter(link => !link.isRightLink)
         .map(link => 
@@ -17,11 +16,11 @@ const Header = ({ links }) => {
         );
 
     return (
-        <header className={ classes.items }>
+        <header className={ classes.header }>
             <div className='container'>
-                <nav className={ classes.item }>
+                <nav className={ classes.items }>
                     <img src={ logo } className={ classes.logo } alt="logo" />
-                    { leftLinks }
+                    <div className={ classes.item }>{ leftLinks }</div>
                     <div className={ classes.item }>{ rightLinks }</div>
                 </nav>
             </div>

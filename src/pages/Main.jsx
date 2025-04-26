@@ -3,7 +3,7 @@ import ProductsContainer from "../components/Products/ProductsContainer";
 import TopPart from '../components/TopPart/TopPart';
 import AboutMini from "../components/AboutMini/AboutMini";
 import BottomPart from "../components/BottomPart/BottomPart";
-import Footer from "../components/Footer/Footer";
+import FooterContainer from "../components/Footer/FooterContainer";
 
 const Main = (props) => {
     return (
@@ -13,7 +13,7 @@ const Main = (props) => {
             <AboutMini />
             <ProductsContainer />
             <BottomPart />
-            <Footer />
+            <FooterContainer />
         </div>
     )
 }

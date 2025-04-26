@@ -1,8 +1,11 @@
+.header {
+    background-color: var(--dark-orange);
+    padding: 0.5em 2em;
+}
+
 .items {
     display: flex;
     justify-content: space-between;
-    background-color: var(--dark-orange);
-    padding: 0.5em 2em;
 }
 
 .item {
