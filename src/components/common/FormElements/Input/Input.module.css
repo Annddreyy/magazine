@@ -1,0 +1,15 @@
+.input {
+    padding: 0.5em 1em;
+    background-color: var(--medium-gray);
+    border: none;
+    outline: none;
+    width: 300px;
+}
+
+.input[type="submit"] {
+    background-color: transparent;
+    border-radius: 100px;
+    width: max-content;
+    border: 1px solid var(--light-gray);
+    padding: 0.5em 2em;
+}

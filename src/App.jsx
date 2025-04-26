@@ -7,6 +7,7 @@ import About from './pages/About';
 import Reviews from './pages/Reviews';
 import Bin from './pages/Bin';
 import Favority from './pages/Favority';
+import Login from './pages/Login';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
             <Route path='/reviews' element={ <Reviews /> } />
             <Route path='/bin' element={ <Bin /> } />
             <Route path='/favorites' element={ <Favority /> } />
+            <Route path='/login' element={ <Login /> } />
         </Routes>
     )
 }

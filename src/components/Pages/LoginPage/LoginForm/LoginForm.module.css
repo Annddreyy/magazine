@@ -1,0 +1,32 @@
+.form {
+    display: grid;
+    margin: auto;
+    width: max-content;
+    margin-top: 5em;
+    border-radius: 12px;
+    border: 1px solid var(--light-gray);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.form > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em 3em;
+    border-radius: 12px 0 0 12px;
+}
+
+.left {
+    background-color: var(--dark-orange);
+    color: var(--white);
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.redStar {
+    color: var(--red);
+}

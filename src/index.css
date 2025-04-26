@@ -81,6 +81,12 @@ h2 {
     initial-value: #272727;
 }
 
+@property --medium-gray {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #E0E0E0;
+}
+
 @property --light-gray {
     syntax: "<color>";
     inherits: true;
@@ -96,5 +102,6 @@ h2 {
     --purple: #a633ff;
     --beige: #FFE2CE;
     --dark-gray: #272727;
+    --medium-gray: #E0E0E0;
     --light-gray: #a6a6a6;
 }
