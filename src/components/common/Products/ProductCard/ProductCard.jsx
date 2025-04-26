@@ -4,6 +4,7 @@ import fillHeart from './../../../../assets/images/heart-icon-fill.png';
 import productImg from './../../../../assets/images/product.png';
 import binLogo from './../../../../assets/images/bin-logo.png';
 import Star from './Star/Star';
+import { NavLink } from 'react-router-dom';
 
 const ProductCard = ({ 
     id, title, price, grade, status, favority, imgSrc, 
@@ -32,7 +33,9 @@ const ProductCard = ({
 
     return (
         <div className={ classes.card }>
-            <img src={ imgSrc ? imgSrc : productImg } alt="" />
+            <NavLink to={ '/product/' + id }>
+                <img src={ imgSrc ? imgSrc : productImg } alt="" />
+            </NavLink>
             <div className={ classes.isFavourity } onClick={ setFavorityStatusHandler }>
                 <img src={ favority ? fillHeart : unfillHeart } alt="Добавить в избранное" />
             </div>

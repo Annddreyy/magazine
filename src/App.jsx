@@ -8,6 +8,7 @@ import Reviews from './pages/Reviews';
 import Bin from './pages/Bin';
 import Favority from './pages/Favority';
 import Login from './pages/Login';
+import Product from './pages/Product';
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
             <Route path='/bin' element={ <Bin /> } />
             <Route path='/favorites' element={ <Favority /> } />
             <Route path='/login' element={ <Login /> } />
+            <Route path='/product/:productId' element={ <Product /> } />
         </Routes>
     )
 }

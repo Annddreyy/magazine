@@ -15,7 +15,6 @@ const initialState = {
 const productsReducer = (state = initialState, action) => {
     switch(action.type) {
     case SET_FAVORITY:
-        debugger;
         return {
             ...state,
             products: state.products.map(product => 
