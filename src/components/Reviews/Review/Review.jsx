@@ -3,7 +3,7 @@ import classes from './Review.module.css';
 
 const Review = ({ userImg, fullname, text }) => {
     return (
-        <article>
+        <article className={ classes.review }>
             <div className={ classes.left }>
                 <img src={ userImg || personImg } alt="" />
                 <span>{ fullname }</span>

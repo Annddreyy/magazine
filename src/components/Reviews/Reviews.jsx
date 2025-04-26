@@ -1,11 +1,15 @@
 import Review from "./Review/Review";
+import classes from './Reviews.module.css';
 
 const Reviews = ({ reviews }) => {
     const reviewsElem = reviews.map(review => <Review {...review} key={ review.id } />)
     return (
-        <div>
-            { reviewsElem }
-        </div>
+        <section className='container'>
+            <h2>Отзывы</h2>
+            <div className={ classes.items }>
+                { reviewsElem }
+            </div>
+        </section>
     )
 };
 
