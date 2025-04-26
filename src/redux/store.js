@@ -1,9 +1,10 @@
-import { combineReducers, createStore } from 'redux';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
 import headerReducer from './headerReducer';
 import productsReducer from './productsReducer';
 import footerReducer from './footerReducer';
 import reviewsReducer from './reviewsReducer';
 import binReducer from './binReducer';
+import { thunk as thunkMiddleware } from 'redux-thunk';
 
 const rootReducer = combineReducers({
     header: headerReducer,
@@ -13,6 +14,6 @@ const rootReducer = combineReducers({
     bin: binReducer
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
 export default store;

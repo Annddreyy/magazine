@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import BinProducts from "./BinProducts";
+import { decreaseProduct, deleteProduct, increaseProduct } from "../../../../redux/binReducer";
 
 const BinProductContainer = (props) => {
     return (
@@ -13,4 +14,8 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps)(BinProductContainer);
+export default connect(mapStateToProps, { 
+    increaseProduct, 
+    decreaseProduct,
+    deleteProduct
+ })(BinProductContainer);

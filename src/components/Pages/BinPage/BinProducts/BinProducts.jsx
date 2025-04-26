@@ -1,8 +1,16 @@
 import BinProduct from './BinProduct/BinProduct';
 import classes from './BinProducts.module.css';
 
-const BinProducts = ({ products }) => {
-    const productsElem = products.map(product => <BinProduct { ...product } key={ product.id }/>);
+const BinProducts = ({ products, increaseProduct, decreaseProduct, deleteProduct }) => {
+    const productsElem = products.map(product => 
+        <BinProduct 
+            { ...product } 
+            increaseProduct={ increaseProduct }
+            decreaseProduct={ decreaseProduct }
+            deleteProduct={ deleteProduct }
+            key={ product.id }
+        />
+    );
     const totalPrice = products.reduce((sum, product) => sum + product.price * product.count, 0);
     return (
         <div className='container'>

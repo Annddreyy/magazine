@@ -1,8 +1,21 @@
 import productDefault from './../../../../../assets/images/product.png';
 import classes from './BinProduct.module.css';
 
-const BinProduct = ({ img, title, price, count}) => {
+const BinProduct = ({ id, img, title, price, count, increaseProduct, decreaseProduct, deleteProduct }) => {
     const totalPrice = price * count;
+
+    const increaseProductHandler = () => {
+        increaseProduct(id);
+    };
+
+    const decreaseProductHandler = () => {
+        decreaseProduct(id);
+    };
+
+    const deleteProductHandler = () => {
+        deleteProduct(id);
+    };
+
     return (
         <tr>
             <td>
@@ -16,16 +29,16 @@ const BinProduct = ({ img, title, price, count}) => {
             </td>
             <td>
                 <span className={ classes.countBlock }>
-                    <button className={ classes.button }>-</button>
+                    <button className={ classes.button } onClick={ decreaseProductHandler }>-</button>
                     { count }
-                    <button className={ classes.button }>+</button>
+                    <button className={ classes.button } onClick={ increaseProductHandler } >+</button>
                 </span>
             </td>
             <td>
                 <span>{ totalPrice } руб.</span>
             </td>
             <td>
-                <button className={ classes.button }>x</button>
+                <button className={ classes.button } onClick={ deleteProductHandler }>x</button>
             </td>
         </tr>
     )
