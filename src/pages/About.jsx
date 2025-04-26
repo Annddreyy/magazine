@@ -1,6 +1,6 @@
-import HeaderContainer from './../../src/components/Header/HeaderContainer';
-import FooterContainer from './../../src/components/Footer/FooterContainer';
-import AboutMainPart from '../components/AboutMainPart/AboutMainPart';
+import HeaderContainer from './../components/common/Header/HeaderContainer';
+import FooterContainer from './../components/common/Footer/FooterContainer';
+import AboutMainPart from './../components/Pages/AboutPage/AboutMainPart/AboutMainPart';
 
 const About = () => {
     return (

@@ -1,4 +1,4 @@
-import personImg from './../../../assets/images/person.jpg';
+import personImg from './../../../../../assets/images/person.jpg';
 import classes from './Review.module.css';
 
 const Review = ({ userImg, fullname, text }) => {

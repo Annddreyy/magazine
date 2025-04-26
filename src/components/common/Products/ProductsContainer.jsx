@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Products from "./Products";
-import { setFavorityStatus } from "../../redux/productsReducer";
+import { setFavorityStatus } from "../../../redux/productsReducer";
 
 class ProductsContainer extends React.Component {
     render() {

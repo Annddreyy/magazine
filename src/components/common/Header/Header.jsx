@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import classes from './Header.module.css';
-import logo from './../../assets/images/логотип.png'
+import logo from './../../../assets/images/логотип.png'
 
 const Header = ({ links }) => {
     const leftLinks = links

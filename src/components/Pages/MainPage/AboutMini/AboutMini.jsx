@@ -1,4 +1,4 @@
-import aboutMiniImg from './../../assets/images/diploma.webp';
+import aboutMiniImg from './../../../../assets/images/diploma.webp';
 import classes from './AboutMini.module.css';
 
 const AboutMini = () => {

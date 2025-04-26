@@ -1,6 +1,7 @@
-import HeaderContainer from './../components/Header/HeaderContainer';
-import FooterContainer from './../components/Footer/FooterContainer';
-import ReviewsContainer from '../components/Reviews/ReviewsContainer';
+import HeaderContainer from './../components/common/Header/HeaderContainer';
+import FooterContainer from './../components/common/Footer/FooterContainer';
+
+import ReviewsContainer from './../components/Pages/ReviewsPage/Reviews/ReviewsContainer';
 
 const Reviews = () => {
     return (

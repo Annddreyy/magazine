@@ -1,9 +1,9 @@
 import classes from './ProductCard.module.css';
-import unfillHeart from './../../../assets/images/heart-icon-unfill.png';
-import fillHeart from './../../../assets/images/heart-icon-fill.png';
-import productImg from './../../../assets/images/product.png';
-import binLogo from './../../../assets/images/bin-logo.png';
-import Star from '../../common/Star/Star';
+import unfillHeart from './../../../../assets/images/heart-icon-unfill.png';
+import fillHeart from './../../../../assets/images/heart-icon-fill.png';
+import productImg from './../../../../assets/images/product.png';
+import binLogo from './../../../../assets/images/bin-logo.png';
+import Star from '../../Star/Star';
 
 const ProductCard = ({ id, title, price, grade, status, favority, imgSrc, setFavorityStatus }) => {
     let statusClasses = new Map([

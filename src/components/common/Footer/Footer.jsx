@@ -1,6 +1,6 @@
 import classes from './Footer.module.css';
 import { NavLink } from 'react-router-dom';
-import logo from './../../assets/images/логотип.png';
+import logo from './../../../assets/images/логотип.png';
 
 const Footer = ({ links }) => {
     let leftLinks = links
