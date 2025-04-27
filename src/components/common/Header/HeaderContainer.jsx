@@ -8,7 +8,6 @@ const HeaderContainer = (props) => {
 };
 
 const mapStateToPpops = (state) => {
-    debugger;
     return {
         links: state.header.links,
         isAuth: state.auth.isAuth,

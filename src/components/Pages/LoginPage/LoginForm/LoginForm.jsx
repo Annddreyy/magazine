@@ -4,7 +4,6 @@ import Input from "../../../common/FormElements/Input/Input";
 import classes from './LoginForm.module.css';
 
 const LoginForm = ({ authUser, isAuth }) => {
-    debugger;
     const loginElem = React.createRef();
     const passwordElem = React.createRef();
 

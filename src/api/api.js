@@ -9,6 +9,12 @@ export const usersAPI = {
     getUsers() {
         return instance.get('users')
             .then(response => response.data);
+    },
+    auth(login, password) {
+        return instance.post('auth', { login, password });
+    },
+    logout() {
+        return instance.delete('auth');
     }
 };
 
