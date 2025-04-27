@@ -1,4 +1,5 @@
 import { productsAPI } from '../api/api';
+import { setFavorityProducts } from '../utils/workingWithLocalStorage';
 
 const SET_FAVORITY = 'SET_FAVORITY';
 const SET_PRODUCT_INFORMATION = 'SET_PRODUCT_INFORMATION';
@@ -36,7 +37,6 @@ const productsReducer = (state = initialState, action) => {
             totalProductsCount: action.totalSize
         };
     case SET_CURRENT_PAGE:
-        debugger;
         return {
             ...state,
             currentPage: action.currentPage
@@ -50,10 +50,13 @@ export const getProduct = (productId) => async(dispatch) => {
     let product = await productsAPI.getProduct(productId);
     dispatch(setProductInformation(product));
 };
-
 export const getProducts = (page, size) => async(dispatch) => {
     let products = await productsAPI.getProducts(page, size);
     dispatch(setProductsInformation(products));
+};
+export const setFavority = (productId) => (dispatch, getState) => {
+    dispatch(setFavorityStatus(productId));
+    setFavorityProducts(getState().products.products.filter(product => product.favority));
 };
 
 export const setFavorityStatus = (productId) => ({ type: SET_FAVORITY, productId });

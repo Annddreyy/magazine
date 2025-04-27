@@ -1,12 +1,14 @@
 import HeaderContainer from './../components/common/Header/HeaderContainer';
 import FooterContainer from './../components/common/Footer/FooterContainer';
-import ProductsContainer from '../components/common/Products/ProductsContainer';
+import FavorityPaginator from '../components/Pages/FavorityPage/FavorityPaginator/FavorityPaginator';
+import FavorityProductsContainer from '../components/common/Products/FavorityProductsContainer';
 
 const Favority = () => {
     return (
         <div>
             <HeaderContainer />
-            <ProductsContainer />
+            <FavorityProductsContainer />
+            <FavorityPaginator />
             <FooterContainer />
         </div>
     )

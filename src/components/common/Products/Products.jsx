@@ -1,11 +1,11 @@
 import ProductCard from "./ProductCard/ProductCard";
 import classes from './Products.module.css';
 
-const Products = ({ products, setFavorityStatus, addProduct }) => {
+const Products = ({ products, setFavority, addProduct }) => {
     let productsCards = products.map(product => 
         <ProductCard 
             { ...product } 
-            setFavorityStatus={ setFavorityStatus }
+            setFavority={ setFavority }
             addProduct={ addProduct }
             key={ product.id } 
         />

@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 
 const ProductCard = ({ 
     id, title, price, grade, status, favority, imgSrc, 
-    setFavorityStatus, addProduct
+    setFavority, addProduct
 }) => {
     let statusClasses = new Map([
         ['Хит продаж!', classes.statusBlue],
@@ -23,11 +23,10 @@ const ProductCard = ({
     }
 
     const setFavorityStatusHandler = () => {
-        setFavorityStatus(id);
+        setFavority(id);
     };
 
     const addProductHandler = () => {
-        debugger;
         addProduct({ id, title, price, count: 1 });
     };
 

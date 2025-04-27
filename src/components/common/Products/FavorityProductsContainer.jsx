@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 import Products from "./Products";
 import { setFavority } from "../../../redux/productsReducer";
 import { addProduct } from "../../../redux/binReducer";
+import { getFavorityProducts } from "../../../utils/workingWithLocalStorage";
 
-class ProductsContainer extends React.Component {
+class FavorityProductsContainer extends React.Component {
     render() {
         return (
             <Products {...this.props} />
@@ -14,8 +15,8 @@ class ProductsContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products.products
+        products: getFavorityProducts()
     }
 };
 
-export default connect(mapStateToProps, { setFavority, addProduct })(ProductsContainer);
+export default connect(mapStateToProps, { setFavority, addProduct })(FavorityProductsContainer);
