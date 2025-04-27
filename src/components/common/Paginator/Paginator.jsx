@@ -24,13 +24,17 @@ const Paginator = ({ currentPage, totalItemsCount, pageSize, setCurrentPage }) =
 
     return (
         <div className='container'>
-            <div className={ classes.paginator }>
-                <button onClick={ setPreviosPage }>&lt;</button>
-                <div className={ classes.pages }>
-                    { pagesElem }
+            {
+                pageSize > 0
+                ||
+                <div className={ classes.paginator }>
+                    <button onClick={ setPreviosPage }>&lt;</button>
+                    <div className={ classes.pages }>
+                        { pagesElem }
+                    </div>
+                    <button onClick={ setNextPage }>&gt;</button>
                 </div>
-                <button onClick={ setNextPage }>&gt;</button>
-            </div>
+            }
         </div>
     )
 };

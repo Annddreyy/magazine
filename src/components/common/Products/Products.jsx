@@ -1,7 +1,8 @@
 import ProductCard from "./ProductCard/ProductCard";
 import classes from './Products.module.css';
+import noProducts from './../../../assets/images/no-products.png';
 
-const Products = ({ products, setFavority, addProduct }) => {
+const Products = ({ products, setFavority, addProduct, title }) => {
     let productsCards = products.map(product => 
         <ProductCard 
             { ...product } 
@@ -13,10 +14,15 @@ const Products = ({ products, setFavority, addProduct }) => {
 
     return (
         <section className='container'>
-            <h2>Товары</h2>
+            <h2>{ title }</h2>
+            { productsCards.length > 0 
+            ?
             <div className={ classes.cards }>
                 { productsCards }
             </div>
+            :
+            <img src={ noProducts } alt="" className={ classes.img } />
+            }
         </section>
     )
 }

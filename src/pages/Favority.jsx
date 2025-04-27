@@ -7,7 +7,7 @@ const Favority = () => {
     return (
         <div>
             <HeaderContainer />
-            <FavorityProductsContainer />
+            <FavorityProductsContainer title='Избранные товары' />
             <FavorityPaginator />
             <FooterContainer />
         </div>
