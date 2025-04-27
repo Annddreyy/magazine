@@ -5,9 +5,11 @@ const TopPart = () => {
         <section className={ classes.topPart }>
             <div className={ classes.item + ' ' + 'container' }>
                 <p className={ classes.text }>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo sit deleniti ipsum, enim, 
-                    veniam numquam odio eos laboriosam, officia consequatur hic debitis nostrum autem esse 
-                    libero quidem earum cum rerum.
+                    Косметический бренд, который поможет Вашей коже лица
+                    в борьбе с пигментацией, шелушением, первыми признаками старения, высыпаниями, 
+                    угревой сыпью, а также быстро восстановить кожу после косметологических процедур.
+                    Парфюмированная линейка для тела мягко отшелушивает, увлажняет и питает кожу, 
+                    оставляя приятный аром на долгое время и легкое сияние.
                 </p>
             </div>
         </section>

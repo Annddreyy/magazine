@@ -7,13 +7,13 @@ import AboutMini from "./../components/Pages/MainPage/AboutMini/AboutMini";
 import BottomPart from "./../components/Pages/MainPage/BottomPart/BottomPart";
 
 
-const Main = (props) => {
+const Main = () => {
     return (
         <div>
             <HeaderContainer />
             <TopPart />
             <AboutMini />
-            <ProductsContainer />
+            <ProductsContainer title='Товары' />
             <BottomPart />
             <FooterContainer />
         </div>

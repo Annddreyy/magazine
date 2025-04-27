@@ -7,23 +7,21 @@ const BottomPart = () => {
             <div className='container'>
                 <div className={ classes.items }>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium cumque 
-                        exercitationem atque quis sapiente, nobis eligendi doloremque facilis. 
-                        Architecto iure quas eius et accusantium maxime aut velit pariatur at. Placeat 
-                        corrupti unde provident! Inventore dolore, recusandae optio ut necessitatibus 
-                        facilis exercitationem rerum s.  Lorem ipsum, dolor sit amet consectetur 
-                        adipisicing elit. Praesentium cumque exercitationem atque quis sapiente, 
-                        nobis eligendi doloremque facilis.
+                    Главным компонентом во всей косметической линейке для лица и тела является 
+                    фокус. Это морская водоросль, свойства которой помогают укрепить защитный 
+                    барьер кожи, уменьшает отечность, улучшает тонус и эластичность. Эффективно 
+                    успокаивает раздражения и признаки усталости, помогает поддерживать баланс
+                     влаги и придает здоровый вид.
                     </p>
                     <img src={ bottomPartImg } alt="" />
                 </div>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium cumque 
-                    exercitationem atque quis sapiente, nobis eligendi doloremque facilis. Architecto iure 
-                    quas eius et accusantium maxime aut velit pariatur at. Placeat corrupti unde provident! 
-                    Inventore dolore, recusandae optio ut necessitatibus facilis exercitationem rerum s. 
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium cumque 
-                    exercitationem atque quis sapiente, nobis eligendi doloremque facilis. 
+                    Косметическая линейка идеально подходит для стрессовой кожи, подверженной 
+                    воздействию негативных факторов окружающей среды, неблагоприятных климатических 
+                    условий, излучению от экранов смартфонов и компьютеров, при частых перелетах, 
+                    дефиците отдыха и витаминов. Отличный вариант для пролонгирования 
+                    косметологических процедур, быстрой реабилитации после аппаратных и 
+                    инвазивных воздействий. 
                 </p>
             </div>
         </section>

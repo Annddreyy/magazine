@@ -8,12 +8,11 @@ const AboutMini = () => {
                 <div className={ classes.items }>
                     <img src={ aboutMiniImg } alt="" />
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium cumque 
-                        exercitationem atque quis sapiente, nobis eligendi doloremque facilis. Architecto 
-                        iure quas eius et accusantium maxime aut velit pariatur at. Placeat corrupti unde 
-                        provident! Inventore dolore, recusandae optio ut necessitatibus facilis 
-                        exercitationem rerum s.  Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                        Praesentium cumque exercitationem atque quis sapiente, nobis eligendi doloremque facilis. 
+                        Эmilia professional cosmetics — это капсульный бренд профессиональной 
+                        косметики, созданный косметологом. Эффективный уход за кожей, доступный 
+                        для каждого, как в домашних условиях, так и в профессиональной среде. 
+                        Бренд объединяет в себе научный подход, инновации и эстетику, чтобы 
+                        подарить коже здоровье, сияние и молодость.
                     </p>
                 </div>
             </div>
