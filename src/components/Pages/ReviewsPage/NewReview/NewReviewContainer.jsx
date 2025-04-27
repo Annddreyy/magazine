@@ -8,4 +8,10 @@ const NewReviewContainer = (props) => {
     )
 };
 
-export default connect(null, { addReview })(NewReviewContainer);
+const mapStateToProps = (state) => {
+    return {
+        isAuth: state.auth.isAuth
+    }
+};
+
+export default connect(mapStateToProps, { addReview })(NewReviewContainer);
