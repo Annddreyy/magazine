@@ -6,7 +6,7 @@ import { addProduct } from "../../../redux/binReducer";
 
 class ProductsContainer extends React.Component {
     componentDidMount() {
-        this.props.getProducts();
+        this.props.getProducts(1, 1);
     }
     render() {
         return (
@@ -17,7 +17,9 @@ class ProductsContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products.products
+        products: state.products.products,
+        currentPage: state.products.currentPage,
+        pageSize: state.products.pageSize
     }
 };
 

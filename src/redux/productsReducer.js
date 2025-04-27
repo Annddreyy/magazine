@@ -5,6 +5,9 @@ const SET_PRODUCT_INFORMATION = 'SET_PRODUCT_INFORMATION';
 const SET_PRODUCTS_INFORMATION = 'SET_PRODUCTS_INFORMATION';
 
 const initialState = {
+    totalProductsCount: 0,
+    productsPerPage: 12,
+    currentPage: 1,
     products: [],
     product: null
 };
@@ -26,9 +29,11 @@ const productsReducer = (state = initialState, action) => {
             product: action.product
         };
     case SET_PRODUCTS_INFORMATION:
+        debugger;
         return {
             ...state,
-            products: action.products
+            products: action.products,
+            totalProductsCount: action.totalSize
         };
     default:
         return state;
@@ -40,13 +45,13 @@ export const getProduct = (productId) => async(dispatch) => {
     dispatch(setProductInformation(product));
 };
 
-export const getProducts = () => async(dispatch) => {
-    let products = await productsAPI.getProducts();
+export const getProducts = (page, size) => async(dispatch) => {
+    let products = await productsAPI.getProducts(page, size);
     dispatch(setProductsInformation(products));
 };
 
 export const setFavorityStatus = (productId) => ({ type: SET_FAVORITY, productId });
-export const setProductsInformation = (products) => ({ type: SET_PRODUCTS_INFORMATION, products });
+export const setProductsInformation = (information) => ({ type: SET_PRODUCTS_INFORMATION, products: information.products, totalSize: information['total_size'] });
 export const setProductInformation = (product) => ({ type: SET_PRODUCT_INFORMATION, product });
 
 export default productsReducer;
