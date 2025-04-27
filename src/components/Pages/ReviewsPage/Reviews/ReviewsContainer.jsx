@@ -1,11 +1,23 @@
 import { connect } from "react-redux";
 import Reviews from "./Reviews";
+import React from "react";
+import { getReviews } from "../../../../redux/reviewsReducer";
 
-const ReviewsContainer = (props) => {
-    return (
-        <Reviews {...props} />
-    )
-};
+class ReviewsContainer extends React.Component {
+    componentDidMount() {
+        this.props.getReviews();
+    }
+
+    componentDidUpdate() {
+        this.props.getReviews();
+    }
+
+    render() {
+        return (
+            <Reviews reviews={ this.props.reviews } />
+        )
+    }
+}
 
 const mapStateToProps = (state) => {
     return {
@@ -13,4 +25,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps)(ReviewsContainer);
+export default connect(mapStateToProps, { getReviews })(ReviewsContainer);

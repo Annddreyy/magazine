@@ -22,3 +22,10 @@ export const productsAPI = {
             .then(response => response.data);
     }
 };
+
+export const reviewsAPI = {
+    getReviews() {
+        return instance.get('reviews')
+            .then(response => response.data);
+    }
+};

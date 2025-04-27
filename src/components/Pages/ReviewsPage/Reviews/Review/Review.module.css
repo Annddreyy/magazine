@@ -14,3 +14,9 @@
     height: 100px;
     border-radius: 50%;
 }
+
+.information {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
