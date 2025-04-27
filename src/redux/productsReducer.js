@@ -36,6 +36,7 @@ const productsReducer = (state = initialState, action) => {
             totalProductsCount: action.totalSize
         };
     case SET_CURRENT_PAGE:
+        debugger;
         return {
             ...state,
             currentPage: action.currentPage

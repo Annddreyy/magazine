@@ -1,25 +1,35 @@
 import classes from './Paginator.module.css';
 
 const Paginator = ({ currentPage, totalItemsCount, pageSize, setCurrentPage }) => {
-    const setPage = (event) => {
-        console.log( +event.target.innerHTML );
-    };
-
     const pagesCount = Math.ceil(totalItemsCount / pageSize);
     let pages = [];
 
     for (let i = 1; i <= pagesCount; i++) {
-        pages.push(<span onClick={ setPage }>{ i }</span>);
+        pages.push(i);
     }
+
+    const setPage = (event) => {
+        setCurrentPage( +event.target.innerHTML );
+    };
+
+    const setPreviosPage = () => {
+        currentPage > 1 && setCurrentPage( currentPage - 1 );
+    };
+
+    const setNextPage = () => {
+        currentPage < pagesCount && setCurrentPage( currentPage + 1 );
+    };
+
+    const pagesElem = pages.map(page => <span onClick={ setPage } className={ page == currentPage && classes.activePage }>{ page }</span>)
 
     return (
         <div className='container'>
             <div className={ classes.paginator }>
-                <button>&lt;</button>
+                <button onClick={ setPreviosPage }>&lt;</button>
                 <div className={ classes.pages }>
-                    { pages }
+                    { pagesElem }
                 </div>
-                <button>&gt;</button>
+                <button onClick={ setNextPage }>&gt;</button>
             </div>
         </div>
     )

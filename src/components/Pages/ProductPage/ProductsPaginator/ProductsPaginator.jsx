@@ -1,12 +1,15 @@
 import React from "react";
 import Paginator from "../../../common/Paginator/Paginator"
 import { connect } from "react-redux";
-import { getProducts } from "../../../../redux/productsReducer";
+import { getProducts, setCurrentPage } from "../../../../redux/productsReducer";
 
 class ProductPaginator extends React.Component {
     componentDidMount() {
-        debugger;
-        this.props.getProducts(this.props.currentPage, this.props.pageSize)
+        this.props.getProducts(this.props.currentPage, this.props.pageSize);
+    }
+
+    componentDidUpdate() {
+        this.props.getProducts(this.props.currentPage, this.props.pageSize);
     }
     render() {
         return (
@@ -23,6 +26,6 @@ const mapStateToProps = (state) => {
     }
 };
 
-const mapDispatchToProps = { getProducts }
+const mapDispatchToProps = { getProducts, setCurrentPage }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductPaginator);
