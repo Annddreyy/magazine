@@ -1,0 +1,21 @@
+.paginator {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.paginator > button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.pages {
+    display: flex;
+    gap: 1em;
+}
+
+.pages > * {
+    cursor: pointer;
+}

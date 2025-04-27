@@ -3,11 +3,12 @@ import { productsAPI } from '../api/api';
 const SET_FAVORITY = 'SET_FAVORITY';
 const SET_PRODUCT_INFORMATION = 'SET_PRODUCT_INFORMATION';
 const SET_PRODUCTS_INFORMATION = 'SET_PRODUCTS_INFORMATION';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 
 const initialState = {
     totalProductsCount: 0,
-    productsPerPage: 12,
-    currentPage: 1,
+    pageSize: 12,
+    currentPage: 2,
     products: [],
     product: null
 };
@@ -29,11 +30,15 @@ const productsReducer = (state = initialState, action) => {
             product: action.product
         };
     case SET_PRODUCTS_INFORMATION:
-        debugger;
         return {
             ...state,
             products: action.products,
             totalProductsCount: action.totalSize
+        };
+    case SET_CURRENT_PAGE:
+        return {
+            ...state,
+            currentPage: action.currentPage
         };
     default:
         return state;
@@ -53,5 +58,6 @@ export const getProducts = (page, size) => async(dispatch) => {
 export const setFavorityStatus = (productId) => ({ type: SET_FAVORITY, productId });
 export const setProductsInformation = (information) => ({ type: SET_PRODUCTS_INFORMATION, products: information.products, totalSize: information['total_size'] });
 export const setProductInformation = (product) => ({ type: SET_PRODUCT_INFORMATION, product });
+export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
 
 export default productsReducer;
