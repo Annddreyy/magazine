@@ -5,9 +5,15 @@ const instance = axios.create({
     baseURL: 'https://magazine-api-andrey2211.amvera.io/api/v1/'
 });
 
+export const usersAPI = {
+    getUsers() {
+        return instance.get('users')
+            .then(response => response.data);
+    }
+};
+
 export const productsAPI = {
     getProducts(page, size) {
-        debugger;
         return instance.get(`products?page=${page}&size=${size}`)
             .then(response => response.data);
     },

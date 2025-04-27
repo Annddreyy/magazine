@@ -1,8 +1,21 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 import Input from "../../../common/FormElements/Input/Input";
 import classes from './LoginForm.module.css';
 
-const LoginForm = () => {
+const LoginForm = ({ authUser }) => {
+    const loginElem = React.createRef();
+    const passwordElem = React.createRef();
+
+    const checkAuth = (event) => {
+        event.preventDefault();
+
+        const login = loginElem.current.value;
+        const password = passwordElem.current.value;
+        
+        authUser(login, password);
+    };
+
     return (
         <div className={ classes.form }>
             <div className={ classes.left }>
@@ -12,11 +25,11 @@ const LoginForm = () => {
             </div>
             <div>
                 <h2 className={ classes.formPartTitle }>Авторизация</h2>
-                <form action="" method="get" className={ classes.items }>
+                <form action="" method="get" className={ classes.items } onSubmit={ checkAuth }>
                     <label htmlFor='login'>Логин <span className={ classes.redStar }>*</span></label>
-                    <Input type='text' />
+                    <Input type='text' ref={ loginElem } />
                     <label htmlFor='password'>Пароль <span className={ classes.redStar }>*</span></label>
-                    <Input type='password' />
+                    <Input type='password' ref={ passwordElem } />
                     <button className={ classes.button }>Войти</button>
                 </form>
             </div>

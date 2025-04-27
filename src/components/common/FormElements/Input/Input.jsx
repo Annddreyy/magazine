@@ -1,8 +1,8 @@
 import classes from './Input.module.css';
 
-const Input = ({ type }) => {
+const Input = ({ type, ref }) => {
     return (
-        <input type={type} className={ classes.input } />
+        <input type={type} className={ classes.input } ref={ ref } />
     )
 };
 
