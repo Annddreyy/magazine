@@ -2,10 +2,16 @@ import { connect } from 'react-redux';
 import LoginForm from './LoginForm';
 import { authUser } from '../../../../redux/authReducer';
 
-const LoginFormContainer = ({ authUser }) => {
+const LoginFormContainer = (props) => {
     return (
-        <LoginForm authUser={ authUser } />
+        <LoginForm {...props} />
     )
 };
 
-export default connect(null, { authUser })(LoginFormContainer);
+const mapStateToProps = (state) => {
+    return {
+        isAuth: state.auth.isAuth
+    }
+};
+
+export default connect(mapStateToProps, { authUser })(LoginFormContainer);

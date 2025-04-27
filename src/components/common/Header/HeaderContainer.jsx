@@ -8,8 +8,13 @@ const HeaderContainer = (props) => {
 };
 
 const mapStateToPpops = (state) => {
+    debugger;
     return {
-        links: state.header.links
+        links: state.header.links,
+        isAuth: state.auth.isAuth,
+        surname: state.auth.surname,
+        name: state.auth.name,
+        patronymic: state.auth.patronymic
     }
 };
 

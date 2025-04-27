@@ -1,9 +1,10 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 import Input from "../../../common/FormElements/Input/Input";
 import classes from './LoginForm.module.css';
 
-const LoginForm = ({ authUser }) => {
+const LoginForm = ({ authUser, isAuth }) => {
+    debugger;
     const loginElem = React.createRef();
     const passwordElem = React.createRef();
 
@@ -17,23 +18,30 @@ const LoginForm = ({ authUser }) => {
     };
 
     return (
-        <div className={ classes.form }>
-            <div className={ classes.left }>
-                <h2 className={ classes.formPartTitle }>Регистрация</h2>
-                <p>Нет аккаунта?</p>
-                <NavLink to={'/registration'} className={ classes.link }>Зарегистрироваться</NavLink>
-            </div>
-            <div>
-                <h2 className={ classes.formPartTitle }>Авторизация</h2>
-                <form action="" method="get" className={ classes.items } onSubmit={ checkAuth }>
-                    <label htmlFor='login'>Логин <span className={ classes.redStar }>*</span></label>
-                    <Input type='text' ref={ loginElem } />
-                    <label htmlFor='password'>Пароль <span className={ classes.redStar }>*</span></label>
-                    <Input type='password' ref={ passwordElem } />
-                    <button className={ classes.button }>Войти</button>
-                </form>
-            </div>
-        </div>
+        <>
+            { isAuth
+                ?
+                <Navigate to='/' />
+                :
+                <div className={ classes.form }>
+                    <div className={ classes.left }>
+                        <h2 className={ classes.formPartTitle }>Регистрация</h2>
+                        <p>Нет аккаунта?</p>
+                        <NavLink to={'/registration'} className={ classes.link }>Зарегистрироваться</NavLink>
+                    </div>
+                    <div>
+                        <h2 className={ classes.formPartTitle }>Авторизация</h2>
+                        <form action="" method="get" className={ classes.items } onSubmit={ checkAuth }>
+                            <label htmlFor='login'>Логин <span className={ classes.redStar }>*</span></label>
+                            <Input type='text' ref={ loginElem } />
+                            <label htmlFor='password'>Пароль <span className={ classes.redStar }>*</span></label>
+                            <Input type='password' ref={ passwordElem } />
+                            <button className={ classes.button }>Войти</button>
+                        </form>
+                    </div>
+                </div>
+            }
+        </>
     )
 };
 
