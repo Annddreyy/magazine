@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import Products from "./Products";
 import { setFavority } from "../../../redux/productsReducer";
 import { addProduct } from "../../../redux/binReducer";
-import { getFavorityProducts } from "../../../utils/workingWithLocalStorage";
 
 class FavorityProductsContainer extends React.Component {
     render() {
@@ -15,7 +14,7 @@ class FavorityProductsContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: getFavorityProducts()
+        products: state.products.favorityProducts
     }
 };
 
