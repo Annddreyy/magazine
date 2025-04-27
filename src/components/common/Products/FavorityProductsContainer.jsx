@@ -14,7 +14,8 @@ class FavorityProductsContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products.favorityProducts
+        products: state.products.favorityProducts,
+        isFetching: state.products.isFetching
     }
 };
 

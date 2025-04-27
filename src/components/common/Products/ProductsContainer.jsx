@@ -14,7 +14,8 @@ class ProductsContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products.products
+        products: state.products.products,
+        isFetching: state.products.isFetching
     }
 };
 

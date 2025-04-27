@@ -1,8 +1,9 @@
 import ProductCard from "./ProductCard/ProductCard";
 import classes from './Products.module.css';
 import noProducts from './../../../assets/images/no-products.png';
+import loading from './../../../assets/images/loading.gif';
 
-const Products = ({ products, setFavority, addProduct, title }) => {
+const Products = ({ products, setFavority, addProduct, title, isFetching }) => {
     let productsCards = products.map(product => 
         <ProductCard 
             { ...product } 
@@ -15,13 +16,21 @@ const Products = ({ products, setFavority, addProduct, title }) => {
     return (
         <section className='container'>
             <h2>{ title }</h2>
-            { productsCards.length > 0 
+            { 
+            isFetching
             ?
-            <div className={ classes.cards }>
-                { productsCards }
-            </div>
+            <img src={ loading } />
             :
-            <img src={ noProducts } alt="" className={ classes.img } />
+            <>
+                { productsCards.length > 0 
+                ?
+                <div className={ classes.cards }>
+                    { productsCards }
+                </div>
+                :
+                <img src={ noProducts } alt="" className={ classes.img } />
+                }
+            </>
             }
         </section>
     )
