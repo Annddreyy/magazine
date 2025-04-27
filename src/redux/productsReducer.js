@@ -2,17 +2,10 @@ import { productsAPI } from '../api/api';
 
 const SET_FAVORITY = 'SET_FAVORITY';
 const SET_PRODUCT_INFORMATION = 'SET_PRODUCT_INFORMATION';
+const SET_PRODUCTS_INFORMATION = 'SET_PRODUCTS_INFORMATION';
 
 const initialState = {
-    products: [
-        { id: 1, title: 'title1', imgSrc: null, price: 1300, grade: 4, status: 'Хит продаж!', favority: true },
-        { id: 2, title: 'title2', imgSrc: null, price: 400, grade: 3, status: 'Скидка!', favority: false },
-        { id: 3, title: 'title3', imgSrc: null, price: 1500, grade: 2, status: 'Новинка!', favority: true },
-        { id: 4, title: 'title4', imgSrc: null, price: 800, grade: 5, status: '', favority: false },
-        { id: 5, title: 'title5', imgSrc: null, price: 200, grade: 1, status: '', favority: false },
-        { id: 6, title: 'title4', imgSrc: null, price: 800, grade: 5, status: '', favority: false },
-        { id: 7, title: 'title5', imgSrc: null, price: 200, grade: 1, status: '', favority: false }
-    ],
+    products: [],
     product: null
 };
 
@@ -22,7 +15,7 @@ const productsReducer = (state = initialState, action) => {
         return {
             ...state,
             products: state.products.map(product => 
-                product.id == action.productId 
+                product.id === action.productId 
                     ? {...product, favority: !product.favority}
                     : product
             )
@@ -31,6 +24,11 @@ const productsReducer = (state = initialState, action) => {
         return {
             ...state,
             product: action.product
+        };
+    case SET_PRODUCTS_INFORMATION:
+        return {
+            ...state,
+            products: action.products
         };
     default:
         return state;
@@ -42,7 +40,13 @@ export const getProduct = (productId) => async(dispatch) => {
     dispatch(setProductInformation(product));
 };
 
+export const getProducts = () => async(dispatch) => {
+    let products = await productsAPI.getProducts();
+    dispatch(setProductsInformation(products));
+};
+
 export const setFavorityStatus = (productId) => ({ type: SET_FAVORITY, productId });
+export const setProductsInformation = (products) => ({ type: SET_PRODUCTS_INFORMATION, products });
 export const setProductInformation = (product) => ({ type: SET_PRODUCT_INFORMATION, product });
 
 export default productsReducer;
