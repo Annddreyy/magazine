@@ -8,3 +8,16 @@
 .img {
     width: 300px;
 }
+
+@media (max-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+    .cards {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+}
