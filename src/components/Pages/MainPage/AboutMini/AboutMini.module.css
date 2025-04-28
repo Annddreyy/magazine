@@ -12,3 +12,16 @@
 .items > img {
     width: 300px;
 }
+
+@media (max-width: 900px) {
+    .items {
+        flex-direction: column;
+        gap: 3em;
+    }
+}
+
+@media (max-width: 500px) {
+    .items > img {
+        width: 200px
+    }
+}

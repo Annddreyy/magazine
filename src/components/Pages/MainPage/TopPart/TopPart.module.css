@@ -11,6 +11,22 @@
 }
 
 .text {
-    font-size: 18px;
     width: 40%;
+}
+
+@media (max-width: 1000px) {
+    .text {
+        width: 60%;
+        color: var(--white);
+    }
+
+    .topPart {
+        background: linear-gradient(to bottom, rgb(102, 102, 102, 0.5), rgba(102, 102, 102, 0.5)), url('./../../../../assets/images/main-part.png');
+    }
+}
+
+@media (max-width: 800px) {
+    .text {
+        width: 100%;
+    }
 }
