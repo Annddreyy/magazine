@@ -43,6 +43,17 @@
     resize: vertical;
 }
 
+.information {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.stars {
+    display: flex;
+    gap: 0.5em;
+}
+
 .title {
     margin-bottom: 2em;
 }

@@ -4,12 +4,12 @@ import { getSHA256Hash } from '../utils/sha256';
 const AUTH_USER = 'magazine/auth/AUTH_USER';
 
 const initialState = {
-    login: null,
-    isAuth: false,
-    surname: null,
-    name: null,
-    img: null,
-    patronymic: null
+    login: 'ivan_n',
+    isAuth: true,
+    surname: 'Иванов',
+    name: 'Иван',
+    patronymic: 'Иванович',
+    img: null
 };
 
 const authReducer = (state = initialState, action) => {
