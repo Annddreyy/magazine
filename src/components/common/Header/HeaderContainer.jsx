@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import Header from "./Header";
-import { links } from "../../../config/links";
+import { connect } from 'react-redux';
+import Header from './Header';
+import { links } from '../../../config/links';
 
 const HeaderContainer = (props) => {
     return (

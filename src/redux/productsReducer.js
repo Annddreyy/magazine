@@ -1,12 +1,12 @@
 import { productsAPI } from '../api/api';
 import { setFavorityProducts } from '../utils/workingWithLocalStorage';
 
-const SET_FAVORITY = 'SET_FAVORITY';
-const SET_PRODUCT_INFORMATION = 'SET_PRODUCT_INFORMATION';
-const SET_PRODUCTS_INFORMATION = 'SET_PRODUCTS_INFORMATION';
-const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
-const ADD_FAVORITY_PRODUCT = 'ADD_FAVORITY_PRODUCT';
-const SET_IS_FETCHING = 'SET_IS_FETCHING';
+const SET_FAVORITY = 'magazine/products/SET_FAVORITY';
+const SET_PRODUCT_INFORMATION = 'magazine/products/SET_PRODUCT_INFORMATION';
+const SET_PRODUCTS_INFORMATION = 'magazine/products/SET_PRODUCTS_INFORMATION';
+const SET_CURRENT_PAGE = 'magazine/products/SET_CURRENT_PAGE';
+const ADD_FAVORITY_PRODUCT = 'magazine/products/ADD_FAVORITY_PRODUCT';
+const SET_IS_FETCHING = 'magazine/products/SET_IS_FETCHING';
 
 const initialState = {
     totalProductsCount: 0,

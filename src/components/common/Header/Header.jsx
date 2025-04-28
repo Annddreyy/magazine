@@ -1,22 +1,11 @@
-import { NavLink } from 'react-router-dom';
 import classes from './Header.module.css';
 import logo from './../../../assets/images/логотип.png';
 import personDefault from './../../../assets/images/person.jpg';
+import getLinks from '../../../utils/getLinks';
 
 const Header = ({ links, isAuth, surname, name, patronymic, img }) => {
     const fullName = isAuth && `${surname} ${name.at(0)}. ${patronymic ? patronymic.at(0) + '.' : ''}`;
-    const leftLinks = links
-        .filter(link => !link.isRightLink)
-        .map(link => 
-            <NavLink to={ link.link } className={ classes.link }>{ link.text }</NavLink>
-        );
-
-    const rightLinks = links
-        .filter(link => link.isRightLink)
-        .map(link => 
-            <NavLink to={ link.link } className={ classes.link }>{ link.text }</NavLink>
-        );
-
+    let { leftLinks, rightLinks } = {...getLinks(links)};
     return (
         <header className={ classes.header }>
             <div className='container'>

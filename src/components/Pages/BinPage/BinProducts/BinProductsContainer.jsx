@@ -1,11 +1,15 @@
-import { connect } from "react-redux";
-import BinProducts from "./BinProducts";
-import { decreaseProduct, deleteProduct, increaseProduct } from "../../../../redux/binReducer";
+import { connect } from 'react-redux';
+import BinProducts from './BinProducts';
+import { decreaseProduct, deleteProduct, getBinProductsList, increaseProduct } from '../../../../redux/binReducer';
+import React from 'react';
 
-const BinProductContainer = (props) => {
-    return (
-        <BinProducts {...props} />
-    )
+class BinProductContainer extends React.Component {
+    componentDidMount() {
+        this.props.getBinProductsList();
+    }
+    render() {
+        return <BinProducts {...this.props} />
+    }
 };
 
 const mapStateToProps = (state) => {
@@ -17,5 +21,6 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, { 
     increaseProduct, 
     decreaseProduct,
-    deleteProduct
+    deleteProduct,
+    getBinProductsList
  })(BinProductContainer);

@@ -1,20 +1,9 @@
 import classes from './Footer.module.css';
-import { NavLink } from 'react-router-dom';
 import logo from './../../../assets/images/логотип.png';
+import getLinks from '../../../utils/getLinks';
 
 const Footer = ({ links }) => {
-    let leftLinks = links
-                .filter(link => !link.isRightLink)
-                .map(link => 
-                    <NavLink to={ link.link } className={ classes.link }>{ link.text }</NavLink>
-                );
-    
-    let rightLinks = links
-                .filter(link => link.isRightLink)
-                .map(link => 
-                    <NavLink to={ link.link } className={ classes.link }>{ link.text }</NavLink>
-                );
-    
+    let { leftLinks, rightLinks } = {...getLinks(links)};
     return (
         <footer className={ classes.footer }>
             <div className='container'>

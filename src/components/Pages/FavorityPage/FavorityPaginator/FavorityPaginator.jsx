@@ -1,8 +1,8 @@
-import React from "react";
-import Paginator from "../../../common/Paginator/Paginator"
-import { connect } from "react-redux";
-import { getProducts, setCurrentPage } from "../../../../redux/productsReducer";
-import { getFavorityProducts } from "../../../../utils/workingWithLocalStorage";
+import React from 'react';
+import Paginator from '../../../common/Paginator/Paginator'
+import { connect } from 'react-redux';
+import { getProducts, setCurrentPage } from '../../../../redux/productsReducer';
+import { getFavorityProducts } from '../../../../utils/workingWithLocalStorage';
 
 class ProductPaginator extends React.Component {
     render() {

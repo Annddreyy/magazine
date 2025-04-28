@@ -1,6 +1,6 @@
-import { connect } from "react-redux";
-import Footer from "./Footer";
-import { links } from "../../../config/links";
+import { connect } from 'react-redux';
+import Footer from './Footer';
+import { links } from '../../../config/links';
 
 const FooterContainer = (props) => {
     return (

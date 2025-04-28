@@ -1,4 +1,4 @@
-import LoginFormContainer from "../components/Pages/LoginPage/LoginForm/LoginFormContainer";
+import LoginFormContainer from '../components/Pages/LoginPage/LoginForm/LoginFormContainer';
 
 const Login = () => {
     return (

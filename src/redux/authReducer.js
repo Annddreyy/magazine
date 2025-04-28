@@ -1,7 +1,7 @@
 import { usersAPI } from '../api/api';
 import { getSHA256Hash } from '../utils/sha256';
 
-const AUTH_USER = 'AUTH_USER';
+const AUTH_USER = 'magazine/auth/AUTH_USER';
 
 const initialState = {
     login: null,

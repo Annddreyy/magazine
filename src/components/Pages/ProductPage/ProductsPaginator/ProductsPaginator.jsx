@@ -1,7 +1,7 @@
-import React from "react";
-import Paginator from "../../../common/Paginator/Paginator"
-import { connect } from "react-redux";
-import { setCurrentPage } from "../../../../redux/productsReducer";
+import React from 'react';
+import Paginator from '../../../common/Paginator/Paginator'
+import { connect } from 'react-redux';
+import { setCurrentPage } from '../../../../redux/productsReducer';
 
 class ProductPaginator extends React.Component {
     render() {

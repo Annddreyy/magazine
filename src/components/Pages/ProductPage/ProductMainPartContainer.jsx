@@ -1,9 +1,9 @@
-import React from "react";
-import { compose } from "redux";
-import ProductMainPart from "./ProductMainPart"
-import { withRouter } from "../../../hoc/withRouter";
-import { connect } from "react-redux";
-import { getProduct } from "../../../redux/productsReducer";
+import React from 'react';
+import { compose } from 'redux';
+import ProductMainPart from './ProductMainPart'
+import { withRouter } from '../../../hoc/withRouter';
+import { connect } from 'react-redux';
+import { getProduct } from '../../../redux/productsReducer';
 
 class ProductMainPartContainer extends React.Component {
     componentDidMount() {

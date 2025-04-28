@@ -1,8 +1,8 @@
 import { reviewsAPI } from '../api/api';
 
-const ADD_REVIEW_MESSAGE = 'ADD_REVIEW_MESSAGE';
-const SET_REVIEWS = 'SET_REVIEWS';
-const SET_IS_FETCHING = 'SET_IS_FETCHING';
+const ADD_REVIEW_MESSAGE = 'magazine/reviews/ADD_REVIEW_MESSAGE';
+const SET_REVIEWS = 'magazine/reviews/SET_REVIEWS';
+const SET_IS_FETCHING = 'magazine/reviews/SET_IS_FETCHING';
 
 const initialState = {
     reviews: [],
@@ -12,7 +12,6 @@ const initialState = {
 const reviewsReducer = (state = initialState, action) => {
     switch(action.type) {
     case ADD_REVIEW_MESSAGE:
-        debugger;
         return {
             ...state,
             reviews: [...state.reviews, { 

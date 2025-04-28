@@ -1,8 +1,8 @@
-import { connect } from "react-redux";
-import Reviews from "./Reviews";
-import React from "react";
-import { getReviews } from "../../../../redux/reviewsReducer";
-import { compose } from "redux";
+import { connect } from 'react-redux';
+import Reviews from './Reviews';
+import React from 'react';
+import { getReviews } from '../../../../redux/reviewsReducer';
+import { compose } from 'redux';
 
 class ReviewsContainer extends React.Component {
     componentDidMount() {

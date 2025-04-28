@@ -1,8 +1,8 @@
-import ProductCard from "./ProductCard/ProductCard";
+import ProductCard from './ProductCard/ProductCard';
 import classes from './Products.module.css';
 import noProducts from './../../../assets/images/no-products.png';
-import withLoader from "../../../hoc/withLoader";
-import { compose } from "redux";
+import withLoader from '../../../hoc/withLoader';
+import { compose } from 'redux';
 
 const Products = ({ products, setFavority, addProduct, title }) => {
     let productsCards = products.map(product => 

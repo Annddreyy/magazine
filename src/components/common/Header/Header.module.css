@@ -23,12 +23,6 @@
     display: none;
 }
 
-.link {
-    position: relative;
-    text-decoration: none;
-    color: var(--white);
-}
-
 .link::before {
     position: absolute;
     content: "";
