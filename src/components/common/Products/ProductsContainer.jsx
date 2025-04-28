@@ -9,15 +9,14 @@ class ProductsContainer extends React.Component {
         this.props.getProducts(this.props.currentPage, this.props.pageSize);
     }
 
-    shouldComponentUpdate(prevState, prevProps) {
-        return this.props.currentPage !== prevState.currentPage;
-    }
-
-    componentDidUpdate() {
-        this.props.getProducts(this.props.currentPage, this.props.pageSize);
+    componentDidUpdate(prevState) {
+        if (prevState.currentPage !== this.props.currentPage) {
+            this.props.getProducts(this.props.currentPage, this.props.pageSize);
+        }
     }
     
     render() {
+        debugger;
         return (
             <Products {...this.props} />
         )
