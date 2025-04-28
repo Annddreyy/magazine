@@ -44,7 +44,7 @@ export const authUser = (login, password) => async(dispatch) => {
     const users = await usersAPI.getUsers();
     password = await getSHA256Hash(password);
     for (let user of users) {
-        if (user.login == login && user.password == password) {
+        if (user.login === login && user.password === password) {
             await usersAPI.auth(login, password);
             dispatch(authUserAC(user));
             console.log( 'ok' );

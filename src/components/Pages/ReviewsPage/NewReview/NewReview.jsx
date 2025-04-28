@@ -1,7 +1,6 @@
 import React from 'react';
-
-import personImg from './../../../../assets/images/person.jpg';
 import classes from './NewReview.module.css';
+import personImg from './../../../../assets/images/person.jpg';
 
 const NewReview = ({ img, fullname, addReview, isAuth, user }) => {
     const textArea = React.createRef();

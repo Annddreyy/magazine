@@ -1,6 +1,6 @@
-import classes from './Footer.module.css';
-import logo from './../../../assets/images/логотип.png';
 import getLinks from '../../../utils/getLinks';
+import classes from './Footer.module.css';
+import logo from './../../../assets/images/logo.png';
 
 const Footer = ({ links }) => {
     let { leftLinks, rightLinks } = {...getLinks(links)};

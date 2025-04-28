@@ -1,7 +1,7 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import BinProducts from './BinProducts';
 import { decreaseProduct, deleteProduct, getBinProductsList, increaseProduct } from '../../../../redux/binReducer';
-import React from 'react';
 
 class BinProductContainer extends React.Component {
     componentDidMount() {

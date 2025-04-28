@@ -1,7 +1,7 @@
 .topPart {
     display: flex;
     height: 498px;
-    background: url('./../../../../assets/images/main-part.png');
+    background: url('./../../../../assets/images/MainPage/main-part.png');
     background-size: cover;
 }
 
@@ -21,7 +21,7 @@
     }
 
     .topPart {
-        background: linear-gradient(to bottom, rgb(102, 102, 102, 0.5), rgba(102, 102, 102, 0.5)), url('./../../../../assets/images/main-part.png');
+        background: linear-gradient(to bottom, rgb(102, 102, 102, 0.5), rgba(102, 102, 102, 0.5)), url('./../../../../assets/images/MainPage/main-part.png');
     }
 }
 

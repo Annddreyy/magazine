@@ -1,6 +1,6 @@
 import React from 'react';
-import Paginator from '../../../common/Paginator/Paginator'
 import { connect } from 'react-redux';
+import Paginator from '../../../common/Paginator/Paginator'
 import { getProducts, setCurrentPage } from '../../../../redux/productsReducer';
 import { getFavorityProducts } from '../../../../utils/workingWithLocalStorage';
 

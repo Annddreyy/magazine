@@ -1,10 +1,10 @@
-import classes from './ProductCard.module.css';
-import unfillHeart from './../../../../assets/images/heart-icon-unfill.png';
-import fillHeart from './../../../../assets/images/heart-icon-fill.png';
-import productImg from './../../../../assets/images/product.png';
-import binLogo from './../../../../assets/images/bin-logo.png';
-import Star from './../../Star/Star';
 import { NavLink } from 'react-router-dom';
+import Star from './../../Star/Star';
+import classes from './ProductCard.module.css';
+import unfillHeart from './../../../../assets/images/Card/heart-icon-unfill.png';
+import fillHeart from './../../../../assets/images/Card/heart-icon-fill.png';
+import productImg from './../../../../assets/images/Card/product.png';
+import binLogo from './../../../../assets/images/Card/bin-logo.png';
 
 const ProductCard = ({ 
     id, title, price, grade, status, favority, imgSrc, 

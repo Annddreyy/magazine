@@ -1,8 +1,8 @@
+import { compose } from 'redux';
 import { connect } from 'react-redux';
 import Review from './Review/Review';
-import classes from './Reviews.module.css';
 import withLoader from '../../../../hoc/withLoader';
-import { compose } from 'redux';
+import classes from './Reviews.module.css';
 
 const Reviews = ({ reviews }) => {
     const reviewsElem = reviews.map(review => <Review {...review} key={ review.id } />)

@@ -1,5 +1,5 @@
-import bottomPartImg from './../../../../assets/images/cream.png';
 import classes from './BottomPart.module.css';
+import bottomPartImg from './../../../../assets/images/MainPage/cream.png';
 
 const BottomPart = () => {
     return (

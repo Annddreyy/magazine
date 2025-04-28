@@ -1,6 +1,6 @@
 import classes from './AboutMainPart.module.css';
-import product1 from './../../../../assets/images/product1.jpg';
-import product2 from './../../../../assets/images/product2.jpg';
+import product1 from './../../../../assets/images/AboutPage/product1.jpg';
+import product2 from './../../../../assets/images/AboutPage/product2.jpg';
 
 const AboutMainPart = () => {
     return (

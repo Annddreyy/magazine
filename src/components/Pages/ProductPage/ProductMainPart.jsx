@@ -1,5 +1,5 @@
-import defaultImg from './../../../assets/images/product.png';
 import classes from './ProductMainPart.module.css';
+import defaultImg from './../../../assets/images/Card/product.png';
 
 const ProductMainPart = ({ title, description, producer, img, compound }) => {
     return (

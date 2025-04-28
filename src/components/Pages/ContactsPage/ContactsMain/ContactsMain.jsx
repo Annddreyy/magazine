@@ -2,7 +2,7 @@ import Addresses from './../../../../components/Pages/ContactsPage/Addresses/Add
 import ContactWithUs from './../../../../components/Pages/ContactsPage/ContactWithUs/ContactWithUs';
 import WorkingHours from './../../../../components/Pages/ContactsPage/WorkingHours/WorkingHours';
 import classes from './ContactsMain.module.css';
-import img from './../../../../assets/images/product3.png';
+import img from './../../../../assets/images/Contacts/product.png';
 
 const ContactsMain = () => {
     return (

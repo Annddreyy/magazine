@@ -1,5 +1,5 @@
-import productDefault from './../../../../../assets/images/product.png';
 import classes from './BinProduct.module.css';
+import productDefault from './../../../../../assets/images/Card/product.png';
 
 const BinProduct = ({ id, img, title, price, count, increaseProduct, decreaseProduct, deleteProduct }) => {
     const totalPrice = price * count;

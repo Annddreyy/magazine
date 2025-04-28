@@ -12,7 +12,7 @@ const Paginator = ({ currentPage, totalItemsCount, pageSize, setCurrentPage }) =
     const setPreviosPage = () => currentPage > 1 && setCurrentPage( currentPage - 1 );
     const setNextPage = () => currentPage < pagesCount && setCurrentPage( currentPage + 1 );
 
-    const pagesElem = pages.map(page => <span onClick={ setPage } className={ page == currentPage && classes.activePage }>{ page }</span>)
+    const pagesElem = pages.map(page => <span onClick={ setPage } className={ page === currentPage && classes.activePage }>{ page }</span>)
     
     return (
         <div className='container'>

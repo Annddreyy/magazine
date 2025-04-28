@@ -1,6 +1,6 @@
 import Star from '../../../../common/Star/Star';
-import personImg from './../../../../../assets/images/person.jpg';
 import classes from './Review.module.css';
+import personImg from './../../../../../assets/images/person.jpg';
 
 const Review = ({ user, grade, comment }) => {
     let stars = [];

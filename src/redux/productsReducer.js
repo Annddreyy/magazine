@@ -51,7 +51,7 @@ const productsReducer = (state = initialState, action) => {
     case ADD_FAVORITY_PRODUCT:
         return {
             ...state,
-            favorityProducts: [...state.favorityProducts, state.products.find(product => product.id == action.productId)]
+            favorityProducts: [...state.favorityProducts, state.products.find(product => product.id === action.productId)]
         };
     case SET_IS_FETCHING:
         return {
