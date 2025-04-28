@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
-import Footer from "./Footer"
+import Footer from "./Footer";
+import { links } from "../../../config/links";
 
 const FooterContainer = (props) => {
     return (
@@ -9,7 +10,7 @@ const FooterContainer = (props) => {
 
 const mapStateToPropse = (state) => {
     return {
-        links: state.footer.links
+        links: links.filter(link => link.elem.includes('FOOTER'))
     }
 };
 
