@@ -1,11 +1,17 @@
 import getLinks from '../../../utils/getLinks';
 import classes from './Header.module.css';
+import choosePhoto from '../../../utils/choosePhoto';
+import generateFullName from '../../../utils/generateFullName';
 import logo from './../../../assets/images/logo.png';
 import personDefault from './../../../assets/images/person.jpg';
+import { PERSON_DEFAULT_URL } from '../../../config/vars';
 
 const Header = ({ links, isAuth, surname, name, patronymic, img }) => {
-    const fullName = isAuth && `${surname} ${name.at(0)}. ${patronymic ? patronymic.at(0) + '.' : ''}`;
     let { leftLinks, rightLinks } = {...getLinks(links)};
+    
+    const photo = choosePhoto(img, personDefault, PERSON_DEFAULT_URL);
+    const fullName = isAuth && generateFullName(surname, name, patronymic);
+
     return (
         <header className={ classes.header }>
             <div className='container'>
@@ -19,7 +25,7 @@ const Header = ({ links, isAuth, surname, name, patronymic, img }) => {
                         isAuth
                         ?
                         <div className={ classes.user }>
-                            <img src={ img || personDefault } className={ classes.userImg } alt="" />
+                            <img src={ photo } className={ classes.userImg } alt="" />
                             <span className={ classes.fullname }>{ fullName }</span>
                             <button className={ classes.logout }>Выйти</button>
                         </div>

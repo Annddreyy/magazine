@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { BASE_URL } from '../config/vars';
 
 const instance = axios.create({
     withCredentials: true,
-    baseURL: 'https://magazine-api-andrey2211.amvera.io/api/v1/'
+    baseURL: BASE_URL
 });
 
 export const usersAPI = {
@@ -33,5 +34,8 @@ export const reviewsAPI = {
     getReviews() {
         return instance.get('reviews')
             .then(response => response.data);
+    },
+    addReview(id, comment, grade) {
+        return instance.post('review', { id, comment, grade });
     }
 };

@@ -15,11 +15,11 @@ const reviewsReducer = (state = initialState, action) => {
         return {
             ...state,
             reviews: [...state.reviews, { 
-                id: 6, 
+                id: 120, 
                 userImg: null, 
                 user: action.user, 
                 comment: action.comment,
-                grade: 3
+                grade: action.grade
             }]
         };
     case SET_REVIEWS:
@@ -43,8 +43,9 @@ export const getReviews = () => async(dispatch) => {
     dispatch(setIsFetching(false));
     dispatch(setReviews(reviews));
 };
-export const addReview = (comment, user) => (dispatch) => {
-    dispatch(addReviewMessage(comment, user));
+export const addReview = (user, comment, grade) => async(dispatch) => {
+    await reviewsAPI.addReview(1, comment, grade);
+    dispatch(addReviewMessage(user, comment, grade));
 };
 
 export const addReviewMessage = (comment, user) => ({ type: ADD_REVIEW_MESSAGE, comment, user });

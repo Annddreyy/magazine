@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 import Star from './../../../common/Star/Star';
+import choosePhoto from '../../../../utils/choosePhoto';
+import generateFullName from '../../../../utils/generateFullName';
 import classes from './NewReview.module.css';
 import personImg from './../../../../assets/images/person.jpg';
+import { PERSON_DEFAULT_URL } from '../../../../config/vars';
 
-const NewReview = ({ img, fullname, addReview, isAuth, user }) => {
+const NewReview = ({ addReview, isAuth, img, surname, name, patronymic }) => {
     let [grade, setGrade] = useState(1);
 
     const textArea = React.createRef();
 
-    const addReviewHandler = (event) => {
-        addReview(textArea.current.value, user);
-        event.preventDefault();
-    };
-
+    
     const starSelect = (event) => {
         const target = event.target.closest('span');
         setGrade( +target.getAttribute('value') )
     }
-
+    
     const stars = [];
     for (let i = 1; i <= 5; i++) {
         let isFill = grade >= i;
@@ -27,6 +26,14 @@ const NewReview = ({ img, fullname, addReview, isAuth, user }) => {
             </span>
         )
     }
+    
+    const photo = choosePhoto(img, personImg, PERSON_DEFAULT_URL);
+    const fullname = isAuth && generateFullName(surname, name, patronymic);
+    
+    const addReviewHandler = (event) => {
+        addReview(fullname, textArea.current.value, grade);
+        event.preventDefault();
+    };
 
     return (
         <section className='container'>
@@ -39,7 +46,7 @@ const NewReview = ({ img, fullname, addReview, isAuth, user }) => {
                     <form action="" className={ classes.form }>
                         <div className={ classes.mainItems }>
                             <div className={ classes.left }>
-                                <img src={ personImg } className={ classes.img } alt="" />
+                                <img src={ photo } className={ classes.img } alt="" />
                                 <span>{ fullname }</span>
                             </div>
                             <div className={ classes.information }>
