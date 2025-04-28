@@ -3,7 +3,6 @@ import Reviews from "./Reviews";
 import React from "react";
 import { getReviews } from "../../../../redux/reviewsReducer";
 import { compose } from "redux";
-import withLoader from "../../../../hoc/withLoader";
 
 class ReviewsContainer extends React.Component {
     componentDidMount() {
@@ -18,7 +17,7 @@ class ReviewsContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {
+    return { 
         reviews: state.reviews.reviews
     }
 };

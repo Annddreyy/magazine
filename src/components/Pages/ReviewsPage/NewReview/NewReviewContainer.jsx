@@ -11,7 +11,7 @@ const NewReviewContainer = (props) => {
 const mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
-        user: `${state.auth.surname} ${state.auth.name.at(0)}. ${state.auth.patronymic || state.auth.patronymic.at(0)}.` 
+        user: state.auth.isAuth && `${state.auth.surname} ${state.auth.name.at(0)}. ${state.auth.patronymic || state.auth.patronymic.at(0)}.` 
     }
 };
 
