@@ -6,12 +6,21 @@
 .items {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .item {
     display: flex;
     align-items: center;
     gap: 3em;
+}
+
+.drop {
+    list-style-type: none;
+}
+
+.burgerButton {
+    display: none;
 }
 
 .link {
@@ -56,10 +65,60 @@
 }
 
 .user > button {
-    background-color: transparent;
-    border: 1px solid var(--white);
-    outline: none;
     padding: 0.5em 1em;
+
+    outline: none;
+    border: 1px solid var(--white);
     border-radius: 100px;
+
     color: var(--white);
+    background-color: transparent;
+}
+
+@media (max-width: 1400px) {
+    .drop {
+        position: relative;
+        order: -1;
+    }
+
+    .links {
+        display: none;
+    }
+    
+    .burgerButton {
+        display: block;
+    }
+
+
+    .drop:hover .links {
+        position: absolute;
+
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1em;
+
+        width: max-content;
+        padding: 1em 2em;
+
+        background-color: var(--dark-orange);
+    }
+}
+
+@media (max-width: 800px) {
+    .logo {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .userImg {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .fullname {
+        display: none;
+    }
 }

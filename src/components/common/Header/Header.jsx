@@ -22,7 +22,10 @@ const Header = ({ links, isAuth, surname, name, patronymic, img }) => {
             <div className='container'>
                 <nav className={ classes.items }>
                     <img src={ logo } className={ classes.logo } alt="logo" />
-                    <div className={ classes.item }>{ leftLinks }</div>
+                    <div className={ classes.drop }>
+                        <li className={ classes.burgerButton }><a href="#" className={ classes.link }>&#9776;</a></li>
+                        <div className={ classes.item + ' ' + classes.links }>{ leftLinks }</div>
+                    </div>
                     {
                         isAuth
                         ?
