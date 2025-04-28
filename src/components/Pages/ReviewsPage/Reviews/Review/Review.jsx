@@ -2,7 +2,7 @@ import Star from '../../../../common/Star/Star';
 import personImg from './../../../../../assets/images/person.jpg';
 import classes from './Review.module.css';
 
-const Review = ({ img, fullname, comment, grade }) => {
+const Review = ({ user, grade, comment }) => {
     let stars = [];
     for (let i = 0; i < 5; i++) {
         let isFill = i < grade;
@@ -12,7 +12,7 @@ const Review = ({ img, fullname, comment, grade }) => {
         <article className={ classes.review }>
             <div className={ classes.left }>
                 <img src={ personImg } alt="" />
-                <span>{ fullname }</span>
+                <span>{ user }</span>
             </div>
             <div className={ classes.information }>
                 <p>{ comment }</p>

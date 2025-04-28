@@ -12,13 +12,15 @@ const initialState = {
 const reviewsReducer = (state = initialState, action) => {
     switch(action.type) {
     case ADD_REVIEW_MESSAGE:
+        debugger;
         return {
             ...state,
             reviews: [...state.reviews, { 
                 id: 6, 
                 userImg: null, 
-                fullname: 'Жуков И. И.', 
-                text: action.text
+                user: action.user, 
+                comment: action.comment,
+                grade: 3
             }]
         };
     case SET_REVIEWS:
@@ -42,11 +44,11 @@ export const getReviews = () => async(dispatch) => {
     dispatch(setIsFetching(false));
     dispatch(setReviews(reviews));
 };
-export const addReview = (text) => (dispatch) => {
-    dispatch(addReviewMessage(text));
+export const addReview = (comment, user) => (dispatch) => {
+    dispatch(addReviewMessage(comment, user));
 };
 
-export const addReviewMessage = (text) => ({ type: ADD_REVIEW_MESSAGE, text });
+export const addReviewMessage = (comment, user) => ({ type: ADD_REVIEW_MESSAGE, comment, user });
 export const setReviews = (reviews) => ({ type: SET_REVIEWS, reviews });
 export const setIsFetching = (isFetching) => ({ type: SET_IS_FETCHING, isFetching });
 

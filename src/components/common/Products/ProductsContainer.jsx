@@ -6,7 +6,6 @@ import { addProduct } from "../../../redux/binReducer";
 
 class ProductsContainer extends React.Component {
     componentDidMount() {
-        debugger;
         this.props.getProducts(this.props.currentPage, this.props.pageSize);
     }
 
