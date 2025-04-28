@@ -22,7 +22,7 @@ const BinProduct = ({ id, img, title, price, count, increaseProduct, decreasePro
                 <img src={ img || productDefault } className={ classes.img } alt="" />
             </td>
             <td>
-                <h3>{ title }</h3>
+                <h3 className={ classes.title }>{ title }</h3>
             </td>
             <td>
                 <span>{ price } руб.</span>

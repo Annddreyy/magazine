@@ -4,24 +4,44 @@
 
 .countBlock {
     display: flex;
+    align-items: center;
     gap: 1em;
+
     width: max-content;
+
     border: 1px solid var(--light-gray);
     border-radius: 100px;
+
     padding: 4px 12px;
-    align-items: center;
 }
 
 .button {
     display: flex;
     justify-content: center;
-    border: 1px solid var(--light-gray);
+    align-items: center;
+
     width: 20px;
     height: 20px;
+
     outline: none;
-    background-color: transparent;
-    color: var(--light-gray);
-    align-items: center;
+
+    border: 1px solid var(--light-gray);
     border-radius: 50%;
+
+    color: var(--light-gray);
+    background-color: transparent;
+
     cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .countBlock {
+        gap: 0.5em;
+        padding: 0;
+        border: none;
+    }
+
+    .title {
+        font-size: 16px;
+    }
 }

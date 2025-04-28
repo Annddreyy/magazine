@@ -20,20 +20,22 @@ const BinProducts = ({ products, increaseProduct, decreaseProduct, deleteProduct
                 productsElem.length
                 ?
                 <>
-                    <table className={ classes.table }>
-                        <thead className={ classes.thead }>
-                            <th>Фото</th>
-                            <th>Название</th>
-                            <th>Цена</th>
-                            <th>Количество</th>
-                            <th>Итого</th>
-                            <th></th>
-                        </thead>
-                        <tbody className={ classes.tbody }>
-                            { productsElem }
-                        </tbody>
+                    <div className={ classes.tableWrapper }>
+                        <table className={ classes.table }>
+                            <thead className={ classes.thead }>
+                                <th>Фото</th>
+                                <th>Название</th>
+                                <th>Цена</th>
+                                <th>Количество</th>
+                                <th>Итого</th>
+                                <th></th>
+                            </thead>
+                            <tbody className={ classes.tbody }>
+                                { productsElem }
+                            </tbody>
                         </table>
-                        <h3 className={ classes.itog }>Итоговая сумма: { totalPrice } руб.</h3>
+                    </div>
+                    <h3 className={ classes.itog }>Итоговая сумма: { totalPrice } руб.</h3>
                     <button className={ classes.orderButton }>Оформить заказ</button>
                 </>
                 :
