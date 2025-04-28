@@ -1,6 +1,9 @@
 import classes from './Paginator.module.css';
 
 const Paginator = ({ currentPage, totalItemsCount, pageSize, setCurrentPage }) => {
+    if  (totalItemsCount == 50) {
+        console.log( 1 );
+    }
     const pagesCount = Math.ceil(totalItemsCount / pageSize);
     let pages = [];
 
@@ -21,12 +24,12 @@ const Paginator = ({ currentPage, totalItemsCount, pageSize, setCurrentPage }) =
     };
 
     const pagesElem = pages.map(page => <span onClick={ setPage } className={ page == currentPage && classes.activePage }>{ page }</span>)
-
+    
     return (
         <div className='container'>
             {
                 pageSize > 0
-                ||
+                &&
                 <div className={ classes.paginator }>
                     <button onClick={ setPreviosPage }>&lt;</button>
                     <div className={ classes.pages }>

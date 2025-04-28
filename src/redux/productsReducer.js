@@ -11,7 +11,7 @@ const SET_IS_FETCHING = 'SET_IS_FETCHING';
 const initialState = {
     totalProductsCount: 0,
     pageSize: 12,
-    currentPage: 1,
+    currentPage: 0,
 
     products: [],
     favorityProducts: [],

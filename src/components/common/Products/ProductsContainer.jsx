@@ -1,12 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
 import Products from "./Products";
-import { setFavority } from "../../../redux/productsReducer";
+import { getProducts, setFavority } from "../../../redux/productsReducer";
 import { addProduct } from "../../../redux/binReducer";
-import { compose } from "redux";
-import withLoader from "../../../hoc/withLoader";
 
 class ProductsContainer extends React.Component {
+    componentDidMount() {
+        debugger;
+        this.props.getProducts(this.props.currentPage, this.props.pageSize);
+    }
+
+    shouldComponentUpdate(prevState, prevProps) {
+        return this.props.currentPage !== prevState.currentPage;
+    }
+
+    componentDidUpdate() {
+        this.props.getProducts(this.props.currentPage, this.props.pageSize);
+    }
+    
     render() {
         return (
             <Products {...this.props} />
@@ -17,11 +28,10 @@ class ProductsContainer extends React.Component {
 const mapStateToProps = (state) => {
     return {
         products: state.products.products,
-        isFetching: state.products.isFetching
+        isFetching: state.products.isFetching,
+        currentPage: state.products.currentPage,
+        pageSize: state.products.pageSize
     }
 };
 
-export default compose(
-    connect(mapStateToProps, { setFavority, addProduct }),
-    withLoader
-)(ProductsContainer)
+export default connect(mapStateToProps, { setFavority, addProduct, getProducts })(ProductsContainer)
