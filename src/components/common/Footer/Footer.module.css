@@ -24,11 +24,12 @@
     gap: 5em;
 }
 
-.left {
+.right {
     display: flex;
     gap: 3em;
     align-items: start;
     justify-content: space-between;
+    width: 100%;
 }
 
 .copyright {
@@ -43,7 +44,7 @@
 }
 
 @media (max-width: 650px) {
-    .left {
+    .right {
         flex-direction: column;
         gap: 2em;
     }

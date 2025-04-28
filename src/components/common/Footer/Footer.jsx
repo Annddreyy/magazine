@@ -12,7 +12,7 @@ const Footer = ({ links }) => {
                         <div className={ classes.items }>
                             { leftLinks }
                         </div>
-                        <div className={ classes.left }>
+                        <div className={ classes.right }>
                             <div className={ classes.items }>
                                 { rightLinks }
                             </div>
