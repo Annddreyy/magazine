@@ -11,3 +11,15 @@
 .img {
     width: 400px;
 }
+
+@media (max-width: 850px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .img {
+        width: 250px;
+    }
+}
