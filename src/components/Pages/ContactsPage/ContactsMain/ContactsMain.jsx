@@ -14,7 +14,7 @@ const ContactsMain = () => {
                     <WorkingHours />
                     <ContactWithUs />
                 </div>
-                <img src={ img } alt="" />
+                <img src={ img } className={ classes.img } alt="" />
             </div>
         </section>
     )
