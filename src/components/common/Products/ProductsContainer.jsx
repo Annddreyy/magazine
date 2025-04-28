@@ -16,7 +16,6 @@ class ProductsContainer extends React.Component {
     }
     
     render() {
-        debugger;
         return (
             <Products {...this.props} />
         )
