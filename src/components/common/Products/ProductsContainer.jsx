@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import Products from "./Products";
 import { setFavority } from "../../../redux/productsReducer";
 import { addProduct } from "../../../redux/binReducer";
+import { compose } from "redux";
+import withLoader from "../../../hoc/withLoader";
 
 class ProductsContainer extends React.Component {
     render() {
@@ -19,4 +21,7 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, { setFavority, addProduct })(ProductsContainer);
+export default compose(
+    connect(mapStateToProps, { setFavority, addProduct }),
+    withLoader
+)(ProductsContainer)

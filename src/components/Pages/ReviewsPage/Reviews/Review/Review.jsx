@@ -15,12 +15,8 @@ const Review = ({ img, fullname, comment, grade }) => {
                 <span>{ fullname }</span>
             </div>
             <div className={ classes.information }>
-                <p>
-                    { comment }
-                </p>
-                <div>
-                    { stars }
-                </div>
+                <p>{ comment }</p>
+                <div>{ stars }</div>
             </div>
         </article>
     )

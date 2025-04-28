@@ -1,5 +1,8 @@
+import { connect } from "react-redux";
 import Review from "./Review/Review";
 import classes from './Reviews.module.css';
+import withLoader from "../../../../hoc/withLoader";
+import { compose } from "redux";
 
 const Reviews = ({ reviews }) => {
     const reviewsElem = reviews.map(review => <Review {...review} key={ review.id } />)
@@ -13,4 +16,13 @@ const Reviews = ({ reviews }) => {
     )
 };
 
-export default Reviews;
+const mapStateToProps = (state) => {
+    return {
+        isFetching: state.reviews.isFetching
+    }
+}
+
+export default compose(
+    connect(mapStateToProps),
+    withLoader
+)(Reviews);
