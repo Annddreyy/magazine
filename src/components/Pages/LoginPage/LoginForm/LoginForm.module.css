@@ -1,11 +1,13 @@
 .form {
     display: grid;
-    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+
     width: max-content;
-    margin-top: 5em;
+
+    margin: 5em auto;
+
     border-radius: 12px;
     border: 1px solid var(--light-gray);
-    grid-template-columns: repeat(2, 1fr);
 }
 
 .form > * {
@@ -17,13 +19,15 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
-    background-color: var(--dark-orange);
+
     color: var(--white);
+    background-color: var(--dark-orange);
 }
 
 .formPartTitle {
     margin: 0;
     margin-bottom: 1em;
+
     text-align: center;
 }
 
@@ -37,13 +41,14 @@
     margin-top: 2em;
 }
 
-
 .button {
-    background-color: transparent;
-    border-radius: 100px;
     width: max-content;
-    border: 1px solid var(--light-gray);
     padding: 0.5em 2em;
+
+    border: 1px solid var(--light-gray);
+    border-radius: 100px;
+
+    background-color: transparent;
 }
 
 .redStar {
@@ -51,11 +56,50 @@
 }
 
 .link {
-    color: var(--white);
+    width: max-content;
+
+    padding: 0.5em 1em;
+
     font-size: 16px;
     text-decoration: none;
+
+    color: var(--white);
+
     border: 1px solid var(--white);
-    padding: 0.5em 1em;
     border-radius: 100px;
-    width: max-content;
+}
+
+@media (max-width: 850px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+
+    .form > * {
+        border-radius: 12px;
+        padding: 3rem 3em;
+    }
+
+    .formPartTitle {
+        font-size: 21px;
+    }
+
+    .link {
+        padding: 0em 1em;
+    }
+}
+
+@media (max-width: 500px) {
+    .form > * {
+        padding: 1rem 2em;
+    }
+
+    .left > .formPartTitle {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .form > * {
+        padding: 1rem 1.5em;
+    }
 }

@@ -5,3 +5,15 @@
     outline: none;
     width: 300px;
 }
+
+@media (max-width: 400px) {
+    .input {
+        width: 250px;
+    }
+}
+
+@media (max-width: 350px) {
+    .input {
+        width: 220px;
+    }
+}
