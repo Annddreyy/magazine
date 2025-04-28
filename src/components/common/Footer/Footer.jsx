@@ -23,11 +23,14 @@ const Footer = ({ links }) => {
                         <div className={ classes.items }>
                             { leftLinks }
                         </div>
-                        <div className={ classes.items }>
-                            { rightLinks }
+                        <div className={ classes.left }>
+                            <div className={ classes.items }>
+                                { rightLinks }
+                            </div>
+                            <img src={ logo } className={ classes.logo } alt="Логотип" />
                         </div>
                     </div>
-                    <img src={ logo } alt="Логотип" />
+
                 </div>
                 <p className={ classes.copyright }>© 2025 - Emilia, все права защищены</p>
             </div>
