@@ -9,7 +9,6 @@ const HeaderContainer = (props) => {
 };
 
 const mapStateToPpops = (state) => {
-    debugger;
     return {
         links: links.filter(link => link.elem.includes('HEADER')),
         isAuth: state.auth.isAuth,
