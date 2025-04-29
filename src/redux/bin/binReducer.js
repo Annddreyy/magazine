@@ -1,5 +1,3 @@
-import { getBinProducts, setBinProducts } from '../utils/workingWithLocalStorage';
-
 const SET_PRODUCTS = 'magazine/bin/SET_PRODUCTS';
 const INCREASE_PRODUCT = 'magazine/bin/INCREASE_PRODUCT';
 const DECREASE_PRODUCT = 'magazine/bin/DECREASE_PRODUCT';
@@ -48,26 +46,6 @@ const binReducer = (state = initialState, action) => {
     default:
         return state;
     }
-};
-
-export const getBinProductsList = () => (dispatch) => {
-    dispatch(setProductsActionCreator(getBinProducts()));
-};
-export const increaseProduct = (productId) => (dispatch, getState) => {
-    dispatch(increaseProductActionCreator(productId));
-    setBinProducts(getState().bin.products);
-};
-export const decreaseProduct = (productId) => (dispatch, getState) => {
-    dispatch(decreaseProductActionCreator(productId));
-    setBinProducts(getState().bin.products);
-};
-export const addProduct = (product) => (dispatch, getState) => {
-    dispatch(addProductActionCreator(product));
-    setBinProducts(getState().bin.products);
-};
-export const deleteProduct = (productId) => (dispatch, getState) => {
-    dispatch(deleteProductActionCreator(productId));
-    setBinProducts(getState().bin.products);
 };
 
 export const setProductsActionCreator = (products) => ({ type: SET_PRODUCTS, products });

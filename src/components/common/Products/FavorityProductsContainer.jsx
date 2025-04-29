@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Products from './Products';
-import { setFavority } from '../../../redux/productsReducer';
-import { addProduct } from '../../../redux/binReducer';
+import { setFavority } from '../../../redux/products/productsThunks';
+import { addProduct } from '../../../redux/bin/binThunks';
 
 class FavorityProductsContainer extends React.Component {
     render() {

@@ -1,5 +1,3 @@
-import { reviewsAPI } from '../api/api';
-
 const ADD_REVIEW_MESSAGE = 'magazine/reviews/ADD_REVIEW_MESSAGE';
 const SET_REVIEWS = 'magazine/reviews/SET_REVIEWS';
 const SET_IS_FETCHING = 'magazine/reviews/SET_IS_FETCHING';
@@ -47,17 +45,6 @@ const reviewsReducer = (state = initialState, action) => {
     default:
         return state;
     }
-};
-
-export const getReviews = (page, size) => async(dispatch) => {
-    dispatch(setIsFetching(true));
-    let reviews = await reviewsAPI.getReviews(page, size);
-    dispatch(setIsFetching(false));
-    dispatch(setReviews(reviews));
-};
-export const addReview = (user, comment, grade) => async(dispatch) => {
-    await reviewsAPI.addReview(1, comment, grade);
-    dispatch(addReviewMessage(user, comment, grade));
 };
 
 export const addReviewMessage = (comment, user) => ({ type: ADD_REVIEW_MESSAGE, comment, user });

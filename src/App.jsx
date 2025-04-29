@@ -10,7 +10,7 @@ import Favority from './pages/Favority';
 import Login from './pages/Login';
 import Product from './pages/Product';
 import { connect } from 'react-redux';
-import { checkUser } from './redux/authReducer';
+import { checkUser } from './redux/auth/authThunks';
 import React from 'react';
 
 class App extends React.Component {

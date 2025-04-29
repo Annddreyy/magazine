@@ -1,9 +1,9 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
-import productsReducer from './productsReducer';
-import reviewsReducer from './reviewsReducer';
-import binReducer from './binReducer';
 import { thunk as thunkMiddleware } from 'redux-thunk';
-import authReducer from './authReducer';
+import productsReducer from './products/productsReducer';
+import reviewsReducer from './reviews/reviewsReducer';
+import binReducer from './bin/binReducer';
+import authReducer from './auth/authReducer';
 
 const rootReducer = combineReducers({
     products: productsReducer,

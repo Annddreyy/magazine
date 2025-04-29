@@ -3,7 +3,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import ProductMainPart from './ProductMainPart'
 import { withRouter } from '../../../hoc/withRouter';
-import { getProduct } from '../../../redux/productsReducer';
+import { getProduct } from '../../../redux/products/productsThunks';
 
 class ProductMainPartContainer extends React.Component {
     componentDidMount() {

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import NewReview from './NewReview'
-import { addReview } from '../../../../redux/reviewsReducer';
+import { addReview } from '../../../../redux/reviews/reviewsThunks';
 
 const NewReviewContainer = (props) => {
     return (

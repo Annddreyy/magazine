@@ -3,7 +3,8 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import Reviews from './Reviews';
 import withPaginator from './../../../../hoc/withPaginator';
-import { getReviews, setCurrentPage } from '../../../../redux/reviewsReducer';
+import { setCurrentPage } from '../../../../redux/reviews/reviewsReducer';
+import { getReviews } from '../../../../redux/reviews/reviewsThunks';
 
 class ReviewsContainer extends React.Component {
     componentDidMount() {
@@ -11,7 +12,7 @@ class ReviewsContainer extends React.Component {
     }
 
     componentDidUpdate(prevState) {
-        if (prevState.currentPage != this.props.currentPage) {
+        if (prevState.currentPage !== this.props.currentPage) {
             this.props.getReviews(this.props.currentPage, this.props.pageSize);
         }
     }

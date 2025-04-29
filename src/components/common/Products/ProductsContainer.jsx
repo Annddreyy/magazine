@@ -1,9 +1,10 @@
 import React from 'react';
+import { compose } from 'redux';
 import { connect } from 'react-redux';
 import Products from './Products';
-import { getProducts, setCurrentPage, setFavority } from '../../../redux/productsReducer';
-import { addProduct } from '../../../redux/binReducer';
-import { compose } from 'redux';
+import { setCurrentPage } from '../../../redux/products/productsReducer';
+import { setFavority, getProducts } from '../../../redux/products/productsThunks';
+import { addProduct } from '../../../redux/bin/binThunks';
 import withPaginator from '../../../hoc/withPaginator';
 
 class ProductsContainer extends React.Component {
