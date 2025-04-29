@@ -4,6 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import { requiredField } from './../../../../utils/validators/validators';
 import { Input } from '../../../common/FormControls/FormControls';
 import classes from './LoginForm.module.css';
+import styles from './../../../../components/common/FormControls/FormControls.module.css';
 
 const LoginForm = ({ handleSubmit, error, isAuth }) => {
     return (
@@ -20,6 +21,9 @@ const LoginForm = ({ handleSubmit, error, isAuth }) => {
                     </div>
                     <div>
                         <h2 className={ classes.formPartTitle }>Авторизация</h2>
+                        { error && <div className={ styles.formSummaryError }>
+                            { error }
+                        </div> }
                         <form action="" method='get' className={ classes.items } onSubmit={ handleSubmit }>
                             <label htmlFor='login'>Логин <span className={ classes.redStar }>*</span></label>
                             <Field 

@@ -1,6 +1,7 @@
 import { usersAPI } from '../../api/api';
 import { getSHA256Hash } from '../../utils/sha256';
 import { authUserAC } from './authReducer';
+import { stopSubmit } from 'redux-form';
 
 export const checkUser = () => (dispatch) => {
     if (document.cookie.includes('user')) {
@@ -17,11 +18,11 @@ export const checkUser = () => (dispatch) => {
 export const authUser = (login, password) => async(dispatch) => {
     const users = await usersAPI.getUsers();
     password = await getSHA256Hash(password);
-    for (let user of users) {
-        if (user.login === login && user.password === password) {
-            await usersAPI.auth(login, password);
-            dispatch(authUserAC(user));
-            console.log( 'ok' );
-        }
+    let currentUser = users.find(user => user.login === login && user.password === password);
+    if (currentUser) {
+        await usersAPI.auth(login, password);
+        dispatch(authUserAC(currentUser));
+    } else {
+        dispatch(stopSubmit('login', { _error: 'Неверный логин или пароль' } ));
     }
 };
