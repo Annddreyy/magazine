@@ -2,11 +2,18 @@ import React from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import Reviews from './Reviews';
-import { getReviews } from '../../../../redux/reviewsReducer';
+import withPaginator from './../../../../hoc/withPaginator';
+import { getReviews, setCurrentPage } from '../../../../redux/reviewsReducer';
 
 class ReviewsContainer extends React.Component {
     componentDidMount() {
-        this.props.getReviews();
+        this.props.getReviews(this.props.currentPage, this.props.pageSize);
+    }
+
+    componentDidUpdate(prevState) {
+        if (prevState.currentPage != this.props.currentPage) {
+            this.props.getReviews(this.props.currentPage, this.props.pageSize);
+        }
     }
 
     render() {
@@ -18,10 +25,14 @@ class ReviewsContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return { 
-        reviews: state.reviews.reviews
+        reviews: state.reviews.reviews,
+        currentPage: state.reviews.currentPage,
+        pageSize: state.reviews.pageSize,
+        totalItemsCount: state.reviews.totalReviewsCount
     }
 };
 
 export default compose(
-    connect(mapStateToProps, { getReviews })
+    connect(mapStateToProps, { getReviews, setCurrentPage }),
+    withPaginator
 )(ReviewsContainer);

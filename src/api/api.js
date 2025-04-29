@@ -31,8 +31,8 @@ export const productsAPI = {
 };
 
 export const reviewsAPI = {
-    getReviews() {
-        return instance.get('reviews')
+    getReviews(page, size) {
+        return instance.get(`reviews?page=${page}&size=${size}`)
             .then(response => response.data);
     },
     addReview(id, comment, grade) {

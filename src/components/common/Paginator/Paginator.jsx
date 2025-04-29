@@ -1,7 +1,6 @@
 import classes from './Paginator.module.css';
 
 const Paginator = ({ currentPage, totalItemsCount, pageSize, setCurrentPage }) => {
-    debugger;
     const pagesCount = Math.ceil(totalItemsCount / pageSize);
     let pages = [];
 
