@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Navigate, NavLink } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { minLengthCreator, requiredField } from './../../../utils/validators/validators';
@@ -6,8 +6,7 @@ import { FileInput, Input } from './../../common/FormControls/FormControls';
 import classes from './../../common/FormControls/Form.module.css';
 import styles from './../../../components/common/FormControls/FormControls.module.css';
 
-const RegistrationForm = ({ handleSubmit, error, isAuth }) => {
-    let [selectedImg, setSelectedImg] = useState('');
+const RegistrationForm = ({ handleSubmit, error, isAuth, selectedImg, img, setImage }) => {
     let minLength8 = minLengthCreator(8);
     return (
         <>
@@ -68,14 +67,11 @@ const RegistrationForm = ({ handleSubmit, error, isAuth }) => {
                             />
                             <label htmlFor='photo'>Фото <span className={ classes.redStar }>*</span></label>
                             <div>
-                                <img className={ classes.selectedImg } src={ selectedImg } alt="" />
                                 <Field 
                                     type='file'
                                     name='photo'
                                     id='photo'
                                     component={ FileInput }
-                                    setSelectedImg={ setSelectedImg }
-                                    validate={ [requiredField] }
                                 />
                             </div>
                             <button className={ classes.button }>Войти</button>
@@ -87,4 +83,4 @@ const RegistrationForm = ({ handleSubmit, error, isAuth }) => {
     )
 };
 
-export default reduxForm({ form: 'login' })(RegistrationForm);
+export default reduxForm({ form: 'registration' })(RegistrationForm);

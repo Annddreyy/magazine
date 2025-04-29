@@ -16,6 +16,17 @@ export const usersAPI = {
     },
     logout() {
         return instance.delete('auth');
+    },
+    registration(surname, name, patronymic, login, password, img_path) {
+        if (patronymic) {
+            return instance.post('registration', {
+                surname, name, patronymic, login, password, img_path
+            });
+        } else {
+            return instance.post('registration', {
+                surname, name, login, password, img_path
+            });
+        }
     }
 };
 

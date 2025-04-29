@@ -1,8 +1,8 @@
-import RegistrationForm from "../components/Pages/RegistrationPage/RegistrationForm";
+import RegistrationFormContainer from "../components/Pages/RegistrationPage/RegistrationFormContainer";
 
 const Registration = () => {
     return (
-        <RegistrationForm />
+        <RegistrationFormContainer />
     )
 };
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './FormControls.module.css';
-import readFile from '../../../utils/readFile';
 
 export const Textarea = ({input, meta, ...props}) => {
     const showError = meta.error && meta.touched;
@@ -21,22 +20,20 @@ export const Input = ({input, meta, ...props}) => {
         </div>
     )
 }
-export const FileInput = ({input, meta, setSelectedImg, ...props}) => {
-    const showError = meta.error && meta.touched;
 
-    const read = async(file) => {
-        let url = await readFile(file);
-        setSelectedImg( url );
-    }
+export const FileInput = ({input, meta, ...props}) => {
+    const showError = meta.error && meta.touched;
 
     return (
         <div className={ classes.formControl + ' ' + (showError ? classes.error : '') }>
             <input 
                 type={ props.type } 
-                onChange={(event) => { read(event.target.files[0]); }}  
+                onChange={(event) => {
+                    input.onChange(event.target.files[0]);
+                }}
                 className={ classes.input } 
                 {...props} 
             />
-        </div>
+        </div>     
     )
 }
