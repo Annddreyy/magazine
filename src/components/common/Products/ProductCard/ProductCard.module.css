@@ -15,6 +15,10 @@
     font-size: 24px;
 }
 
+.img {
+    width: 100%;
+}
+
 .isFavourity {
     position: absolute;
     top: 0;

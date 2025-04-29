@@ -33,7 +33,7 @@ const ProductCard = ({
     return (
         <div className={ classes.card }>
             <NavLink to={ '/product/' + id }>
-                <img src={ productImg } alt="" />
+                <img src={ productImg } className={ classes.img } alt="" />
             </NavLink>
             <div className={ classes.isFavourity } onClick={ setFavorityStatusHandler }>
                 <img src={ favority ? fillHeart : unfillHeart } alt="Добавить в избранное" />
