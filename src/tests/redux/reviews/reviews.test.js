@@ -1,19 +1,16 @@
 import productsReducer, { setCurrentPage, setIsFecthing } from '../../../redux/products/productsReducer';
 
 const state = {
-    totalProductsCount: 0,
-    pageSize: 12,
+    totalReviewsCount: 0,
+    pageSize: 10,
     currentPage: 1,
 
-    products: [],
-    favorityProducts: [],
-    
-    product: null,
+    reviews: [],
 
     isFetching: false
 };
 
-describe('check products reducer', () => {
+describe('check reviews reducer', () => {
     it('set isFetching false', () => {
         const action = setIsFecthing(false);
         const newState = productsReducer(state, action);
