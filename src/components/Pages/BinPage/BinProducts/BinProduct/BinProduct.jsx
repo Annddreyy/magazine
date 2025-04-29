@@ -1,25 +1,17 @@
 import classes from './BinProduct.module.css';
-import productDefault from './../../../../../assets/images/Card/product.png';
+import { productImg } from '../../../../../config/images';
 
 const BinProduct = ({ id, img, title, price, count, increaseProduct, decreaseProduct, deleteProduct }) => {
     const totalPrice = price * count;
 
-    const increaseProductHandler = () => {
-        increaseProduct(id);
-    };
-
-    const decreaseProductHandler = () => {
-        decreaseProduct(id);
-    };
-
-    const deleteProductHandler = () => {
-        deleteProduct(id);
-    };
+    const increaseProductHandler = () => increaseProduct(id);
+    const decreaseProductHandler = () => decreaseProduct(id);
+    const deleteProductHandler = () => deleteProduct(id);
 
     return (
         <tr>
             <td>
-                <img src={ img || productDefault } className={ classes.img } alt="" />
+                <img src={ img || productImg } className={ classes.img } alt="" />
             </td>
             <td>
                 <h3 className={ classes.title }>{ title }</h3>

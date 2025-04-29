@@ -23,14 +23,11 @@ export const Input = ({input, meta, ...props}) => {
 
 export const FileInput = ({input, meta, ...props}) => {
     const showError = meta.error && meta.touched;
-
     return (
         <div className={ classes.formControl + ' ' + (showError ? classes.error : '') }>
             <input 
                 type={ props.type } 
-                onChange={(event) => {
-                    input.onChange(event.target.files[0]);
-                }}
+                onChange={(event) => input.onChange(event.target.files[0]) }
                 className={ classes.input } 
                 {...props} 
             />

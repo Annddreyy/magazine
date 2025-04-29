@@ -2,7 +2,7 @@ import { compose } from 'redux';
 import ProductCard from './ProductCard/ProductCard';
 import withLoader from '../../../hoc/withLoader';
 import classes from './Products.module.css';
-import noProducts from './../../../assets/images/no-products.png';
+import { noProducts } from '../../../config/images';
 
 const Products = ({ products, setFavority, addProduct, title }) => {
     let productsCards = products.map(product => 
@@ -17,7 +17,8 @@ const Products = ({ products, setFavority, addProduct, title }) => {
     return (
         <section className='container'>
             <h2>{ title }</h2>
-            { productsCards.length > 0 
+            { 
+                productsCards.length > 0 
                 ?
                 <div className={ classes.cards }>
                     { productsCards }

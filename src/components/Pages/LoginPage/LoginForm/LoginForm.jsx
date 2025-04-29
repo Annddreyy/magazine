@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navigate, NavLink } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
-import { requiredField } from './../../../../utils/validators/validators';
 import { Input } from '../../../common/FormControls/FormControls';
+import { requiredField } from './../../../../utils/validators/validators';
 import classes from './../../../common/FormControls/Form.module.css';
 import styles from './../../../../components/common/FormControls/FormControls.module.css';
 

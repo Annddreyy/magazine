@@ -1,10 +1,10 @@
 import getLinks from '../../../utils/getLinks';
-import classes from './Header.module.css';
 import choosePhoto from '../../../utils/choosePhoto';
 import generateFullName from '../../../utils/generateFullName';
-import logo from './../../../assets/images/logo.png';
-import personDefault from './../../../assets/images/person.jpg';
 import { PERSON_DEFAULT_URL } from '../../../config/vars';
+import classes from './Header.module.css';
+import { logo } from '../../../config/images';
+import { personDefault } from '../../../config/images';
 
 const Header = ({ links, isAuth, surname, name, patronymic, img }) => {
     let { leftLinks, rightLinks } = {...getLinks(links)};

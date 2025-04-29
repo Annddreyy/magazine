@@ -1,5 +1,5 @@
 import classes from './Loading.module.css';
-import loading from './../../../assets/images/loading.gif';
+import { loading } from './../../../config/images';
 
 const Loading = () => {
     return (

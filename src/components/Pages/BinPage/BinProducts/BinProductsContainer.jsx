@@ -8,7 +8,13 @@ class BinProductContainer extends React.Component {
         this.props.getBinProductsList();
     }
     render() {
-        return <BinProducts {...this.props} />
+        return (
+        <BinProducts 
+            products={ this.props.products }
+            increaseProduct={ this.props.increaseProduct }
+            decreaseProduct={ this.props.decreaseProduct }
+            deleteProduct={ this.props.deleteProduct }
+        />)
     }
 };
 

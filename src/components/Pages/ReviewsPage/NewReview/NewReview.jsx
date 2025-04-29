@@ -3,14 +3,12 @@ import Star from './../../../common/Star/Star';
 import choosePhoto from '../../../../utils/choosePhoto';
 import generateFullName from '../../../../utils/generateFullName';
 import classes from './NewReview.module.css';
-import personImg from './../../../../assets/images/person.jpg';
+import { personDefault } from '../../../../config/images';
 import { PERSON_DEFAULT_URL } from '../../../../config/vars';
 
 const NewReview = ({ addReview, isAuth, img, surname, name, patronymic }) => {
     let [grade, setGrade] = useState(1);
-
     const textArea = React.createRef();
-
     
     const starSelect = (event) => {
         const target = event.target.closest('span');
@@ -27,7 +25,7 @@ const NewReview = ({ addReview, isAuth, img, surname, name, patronymic }) => {
         )
     }
     
-    const photo = choosePhoto(img, personImg, PERSON_DEFAULT_URL);
+    const photo = choosePhoto(img, personDefault, PERSON_DEFAULT_URL);
     const fullname = isAuth && generateFullName(surname, name, patronymic);
     
     const addReviewHandler = (event) => {

@@ -1,6 +1,6 @@
 import BinProduct from './BinProduct/BinProduct';
 import classes from './BinProducts.module.css';
-import noProducts from './../../../../assets/images/no-products.png';
+import { noProducts } from '../../../../config/images';
 
 const BinProducts = ({ products, increaseProduct, decreaseProduct, deleteProduct }) => {
     const productsElem = products.map(product => 

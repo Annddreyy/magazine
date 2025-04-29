@@ -1,10 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import Star from './../../Star/Star';
 import classes from './ProductCard.module.css';
-import unfillHeart from './../../../../assets/images/Card/heart-icon-unfill.png';
-import fillHeart from './../../../../assets/images/Card/heart-icon-fill.png';
-import productImg from './../../../../assets/images/Card/product.png';
-import binLogo from './../../../../assets/images/Card/bin-logo.png';
+import { unfillHeart, fillHeart, productImg, binLogo } from '../../../../config/images';
 
 const ProductCard = ({ 
     id, title, price, grade, status, favority, imgSrc, 
