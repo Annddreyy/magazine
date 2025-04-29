@@ -1,21 +1,11 @@
 import React from 'react';
 import { Navigate, NavLink } from 'react-router-dom';
-import Input from '../../../common/FormElements/Input/Input';
+import { Field, reduxForm } from 'redux-form';
+import { requiredField } from './../../../../utils/validators/validators';
+import { Input } from '../../../common/FormControls/FormControls';
 import classes from './LoginForm.module.css';
 
-const LoginForm = ({ authUser, isAuth }) => {
-    const loginElem = React.createRef();
-    const passwordElem = React.createRef();
-
-    const checkAuth = (event) => {
-        event.preventDefault();
-
-        const login = loginElem.current.value;
-        const password = passwordElem.current.value;
-        
-        authUser(login, password);
-    };
-
+const LoginForm = ({ handleSubmit, error, isAuth }) => {
     return (
         <>
             { isAuth
@@ -30,11 +20,23 @@ const LoginForm = ({ authUser, isAuth }) => {
                     </div>
                     <div>
                         <h2 className={ classes.formPartTitle }>Авторизация</h2>
-                        <form action="" method='get' className={ classes.items } onSubmit={ checkAuth }>
+                        <form action="" method='get' className={ classes.items } onSubmit={ handleSubmit }>
                             <label htmlFor='login'>Логин <span className={ classes.redStar }>*</span></label>
-                            <Input type='text' ref={ loginElem } />
+                            <Field 
+                                type='text'
+                                name='login'
+                                id='login'
+                                component={ Input }
+                                validate={ [requiredField] }
+                            />
                             <label htmlFor='password'>Пароль <span className={ classes.redStar }>*</span></label>
-                            <Input type='password' ref={ passwordElem } />
+                            <Field 
+                                type='password'
+                                name='password'
+                                id='password'
+                                component={ Input }
+                                validate={ [requiredField] }
+                            />
                             <button className={ classes.button }>Войти</button>
                         </form>
                     </div>
@@ -44,4 +46,4 @@ const LoginForm = ({ authUser, isAuth }) => {
     )
 };
 
-export default LoginForm;
+export default reduxForm({ form: 'login' })(LoginForm);
