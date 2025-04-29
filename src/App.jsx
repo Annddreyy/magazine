@@ -12,6 +12,7 @@ import Product from './pages/Product';
 import { connect } from 'react-redux';
 import { checkUser } from './redux/auth/authThunks';
 import React from 'react';
+import Registration from './pages/Registration';
 
 class App extends React.Component {
     componentDidMount() {
@@ -29,6 +30,7 @@ class App extends React.Component {
                 <Route path='/bin' element={ <Bin /> } />
                 <Route path='/favorites' element={ <Favority /> } />
                 <Route path='/login' element={ <Login /> } />
+                <Route path='/registration' element={ <Registration /> } />
                 <Route path='/product/:productId' element={ <Product /> } />
             </Routes>
         )

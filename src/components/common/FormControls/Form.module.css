@@ -69,6 +69,13 @@
     border-radius: 100px;
 }
 
+.selectedImg {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--light-gray);
+}
+
 @media (max-width: 850px) {
     .form {
         grid-template-columns: 1fr;
