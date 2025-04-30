@@ -1,20 +1,30 @@
 import { connect } from "react-redux";
-import RegistrationForm from "./RegistrationForm"
+import RegistrationForm from "./RegistrationForm";
+import { Navigate } from "react-router-dom";
 import { registration } from "../../../redux/auth/authThunks";
 import { getIsAuth } from './../../../redux/auth/authSelectors';
 import { getLastPage } from './../../../redux/app/appSelectors';
 import readFile from "../../../utils/readFile";
 
 const RegistrationFormContainer = (props) => {
+    let { isAuth, lastPage, registration, ...other } = {...props};
     const onSubmit = async(formData) => {
         let img = await readFile(formData.photo);
         let { surname, name, patronymic, login, password } = { ...formData };
         img = img.split(',')[1];
-        props.registration(surname, name, patronymic, login, password, img);
+        registration(surname, name, patronymic, login, password, img);
     };
 
     return (
-        <RegistrationForm {...props} onSubmit={ onSubmit }/>
+        <>
+            {
+                isAuth
+                ?
+                <Navigate to={ lastPage } />
+                :
+                <RegistrationForm {...other} onSubmit={ onSubmit }/>
+            }
+        </>
     )
 };
 
