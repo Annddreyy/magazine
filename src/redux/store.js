@@ -4,6 +4,7 @@ import productsReducer from './products/productsReducer';
 import reviewsReducer from './reviews/reviewsReducer';
 import binReducer from './bin/binReducer';
 import authReducer from './auth/authReducer';
+import appReducer from './app/appReducer';
 import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
     reviews: reviewsReducer,
     auth: authReducer,
     bin: binReducer,
+    app: appReducer,
     form: formReducer
 });
 

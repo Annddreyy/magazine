@@ -1,5 +1,8 @@
-import './App.css';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import './App.css';
 import Main from './pages/Main';
 import Catalog from './pages/Catalog';
 import Contacts from './pages/Contacts';
@@ -9,14 +12,23 @@ import Bin from './pages/Bin';
 import Favority from './pages/Favority';
 import Login from './pages/Login';
 import Product from './pages/Product';
-import { connect } from 'react-redux';
-import { checkUser } from './redux/auth/authThunks';
-import React from 'react';
 import Registration from './pages/Registration';
+import { checkUser } from './redux/auth/authThunks';
+import { withRouter } from './hoc/withRouter';
+import { setLastPage } from './redux/app/appReducer';
 
 class App extends React.Component {
     componentDidMount() {
         this.props.checkUser();
+        this.props.setLastPage(this.props.location.pathname)
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.location.pathname !== prevProps.location.pathname) {
+            if (this.props.location.pathname !== '/registration' && this.props.location.pathname !== '/login') {
+                this.props.setLastPage(this.props.location.pathname);
+            }
+        }
     }
 
     render() {
@@ -37,4 +49,7 @@ class App extends React.Component {
     }
 }
 
-export default connect(null, { checkUser })(App);
+export default compose(
+    connect(null, { checkUser, setLastPage }),
+    withRouter
+)(App);

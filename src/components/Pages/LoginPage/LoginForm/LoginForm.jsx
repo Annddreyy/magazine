@@ -6,12 +6,12 @@ import { requiredField } from './../../../../utils/validators/validators';
 import classes from './../../../common/FormControls/Form.module.css';
 import styles from './../../../../components/common/FormControls/FormControls.module.css';
 
-const LoginForm = ({ handleSubmit, error, isAuth }) => {
+const LoginForm = ({ handleSubmit, error, isAuth, lastPage }) => {
     return (
         <>
             { isAuth
                 ?
-                <Navigate to='/' />
+                <Navigate to={ lastPage } />
                 :
                 <div className={ classes.form }>
                     <div className={ classes.left }>
