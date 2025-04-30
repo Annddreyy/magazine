@@ -7,7 +7,6 @@ import { getIsFetching, getProductsSelector } from '../../../redux/products/prod
 
 class ProductsContainer extends React.Component {
     componentDidMount() {
-        debugger;
         this.props.getProducts(this.props.currentPage || 1, this.props.pageSize || 6);
     }
 
