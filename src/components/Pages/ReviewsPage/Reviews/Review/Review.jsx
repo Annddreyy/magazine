@@ -8,7 +8,7 @@ const Review = ({ img, user, grade, comment }) => {
     let stars = [];
     for (let i = 0; i < 5; i++) {
         let isFill = i < grade;
-        stars.push( <Star isFill={ isFill }/> );
+        stars.push( <Star isFill={ isFill } key={ i } /> );
     }
 
     const photo = choosePhoto(img, personImg, PERSON_DEFAULT_URL);

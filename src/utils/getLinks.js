@@ -6,7 +6,7 @@ function getLinks(links) {
         return links
         .filter(link => !!link.isRightLink === condition)
         .map(link => 
-            <NavLink to={ link.link } className={ classes.link }>
+            <NavLink to={ link.link } className={ classes.link } key={ link.id }>
                 { link.text }
             </NavLink>
         );

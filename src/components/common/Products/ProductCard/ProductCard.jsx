@@ -16,7 +16,7 @@ const ProductCard = ({
     let stars = [];
     for (let i = 0; i < 5; i++) {
         let isFill = i < grade;
-        stars.push( <Star isFill={ isFill }/> );
+        stars.push( <Star isFill={ isFill } key={ i } /> );
     }
 
     const setFavorityStatusHandler = () => {

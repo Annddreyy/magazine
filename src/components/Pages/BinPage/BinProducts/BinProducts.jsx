@@ -23,12 +23,14 @@ const BinProducts = ({ products, increaseProduct, decreaseProduct, deleteProduct
                     <div className={ classes.tableWrapper }>
                         <table className={ classes.table }>
                             <thead className={ classes.thead }>
-                                <th>Фото</th>
-                                <th>Название</th>
-                                <th>Цена</th>
-                                <th>Количество</th>
-                                <th>Итого</th>
-                                <th></th>
+                                <tr>
+                                    <th>Фото</th>
+                                    <th>Название</th>
+                                    <th>Цена</th>
+                                    <th>Количество</th>
+                                    <th>Итого</th>
+                                    <th></th>
+                                </tr>
                             </thead>
                             <tbody className={ classes.tbody }>
                                 { productsElem }
