@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/magazine/static/css/main.e229e9ff.css",
-    "main.js": "/magazine/static/js/main.395c5864.js",
+    "main.js": "/magazine/static/js/main.012abaa1.js",
     "static/js/453.a65cad91.chunk.js": "/magazine/static/js/453.a65cad91.chunk.js",
     "static/media/main-part.png": "/magazine/static/media/main-part.a073a2acc1ba84fc57b8.png",
     "static/media/product.png": "/magazine/static/media/product.270e5a9b1822fccb72e1.png",
@@ -16,11 +16,11 @@
     "static/media/heart-icon-fill.png": "/magazine/static/media/heart-icon-fill.2ad28e5c9a6550118f6a.png",
     "index.html": "/magazine/index.html",
     "main.e229e9ff.css.map": "/magazine/static/css/main.e229e9ff.css.map",
-    "main.395c5864.js.map": "/magazine/static/js/main.395c5864.js.map",
+    "main.012abaa1.js.map": "/magazine/static/js/main.012abaa1.js.map",
     "453.a65cad91.chunk.js.map": "/magazine/static/js/453.a65cad91.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e229e9ff.css",
-    "static/js/main.395c5864.js"
+    "static/js/main.012abaa1.js"
   ]
 }
