@@ -13,7 +13,13 @@ export const decreaseProduct = (productId) => (dispatch, getState) => {
     setBinProducts(getState().bin.products);
 };
 export const addProduct = (product) => (dispatch, getState) => {
-    dispatch(addProductActionCreator(product));
+    let products = getBinProducts();
+    let findProduct = products.filter(p => p.id === product.id);
+    if (findProduct.length > 0) {
+        dispatch(increaseProductActionCreator(product.id));
+    } else {
+        dispatch(addProductActionCreator(product));
+    }
     setBinProducts(getState().bin.products);
 };
 export const deleteProduct = (productId) => (dispatch, getState) => {
