@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/magazine/static/css/main.e229e9ff.css",
-    "main.js": "/magazine/static/js/main.6cc7d8b0.js",
-    "static/js/453.a65cad91.chunk.js": "/magazine/static/js/453.a65cad91.chunk.js",
-    "static/media/main-part.png": "/magazine/static/media/main-part.a073a2acc1ba84fc57b8.png",
-    "static/media/product.png": "/magazine/static/media/product.270e5a9b1822fccb72e1.png",
-    "static/media/cream.png": "/magazine/static/media/cream.540fdf9c24575ac532cc.png",
-    "static/media/no-products.png": "/magazine/static/media/no-products.b8f07e7e7da2c4563a6e.png",
-    "static/media/diploma.webp": "/magazine/static/media/diploma.67f6539afbf165decc0a.webp",
-    "static/media/loading.gif": "/magazine/static/media/loading.c56c2a9625257dbc2e67.gif",
-    "static/media/product1.jpg": "/magazine/static/media/product1.f2ab8651dac12d12521f.jpg",
-    "static/media/person.jpg": "/magazine/static/media/person.88b69d1c3843d595a100.jpg",
-    "static/media/heart-icon-unfill.png": "/magazine/static/media/heart-icon-unfill.c318e0b8f8ae32a64b1c.png",
-    "static/media/product2.jpg": "/magazine/static/media/product2.a9ebf49be9633c8f5c69.jpg",
-    "static/media/heart-icon-fill.png": "/magazine/static/media/heart-icon-fill.2ad28e5c9a6550118f6a.png",
-    "index.html": "/magazine/index.html",
-    "main.e229e9ff.css.map": "/magazine/static/css/main.e229e9ff.css.map",
-    "main.6cc7d8b0.js.map": "/magazine/static/js/main.6cc7d8b0.js.map",
-    "453.a65cad91.chunk.js.map": "/magazine/static/js/453.a65cad91.chunk.js.map"
+    "main.css": "/static/css/main.2ba97ffb.css",
+    "main.js": "/static/js/main.5a98b5bb.js",
+    "static/js/453.a65cad91.chunk.js": "/static/js/453.a65cad91.chunk.js",
+    "static/media/main-part.png": "/static/media/main-part.a073a2acc1ba84fc57b8.png",
+    "static/media/product.png": "/static/media/product.270e5a9b1822fccb72e1.png",
+    "static/media/cream.png": "/static/media/cream.540fdf9c24575ac532cc.png",
+    "static/media/no-products.png": "/static/media/no-products.b8f07e7e7da2c4563a6e.png",
+    "static/media/diploma.webp": "/static/media/diploma.67f6539afbf165decc0a.webp",
+    "static/media/loading.gif": "/static/media/loading.c56c2a9625257dbc2e67.gif",
+    "static/media/product1.jpg": "/static/media/product1.f2ab8651dac12d12521f.jpg",
+    "static/media/person.jpg": "/static/media/person.88b69d1c3843d595a100.jpg",
+    "static/media/heart-icon-unfill.png": "/static/media/heart-icon-unfill.c318e0b8f8ae32a64b1c.png",
+    "static/media/product2.jpg": "/static/media/product2.a9ebf49be9633c8f5c69.jpg",
+    "static/media/heart-icon-fill.png": "/static/media/heart-icon-fill.2ad28e5c9a6550118f6a.png",
+    "index.html": "/index.html",
+    "main.2ba97ffb.css.map": "/static/css/main.2ba97ffb.css.map",
+    "main.5a98b5bb.js.map": "/static/js/main.5a98b5bb.js.map",
+    "453.a65cad91.chunk.js.map": "/static/js/453.a65cad91.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e229e9ff.css",
-    "static/js/main.6cc7d8b0.js"
+    "static/css/main.2ba97ffb.css",
+    "static/js/main.5a98b5bb.js"
   ]
 }
