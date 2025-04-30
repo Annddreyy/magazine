@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import LoginForm from './LoginForm';
 import { authUser } from '../../../../redux/auth/authThunks';
+import { getIsAuth } from '../../../../redux/auth/authSelectors';
 
 const LoginFormContainer = (props) => {
     const onSubmit = (formData) => {
@@ -15,7 +16,7 @@ const LoginFormContainer = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        isAuth: state.auth.isAuth
+        isAuth: getIsAuth(state)
     }
 };
 

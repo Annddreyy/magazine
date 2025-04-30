@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import ProductMainPart from './ProductMainPart'
 import { withRouter } from '../../../hoc/withRouter';
 import { getProduct } from '../../../redux/products/productsThunks';
+import { getProductSelector } from '../../../redux/products/productsSelectors';
 
 class ProductMainPartContainer extends React.Component {
     componentDidMount() {
@@ -18,7 +19,7 @@ class ProductMainPartContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        product: state.products.product
+        product: getProductSelector(state)
     }
 };
 const mapDispatchToProps = { getProduct };

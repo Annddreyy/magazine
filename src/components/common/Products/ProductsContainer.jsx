@@ -5,6 +5,8 @@ import Products from './Products';
 import { setFavority, getProducts } from '../../../redux/products/productsThunks';
 import { addProduct } from '../../../redux/bin/binThunks';
 import withPaginator from '../../../hoc/withPaginator';
+import { setCurrentPage } from '../../../redux/products/productsReducer';
+import { getCurrentPage, getIsFetching, getPageSize, getProductsSelector, getTotalProductsCount } from '../../../redux/products/productsSelectors';
 
 class ProductsContainer extends React.Component {
     componentDidMount() {
@@ -31,15 +33,15 @@ class ProductsContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products.products,
-        isFetching: state.products.isFetching,
-        currentPage: state.products.currentPage,
-        pageSize: state.products.pageSize,
-        totalItemsCount: state.products.totalProductsCount
+        products: getProductsSelector(state),
+        isFetching: getIsFetching(state),
+        currentPage: getCurrentPage(state),
+        pageSize: getPageSize(state),
+        totalItemsCount: getTotalProductsCount(state)
     }
 };
 
 export default compose(
-    connect(mapStateToProps, { setFavority, addProduct, getProducts }),
+    connect(mapStateToProps, { setFavority, addProduct, getProducts, setCurrentPage }),
     withPaginator
 )(ProductsContainer);

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import BinProducts from './BinProducts';
 import { decreaseProduct, deleteProduct, getBinProductsList, increaseProduct } from '../../../../redux/bin/binThunks';
+import { getBinProducts } from '../../../../redux/bin/binSelectors';
 
 class BinProductContainer extends React.Component {
     componentDidMount() {
@@ -20,7 +21,7 @@ class BinProductContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.bin.products
+        products: getBinProducts(state)
     }
 };
 

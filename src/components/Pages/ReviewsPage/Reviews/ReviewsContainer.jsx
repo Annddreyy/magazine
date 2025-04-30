@@ -5,6 +5,7 @@ import Reviews from './Reviews';
 import withPaginator from './../../../../hoc/withPaginator';
 import { setCurrentPage } from '../../../../redux/reviews/reviewsReducer';
 import { getReviews } from '../../../../redux/reviews/reviewsThunks';
+import { getCurrentPage, getPageSize, getReviewsSelector, getTotalReviews } from '../../../../redux/reviews/reviewsSelectors';
 
 class ReviewsContainer extends React.Component {
     componentDidMount() {
@@ -26,10 +27,10 @@ class ReviewsContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return { 
-        reviews: state.reviews.reviews,
-        currentPage: state.reviews.currentPage,
-        pageSize: state.reviews.pageSize,
-        totalItemsCount: state.reviews.totalReviewsCount
+        reviews: getReviewsSelector(state),
+        currentPage: getCurrentPage(state),
+        pageSize: getPageSize(state),
+        totalItemsCount: getTotalReviews(state)
     }
 };
 

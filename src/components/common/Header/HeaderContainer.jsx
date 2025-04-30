@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Header from './Header';
 import { links } from '../../../config/links';
+import { getImg, getIsAuth, getName, getPatronymic, getSurname } from '../../../redux/auth/authSelectors';
 
 const HeaderContainer = (props) => {
     return (
@@ -11,11 +12,11 @@ const HeaderContainer = (props) => {
 const mapStateToPpops = (state) => {
     return {
         links: links.filter(link => link.elem.includes('HEADER')),
-        isAuth: state.auth.isAuth,
-        surname: state.auth.surname,
-        name: state.auth.name,
-        patronymic: state.auth.patronymic,
-        img: state.auth.img
+        isAuth: getIsAuth(state),
+        surname: getSurname(state),
+        name: getName(state),
+        patronymic: getPatronymic(state),
+        img: getImg(state)
     }
 };
 
