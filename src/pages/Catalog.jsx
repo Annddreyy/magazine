@@ -1,12 +1,12 @@
 import HeaderContainer from './../components/common/Header/HeaderContainer';
 import FooterContainer from './../components/common/Footer/FooterContainer';
-import ProductsContainer from '../components/common/Products/ProductsContainer';
+import ProductsContainerWithPaginator from '../components/common/Products/ProductsContainerWithPaginator';
 
 const Catalog = () => {
     return (
         <div>
             <HeaderContainer />
-            <ProductsContainer title='Каталог товаров' />
+            <ProductsContainerWithPaginator title='Каталог товаров' />
             <FooterContainer />
         </div>
     )
