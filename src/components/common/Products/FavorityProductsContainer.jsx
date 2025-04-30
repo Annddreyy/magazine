@@ -1,10 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Products from './Products';
-import { setFavority } from '../../../redux/products/productsThunks';
+import { deleteFavority, getFavorityThunk, setFavority } from '../../../redux/products/productsThunks';
 import { addProduct } from '../../../redux/bin/binThunks';
+import { getFavority, getIsFetching } from '../../../redux/products/productsSelectors';
 
 class FavorityProductsContainer extends React.Component {
+    componentDidMount() {
+        this.props.getFavorityThunk();
+    }
     render() {
         return (
             <Products {...this.props} />
@@ -14,9 +18,9 @@ class FavorityProductsContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        products: state.products.favorityProducts,
-        isFetching: state.products.isFetching
+        products: getFavority(state),
+        isFetching: getIsFetching(state)
     }
 };
 
-export default connect(mapStateToProps, { setFavority, addProduct })(FavorityProductsContainer);
+export default connect(mapStateToProps, { setFavority, addProduct, getFavorityThunk, deleteFavority })(FavorityProductsContainer);

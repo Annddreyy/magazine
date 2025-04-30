@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Products from './Products';
-import { setFavority, getProducts } from '../../../redux/products/productsThunks';
+import { setFavority, getProducts, deleteFavority } from '../../../redux/products/productsThunks';
 import { addProduct } from '../../../redux/bin/binThunks';
 import { getIsFetching, getProductsSelector } from '../../../redux/products/productsSelectors';
 
@@ -22,6 +22,7 @@ class ProductsContainer extends React.Component {
                 products={ this.props.products }
                 setFavority={ this.props.setFavority }
                 addProduct={ this.props.addProduct }
+                deleteFavority={ this.props.deleteFavority }
                 title={ this.props.title }
             />
         )
@@ -35,4 +36,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, { setFavority, addProduct, getProducts })(ProductsContainer);
+export default connect(mapStateToProps, { setFavority, addProduct, getProducts, deleteFavority })(ProductsContainer);

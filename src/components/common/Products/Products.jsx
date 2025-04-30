@@ -4,12 +4,13 @@ import withLoader from '../../../hoc/withLoader';
 import classes from './Products.module.css';
 import { noProducts } from '../../../config/images';
 
-const Products = ({ products, setFavority, addProduct, title }) => {
+const Products = ({ products, setFavority, deleteFavority, addProduct, title }) => {
     let productsCards = products.map(product => 
         <ProductCard 
             { ...product } 
             setFavority={ setFavority }
             addProduct={ addProduct }
+            deleteFavority={ deleteFavority }
             key={ product.id } 
         />
     );

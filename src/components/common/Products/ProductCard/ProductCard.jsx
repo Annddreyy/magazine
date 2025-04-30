@@ -3,35 +3,34 @@ import classes from './ProductCard.module.css';
 import { unfillHeart, fillHeart, productImg, binLogo } from '../../../../config/images';
 import createStars from '../../../../utils/createStars';
 
-const ProductCard = ({ 
-    id, title, price, grade, status, favority, imgSrc, 
-    setFavority, addProduct
-}) => {
+const ProductCard = ({ setFavority, deleteFavority, addProduct, ...product }) => {
     let statusClasses = new Map([
         ['Хит продаж!', classes.statusBlue],
         ['Скидка!', classes.statusRed],
         ['Новинка!', classes.statusPurple]
     ]);
 
-    let stars = createStars(grade);
+    let stars = createStars(product.grade);
 
-    const setFavorityStatusHandler = () => setFavority(id);
-    const addProductHandler = () => addProduct({ id, title, price, count: 1 });
+    const setFavorityStatusHandler = () => setFavority(product.id);
+    const deleteFavorityStatusHandler = () => deleteFavority(product.id);
+
+    const addProductHandler = () => addProduct({ id: product.id, title: product.title, price: product.price, count: 1 });
 
     return (
         <div className={ classes.card }>
-            <NavLink to={ '/product/' + id }>
+            <NavLink to={ '/product/' + product.id }>
                 <img src={ productImg } className={ classes.img } alt="" />
             </NavLink>
-            <div className={ classes.isFavourity } onClick={ setFavorityStatusHandler }>
-                <img src={ favority ? fillHeart : unfillHeart } alt="Добавить в избранное" />
+            <div className={ classes.isFavourity } onClick={ product.favority ? deleteFavorityStatusHandler : setFavorityStatusHandler }>
+                <img src={ product.favority ? fillHeart : unfillHeart } alt="Добавить в избранное" />
             </div>
             <div className={ classes.information }>
-                <span className={ classes.title }>{ title }</span>
-                <span className={ classes.status + ' ' + statusClasses.get(status) }>{ status }</span>
+                <span className={ classes.title }>{ product.title }</span>
+                <span className={ classes.status + ' ' + statusClasses.get(product.status) }>{ product.status }</span>
             </div>
             <div className={ classes.information }>
-                <span className={ classes.price }>{ price } руб.</span>
+                <span className={ classes.price }>{ product.price } руб.</span>
                 <span>{ stars }</span>
             </div>
             <button className={ classes.button } onClick={ addProductHandler } >

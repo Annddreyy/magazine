@@ -41,7 +41,7 @@ const BinProducts = ({ products, increaseProduct, decreaseProduct, deleteProduct
                     <button className={ classes.orderButton }>Оформить заказ</button>
                 </>
                 :
-                <img src={ noProducts } className={ classes.img } />
+                <img src={ noProducts } className={ classes.img } alt="" />
             }
         </div>
     )
