@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import Star from './../../Star/Star';
 import classes from './ProductCard.module.css';
 import { unfillHeart, fillHeart, productImg, binLogo } from '../../../../config/images';
+import createStars from '../../../../utils/createStars';
 
 const ProductCard = ({ 
     id, title, price, grade, status, favority, imgSrc, 
@@ -13,19 +13,10 @@ const ProductCard = ({
         ['Новинка!', classes.statusPurple]
     ]);
 
-    let stars = [];
-    for (let i = 0; i < 5; i++) {
-        let isFill = i < grade;
-        stars.push( <Star isFill={ isFill } key={ i } /> );
-    }
+    let stars = createStars(grade);
 
-    const setFavorityStatusHandler = () => {
-        setFavority(id);
-    };
-
-    const addProductHandler = () => {
-        addProduct({ id, title, price, count: 1 });
-    };
+    const setFavorityStatusHandler = () => setFavority(id);
+    const addProductHandler = () => addProduct({ id, title, price, count: 1 });
 
     return (
         <div className={ classes.card }>

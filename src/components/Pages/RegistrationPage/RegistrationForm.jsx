@@ -74,7 +74,7 @@ const RegistrationForm = ({ handleSubmit, error, isAuth, selectedImg, img, setIm
                                     component={ FileInput }
                                 />
                             </div>
-                            <button className={ classes.button }>Войти</button>
+                            <button className={ classes.button }>Зарегистрироваться</button>
                         </form>
                     </div>
                 </div>
