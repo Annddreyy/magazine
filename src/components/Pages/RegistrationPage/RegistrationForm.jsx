@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate, NavLink } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
-import { minLengthCreator, requiredField } from './../../../utils/validators/validators';
+import { correctPassword, minLengthCreator, requiredField } from './../../../utils/validators/validators';
 import { FileInput, Input } from './../../common/FormControls/FormControls';
 import classes from './../../common/FormControls/Form.module.css';
 import styles from './../../../components/common/FormControls/FormControls.module.css';
@@ -63,7 +63,7 @@ const RegistrationForm = ({ handleSubmit, error, isAuth, selectedImg, img, setIm
                                 name='password'
                                 id='password'
                                 component={ Input }
-                                validate={ [requiredField, minLength8] }
+                                validate={ [requiredField, minLength8, correctPassword] }
                             />
                             <label htmlFor='photo'>Фото <span className={ classes.redStar }>*</span></label>
                             <div>

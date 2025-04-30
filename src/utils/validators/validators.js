@@ -16,3 +16,13 @@ export const maxLengthCreator = (maxLength) => (value) => {
     }
     return undefined;
 };
+
+export const correctPassword = value => {
+    let passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+    if (passwordRegex.test(value)) {
+        return undefined;
+    }
+    else {
+        return 'Пароль должен содержать 1 цифру, 1 строчную и 1 заглавную латинскую букву, а также специальный символ из набора "#?!@$%^&*-"';
+    }
+};

@@ -21,14 +21,25 @@
     background-color: var(--medium-gray);
 }
 
+.errorMessage {
+    color: var(--red);
+    width: 350px;
+}
+
 @media (max-width: 400px) {
     .input {
+        width: 250px;
+    }
+    .errorMessage {
         width: 250px;
     }
 }
 
 @media (max-width: 350px) {
     .input {
+        width: 220px;
+    }
+    .errorMessage {
         width: 220px;
     }
 }

@@ -17,6 +17,7 @@ export const Input = ({input, meta, ...props}) => {
     return (
         <div className={ classes.formControl + ' ' + (showError ? classes.error : '') }>
             <input type={ props.type } className={ classes.input } {...input} {...props} />
+            { showError && <p className={ classes.errorMessage }>{ meta.error }</p> }
         </div>
     )
 }
