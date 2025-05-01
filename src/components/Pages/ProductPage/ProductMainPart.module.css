@@ -12,3 +12,25 @@
 .title {
     font-weight: bolder;
 }
+
+.img {
+    width: 500px;
+}
+
+@media (max-width: 1300px) {
+    .img {
+        width: 350px;
+    }
+}
+
+@media (max-width: 900px) {
+    .description {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .img {
+        width: 250px;
+    }
+}

@@ -6,7 +6,7 @@ const ProductMainPart = ({ title, description, producer, img, compound }) => {
         <section className='container'>
             <h2>{ title }</h2>
             <div className={ classes.description }>
-                <img src={ img || defaultImg } alt="" />
+                <img src={ img || defaultImg } className={ classes.img } alt="" />
                 <div className={ classes.text }>
                     <p className={ classes.title }>Описание:</p>
                     <p>{ description }</p>
