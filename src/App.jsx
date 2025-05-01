@@ -16,6 +16,7 @@ import Registration from './pages/Registration';
 import { checkUser } from './redux/auth/authThunks';
 import { withRouter } from './hoc/withRouter';
 import { setLastPage } from './redux/app/appReducer';
+import HeaderContainer from './components/common/Header/HeaderContainer';
 
 class App extends React.Component {
     componentDidMount() {
