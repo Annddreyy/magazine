@@ -4,16 +4,20 @@ import { getSHA256Hash } from '../../utils/sha256';
 import { authUserAC } from './authReducer';
 import { stopSubmit } from 'redux-form';
 
-export const checkUser = () => (dispatch) => {
-    let userId = getCookie('user');
-    console.log( userId );
-    console.log( document.cookie );
+export const checkUser = () => async(dispatch) => {
+    let userId = +getCookie('userId');
+    if (userId) {
+        let user = await usersAPI.getUser(+userId);
+        dispatch(authUserAC(user));
+    }
 };
 
 export const authUser = (login, password) => async(dispatch) => {
     password = await getSHA256Hash(password);
     let response = await usersAPI.auth(login, password);
-    if (response.status == 'ok') {
+    if (response.status === 'ok') {
+        document.cookie = `userId=${response.user.id};`;
+
         dispatch(authUserAC(response.user));
     }
     else {
