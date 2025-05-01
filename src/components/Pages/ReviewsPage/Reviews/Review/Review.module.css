@@ -20,3 +20,7 @@
     flex-direction: column;
     gap: 1em;
 }
+
+.comment {
+    word-break: break-all;
+}

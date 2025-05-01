@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import NewReview from './NewReview'
-import { addReview } from '../../../../redux/reviews/reviewsThunks';
+import { addReview, getReviews } from '../../../../redux/reviews/reviewsThunks';
 import { getId, getImg, getIsAuth, getName, getPatronymic, getSurname } from '../../../../redux/auth/authSelectors';
+import { getCurrentPage, getPageSize } from '../../../../redux/reviews/reviewsSelectors';
 
 const NewReviewContainer = (props) => {
     return (
@@ -11,6 +12,8 @@ const NewReviewContainer = (props) => {
 
 const mapStateToProps = (state) => {
     return {
+        currentPage: getCurrentPage(state),
+        pageSize: getPageSize(state),
         isAuth: getIsAuth(state),
         id: getId(state),
         surname: getSurname(state),
@@ -20,4 +23,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, { addReview })(NewReviewContainer);
+export default connect(mapStateToProps, { addReview, getReviews })(NewReviewContainer);

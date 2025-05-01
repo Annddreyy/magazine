@@ -6,7 +6,7 @@ import classes from './NewReview.module.css';
 import { personDefault } from '../../../../config/images';
 import { PERSON_DEFAULT_URL } from '../../../../config/vars';
 
-const NewReview = ({ addReview, isAuth, ...user }) => {
+const NewReview = ({ addReview, isAuth, getReviews, currentPage, pageSize, ...user }) => {
     let [grade, setGrade] = useState(1);
     const textArea = React.createRef();
     
@@ -30,7 +30,8 @@ const NewReview = ({ addReview, isAuth, ...user }) => {
     
     const addReviewHandler = (event) => {
         let comment = textArea.current.value;
-        addReview(user.id, fullname, user.img, comment, grade);
+        addReview(user.id, comment, grade, currentPage, pageSize);
+        getReviews(currentPage, pageSize)
         event.preventDefault();
     };
 
