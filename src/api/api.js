@@ -7,12 +7,9 @@ const instance = axios.create({
 });
 
 export const usersAPI = {
-    getUsers() {
-        return instance.get('users')
-            .then(response => response.data);
-    },
     auth(login, password) {
-        return instance.post('auth', { login, password });
+        return instance.post('auth', { login, password })
+            .then(response => response.data);
     },
     logout() {
         return instance.delete('auth');
