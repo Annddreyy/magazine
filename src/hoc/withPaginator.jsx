@@ -1,4 +1,4 @@
-import Paginator from './../components/common/Paginator/Paginator';
+import Paginator from '../components/common/Paginator/Paginator';
 
 const withPaginator = (Component) => {
     return function wrappedFunction(props) {

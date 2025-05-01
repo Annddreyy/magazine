@@ -6,7 +6,7 @@ import classes from './NewReview.module.css';
 import { personDefault } from '../../../../config/images';
 import { PERSON_DEFAULT_URL } from '../../../../config/vars';
 
-const NewReview = ({ addReview, isAuth, img, surname, name, patronymic }) => {
+const NewReview = ({ addReview, isAuth, ...user }) => {
     let [grade, setGrade] = useState(1);
     const textArea = React.createRef();
     
@@ -25,11 +25,12 @@ const NewReview = ({ addReview, isAuth, img, surname, name, patronymic }) => {
         )
     }
     
-    const photo = choosePhoto(img, personDefault, PERSON_DEFAULT_URL);
-    const fullname = isAuth && generateFullName(surname, name, patronymic);
+    const photo = choosePhoto(user.img, personDefault, PERSON_DEFAULT_URL);
+    const fullname = isAuth && generateFullName(user.surname, user.name, user.patronymic);
     
     const addReviewHandler = (event) => {
-        addReview(fullname, textArea.current.value, grade);
+        let comment = textArea.current.value;
+        addReview(user.id, fullname, user.img, comment, grade);
         event.preventDefault();
     };
 
@@ -49,9 +50,6 @@ const NewReview = ({ addReview, isAuth, img, surname, name, patronymic }) => {
                             </div>
                             <div className={ classes.information }>
                                 <textarea ref={ textArea } name="" id="" className={ classes.text }>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis at 
-                                    ipsum odit asperiores, consequatur quam accusantium molestiae deserunt amet 
-                                    voluptatem rem a eaque eius ducimus consequuntur blanditiis fuga iusto dicta.
                                 </textarea>
                                 <div className={ classes.stars }>
                                     { stars }

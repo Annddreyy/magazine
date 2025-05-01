@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import NewReview from './NewReview'
 import { addReview } from '../../../../redux/reviews/reviewsThunks';
-import { getImg, getIsAuth, getName, getPatronymic, getSurname } from '../../../../redux/auth/authSelectors';
+import { getId, getImg, getIsAuth, getName, getPatronymic, getSurname } from '../../../../redux/auth/authSelectors';
 
 const NewReviewContainer = (props) => {
     return (
@@ -12,6 +12,7 @@ const NewReviewContainer = (props) => {
 const mapStateToProps = (state) => {
     return {
         isAuth: getIsAuth(state),
+        id: getId(state),
         surname: getSurname(state),
         name: getName(state),
         patronymic: getPatronymic(state),

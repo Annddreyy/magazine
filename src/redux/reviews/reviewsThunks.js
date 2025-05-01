@@ -7,7 +7,7 @@ export const getReviews = (page, size) => async(dispatch) => {
     dispatch(setIsFetching(false));
     dispatch(setReviews(reviews));
 };
-export const addReview = (user, comment, grade) => async(dispatch) => {
-    await reviewsAPI.addReview(1, comment, grade);
-    dispatch(addReviewMessage(user, comment, grade));
+export const addReview = (id, fullname, img, comment, grade) => async(dispatch) => {
+    await reviewsAPI.addReview(id, comment, grade);
+    dispatch(addReviewMessage(id, fullname, img, comment, grade));
 };

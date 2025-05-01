@@ -4,7 +4,7 @@ import personImg from './../../../../../assets/images/person.jpg';
 import { PERSON_DEFAULT_URL } from '../../../../../config/vars';
 import createStars from '../../../../../utils/createStars';
 
-const Review = ({ img, user, grade, comment }) => {
+const Review = ({ img, fullname, grade, comment }) => {
     let stars = createStars(grade);
     const photo = choosePhoto(img, personImg, PERSON_DEFAULT_URL);
     
@@ -12,7 +12,7 @@ const Review = ({ img, user, grade, comment }) => {
         <article className={ classes.review }>
             <div className={ classes.left }>
                 <img src={ photo } alt="" />
-                <span>{ user }</span>
+                <span>{ fullname }</span>
             </div>
             <div className={ classes.information }>
                 <p>{ comment }</p>

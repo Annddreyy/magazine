@@ -19,9 +19,9 @@ const reviewsReducer = (state = initialState, action) => {
         return {
             ...state,
             reviews: [...state.reviews, { 
-                id: 120, 
-                userImg: null, 
-                user: action.user, 
+                id: action.id, 
+                img: action.img, 
+                fullname: action.fullname, 
                 comment: action.comment,
                 grade: action.grade
             }]
@@ -47,7 +47,7 @@ const reviewsReducer = (state = initialState, action) => {
     }
 };
 
-export const addReviewMessage = (comment, user) => ({ type: ADD_REVIEW_MESSAGE, comment, user });
+export const addReviewMessage = (id, fullname, img, comment, grade) => ({ type: ADD_REVIEW_MESSAGE, id, fullname, img, comment, grade });
 export const setReviews = (information) => ({ type: SET_REVIEWS, reviews: information.reviews, totalSize: information['total_size'] });
 export const setIsFetching = (isFetching) => ({ type: SET_IS_FETCHING, isFetching });
 export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });

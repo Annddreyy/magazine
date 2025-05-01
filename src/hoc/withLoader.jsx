@@ -1,4 +1,4 @@
-import Loading from './../components/common/Loading/Loading';
+import Loading from '../components/common/Loading/Loading';
 
 const withLoader = (Component) => {
     return function wrapperComponent(props) {
