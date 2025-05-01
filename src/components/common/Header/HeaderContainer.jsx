@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Header from './Header';
 import { links } from '../../../config/links';
 import { getImg, getIsAuth, getName, getPatronymic, getSurname } from '../../../redux/auth/authSelectors';
+import { logout } from '../../../redux/auth/authThunks';
 
 const HeaderContainer = (props) => {
     return (
@@ -20,4 +21,4 @@ const mapStateToPpops = (state) => {
     }
 };
 
-export default connect(mapStateToPpops)(HeaderContainer);
+export default connect(mapStateToPpops, { logout })(HeaderContainer);

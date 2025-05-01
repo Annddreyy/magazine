@@ -1,7 +1,7 @@
 import { usersAPI } from '../../api/api';
-import getCookie from '../../utils/getCookie';
+import { getCookie, deleteCookie } from '../../utils/workingWithCookie';
 import { getSHA256Hash } from '../../utils/sha256';
-import { authUserAC } from './authReducer';
+import { authUserAC, logoutUser } from './authReducer';
 import { stopSubmit } from 'redux-form';
 
 export const checkUser = () => async(dispatch) => {
@@ -10,6 +10,11 @@ export const checkUser = () => async(dispatch) => {
         let user = await usersAPI.getUser(+userId);
         dispatch(authUserAC(user));
     }
+};
+
+export const logout = () => (dispatch) => {
+    deleteCookie('userId');
+    dispatch(logoutUser());
 };
 
 export const authUser = (login, password) => async(dispatch) => {

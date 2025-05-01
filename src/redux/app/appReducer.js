@@ -7,7 +7,6 @@ const initialState = {
 const appReducer = (state = initialState, action) => {
     switch(action.type) {
     case SET_LAST_PAGE:
-        debugger;
         return {
             ...state,
             lastPage: action.lastPage

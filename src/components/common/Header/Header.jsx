@@ -6,7 +6,7 @@ import classes from './Header.module.css';
 import { logo } from '../../../config/images';
 import { personDefault } from '../../../config/images';
 
-const Header = ({ links, isAuth, surname, name, patronymic, img }) => {
+const Header = ({ links, isAuth, logout, surname, name, patronymic, img }) => {
     let { leftLinks, rightLinks } = {...getLinks(links)};
     
     const photo = choosePhoto(img, personDefault, PERSON_DEFAULT_URL);
@@ -27,7 +27,7 @@ const Header = ({ links, isAuth, surname, name, patronymic, img }) => {
                         <div className={ classes.user }>
                             <img src={ photo } className={ classes.userImg } alt="" />
                             <span className={ classes.fullname }>{ fullName }</span>
-                            <button className={ classes.logout }>Выйти</button>
+                            <button className={ classes.logout } onClick={ logout }>Выйти</button>
                         </div>
                         :
                         <div className={ classes.item }>{ rightLinks }</div>

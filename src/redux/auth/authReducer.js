@@ -1,4 +1,5 @@
 const AUTH_USER = 'magazine/auth/AUTH_USER';
+const LOGOUT_USER = 'magazine/auth/LOGOUT_USER';
 
 const initialState = {
     isAuth: false,
@@ -23,11 +24,23 @@ const authReducer = (state = initialState, action) => {
             patronymic: action.userInformation.patronymic,
             img: action.userInformation['img_path']
         };
+    case LOGOUT_USER:
+        return {
+            ...state,
+            isAuth: false,
+            id: 0,
+            login: null,
+            surname: null,
+            name: null,
+            patronymic: null,
+            img: null
+        };
     default:
         return state;
     }
 };
 
 export const authUserAC = (userInformation) => ({ type: AUTH_USER, userInformation });
+export const logoutUser = () => ({ type: LOGOUT_USER });
 
 export default authReducer;
