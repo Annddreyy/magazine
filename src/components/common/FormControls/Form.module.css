@@ -37,11 +37,10 @@
     gap: 1em;
 }
 
-.button {
-    margin-top: 2em;
-}
 
 .button {
+    margin-top: 2em;
+    
     width: max-content;
     padding: 0.5em 2em;
 
@@ -49,6 +48,8 @@
     border-radius: 100px;
 
     background-color: transparent;
+
+    color: var(--black);
 }
 
 .redStar {

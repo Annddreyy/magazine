@@ -60,7 +60,7 @@ const RegistrationForm = ({ handleSubmit, error }) => {
                         component={ Input }
                         validate={ [requiredField, minLength8, correctPassword] }
                     />
-                    <label htmlFor='photo'>Фото <span className={ classes.redStar }>*</span></label>
+                    <label htmlFor='photo'>Фото</label>
                     <div>
                         <Field 
                             type='file'
