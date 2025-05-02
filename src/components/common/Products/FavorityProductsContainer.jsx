@@ -12,18 +12,24 @@ class FavorityProductsContainer extends React.Component {
     componentDidMount() {
         this.props.getFavorityThunk(this.props.currentPage, this.props.pageSize);
     }
+
+    componentDidUpdate(prevState) {
+        if (prevState.currentPage !== this.props.currentPage) {
+            this.props.getFavorityThunk(this.props.currentPage, this.props.pageSize);
+        }
+    }
+
     render() {
-        return (
-            <Products {...this.props} />
-        )
+        return <Products {...this.props} />
     }
 }
 
 const mapStateToProps = (state) => {
+    debugger;
     return {
+        totalItemsCount: getTotalFavorityCount(state),
         currentPage: getCurrentPage(state),
         pageSize: getPageSize(state),
-        totalItemsCount: getTotalFavorityCount(state),
         products: getFavority(state),
         isFetching: getIsFetching(state)
     }

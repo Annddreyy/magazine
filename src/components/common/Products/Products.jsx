@@ -5,6 +5,7 @@ import classes from './Products.module.css';
 import { noProducts } from '../../../config/images';
 
 const Products = ({ products, setFavority, deleteFavority, addProduct, title }) => {
+    console.log( products );
     let productsCards = products.map(product => 
         <ProductCard 
             { ...product } 

@@ -1,3 +1,5 @@
+import { getFavorityProducts } from '../../utils/workingWithLocalStorage';
+
 const SET_CURRENT_PAGE = 'magazine/favority/SET_CURRENT_PAGE';
 const ADD_FAVORITY_PRODUCT = 'magazine/favority/ADD_FAVORITY_PRODUCT';
 const SET_IS_FETCHING = 'magazine/favority/SET_IS_FETCHING';
@@ -5,7 +7,7 @@ const SET_FAVORITY_PRODUCTS_INFORMATION = 'magazine/favority/SET_FAVORITY_PRODUC
 const DELETE_FAVORITY_PRODUCT = 'magazine/favority/DELETE_FAVORITY_PRODUCT';
 
 const initialState = {
-    favority: [],
+    favority: getFavorityProducts(),
     pageSize: 12,
     currentPage: 1,
     totalFavorityCount: 0

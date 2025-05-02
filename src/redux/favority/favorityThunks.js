@@ -4,13 +4,13 @@ import { getFavorityProducts, setFavorityProducts } from '../../utils/workingWit
 
 export const getFavorityThunk = (currentPage, pageSize) => async(dispatch) => {
     dispatch(setIsFecthing(true));
-    let products = getFavorityProducts().slice();
+    let products = getFavorityProducts();
+    let length = products.length;
     let left = (currentPage - 1) * pageSize + 1;
     let right = currentPage * pageSize;
-    products = products.slice(left, right);
-    console.log( products );
+    products = products.slice(left - 1, right);
     dispatch(setIsFecthing(false));
-    dispatch(setFavorityProductsAC(products, products.length));
+    dispatch(setFavorityProductsAC(products, length));
 };
 
 export const setFavority = (product) => (dispatch, getState) => {
