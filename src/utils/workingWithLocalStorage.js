@@ -9,9 +9,18 @@ export function getBinProducts() {
     return JSON.parse(localStorage.getItem(BIN)) || [];
 };
 
-export function setFavorityProducts(products) {
+export function addFavorityProductLS(product) {
+    let products = [...getFavorityProducts(), product];
     localStorage.setItem(FAVORITY, JSON.stringify(products));
-};
+}
+
+export function deleteFavorityProductLS(productId) {
+    
+    let products = getFavorityProducts();
+    products = products.filter(product => product.id !== productId);
+    console.log( productId );
+    localStorage.setItem(FAVORITY, JSON.stringify(products));
+}
 
 export function setBinProducts(products) {
     localStorage.setItem(BIN, JSON.stringify(products));

@@ -25,7 +25,6 @@ class FavorityProductsContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    debugger;
     return {
         totalItemsCount: getTotalFavorityCount(state),
         currentPage: getCurrentPage(state),

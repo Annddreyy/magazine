@@ -22,6 +22,7 @@ const favorityReducer = (state = initialState, action) => {
             totalFavorityCount: action.totalFavorityCount
         };
     case SET_CURRENT_PAGE:
+        debugger;
         return {
             ...state,
             currentPage: action.currentPage
