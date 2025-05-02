@@ -17,7 +17,7 @@ const Paginator = ({ currentPage, totalItemsCount, pageSize, setCurrentPage }) =
     return (
         <div className='container'>
             {
-                pageSize > 0
+                pageSize > 0 && totalItemsCount > 0
                 &&
                 <div className={ classes.paginator }>
                     <button onClick={ setPreviosPage }>&lt;</button>
