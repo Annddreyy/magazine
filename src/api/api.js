@@ -19,10 +19,14 @@ export const usersAPI = {
         return instance.delete('auth');
     },
     registration(surname, name, patronymic, login, password, img_path) {
-        if (patronymic) {
+        if (patronymic && img_path) {
             return instance.post('registration', { surname, name, patronymic, login, password, img_path });
-        } else {
+        } else if (img_path) {
             return instance.post('registration', { surname, name, login, password, img_path });
+        } else if (patronymic) {
+            return instance.post('registration', { surname, name, login, password, patronymic });
+        } else {
+            return instance.post('registration', { surname, name, login, password });
         }
     }
 };

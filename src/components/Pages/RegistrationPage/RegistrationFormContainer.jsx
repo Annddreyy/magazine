@@ -8,10 +8,14 @@ import readFile from "../../../utils/readFile";
 
 const RegistrationFormContainer = (props) => {
     let { isAuth, lastPage, registration, ...other } = {...props};
+
     const onSubmit = async(formData) => {
-        let img = await readFile(formData.photo);
         let { surname, name, patronymic, login, password } = { ...formData };
-        img = img.split(',')[1];
+        let img;
+        if (formData.photo) {
+            img = await readFile(formData.photo);
+            img = img.split(',')[1];
+        }
         registration(surname, name, patronymic, login, password, img);
     };
 
