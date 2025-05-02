@@ -11,9 +11,7 @@ class ProductMainPartContainer extends React.Component {
         this.props.getProduct(+this.props.params.productId);
     }
     render() {
-        return (
-            <ProductMainPart { ...this.props.product } />
-        )
+        return <ProductMainPart { ...this.props.product } />
     }
 };
 
@@ -22,9 +20,7 @@ const mapStateToProps = (state) => {
         product: getProductSelector(state)
     }
 };
-const mapDispatchToProps = { getProduct };
-
 export default compose(
-    connect(mapStateToProps, mapDispatchToProps),
+    connect(mapStateToProps, { getProduct }),
     withRouter
 )(ProductMainPartContainer);

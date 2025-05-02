@@ -6,14 +6,11 @@ import { getIsAuth } from './../../../redux/auth/authSelectors';
 import { getLastPage } from './../../../redux/app/appSelectors';
 import readFile from "../../../utils/readFile";
 
-const RegistrationFormContainer = (props) => {
-    let { isAuth, lastPage, registration, ...other } = {...props};
-
-    const onSubmit = async(formData) => {
-        let { surname, name, patronymic, login, password } = { ...formData };
+const RegistrationFormContainer = ({ isAuth, registration, lastPage, ...other }) => {
+    const onSubmit = async({ surname, name, patronymic, login, password, photo }) => {
         let img;
-        if (formData.photo) {
-            img = await readFile(formData.photo);
+        if (photo) {
+            img = await readFile(photo);
             img = img.split(',')[1];
         }
         registration(surname, name, patronymic, login, password, img);

@@ -22,7 +22,6 @@ export const authUser = (login, password) => async(dispatch) => {
     let response = await usersAPI.auth(login, password);
     if (response.status === 'ok') {
         document.cookie = `userId=${response.user.id};`;
-
         dispatch(authUserAC(response.user));
     }
     else {

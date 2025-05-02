@@ -4,14 +4,17 @@ import { addProductActionCreator, decreaseProductActionCreator, deleteProductAct
 export const getBinProductsList = () => (dispatch) => {
     dispatch(setProductsActionCreator(getBinProducts()));
 };
+
 export const increaseProduct = (productId) => (dispatch, getState) => {
     dispatch(increaseProductActionCreator(productId));
     setBinProducts(getState().bin.products);
 };
+
 export const decreaseProduct = (productId) => (dispatch, getState) => {
     dispatch(decreaseProductActionCreator(productId));
     setBinProducts(getState().bin.products);
 };
+
 export const addProduct = (product) => (dispatch, getState) => {
     let products = getBinProducts();
     let findProduct = products.filter(p => p.id === product.id);
@@ -22,6 +25,7 @@ export const addProduct = (product) => (dispatch, getState) => {
     }
     setBinProducts(getState().bin.products);
 };
+
 export const deleteProduct = (productId) => (dispatch, getState) => {
     dispatch(deleteProductActionCreator(productId));
     setBinProducts(getState().bin.products);

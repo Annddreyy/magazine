@@ -5,7 +5,6 @@ export function getCookie(name) {
 
 export function deleteCookie(name) {
     if (getCookie(name)) {
-        console.log(name);
         document.cookie = name + '=; Max-Age=-1; path=/magazine';
     }
 };

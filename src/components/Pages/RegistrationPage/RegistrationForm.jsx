@@ -6,7 +6,7 @@ import { FileInput, Input } from './../../common/FormControls/FormControls';
 import classes from './../../common/FormControls/Form.module.css';
 import styles from './../../../components/common/FormControls/FormControls.module.css';
 
-const RegistrationForm = ({ handleSubmit, error, isAuth, lastPage, selectedImg, img, setImage }) => {
+const RegistrationForm = ({ handleSubmit, error }) => {
     let minLength8 = minLengthCreator(8);
     return (
         <div className={ classes.form }>

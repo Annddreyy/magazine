@@ -1,7 +1,7 @@
 import Loading from '../components/common/Loading/Loading';
 
 const withLoader = (Component) => {
-    return function wrapperComponent(props) {
+    return (props) => {
         if (props.isFetching) {
             return <Loading />;
         }

@@ -4,7 +4,7 @@ import Star from './../../../../common/Star/Star';
 import classes from './NewReviewForm.module.css';
 import { Textarea } from '../../../../common/FormControls/FormControls';
 
-const NewReviewForm = ({ photo, fullname, handleSubmit, onSubmit, error }) => {
+const NewReviewForm = ({ photo, fullname, handleSubmit, onSubmit }) => {
     let [grade, setGrade] = useState(1);
     
     const starSelect = (event) => {

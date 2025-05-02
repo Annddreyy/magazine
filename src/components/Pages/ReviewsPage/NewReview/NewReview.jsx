@@ -10,8 +10,7 @@ const NewReview = ({ addReview, isAuth, getReviews, currentPage, pageSize, ...us
     const photo = choosePhoto(user.img, personDefault, PERSON_DEFAULT_URL);
     const fullname = isAuth && generateFullName(user.surname, user.name, user.patronymic);
 
-    const onSubmit = async(formData) => {
-        let { comment, grade } = { ...formData };
+    const onSubmit = async({ comment, grade }) => {
         await addReview(user.id, comment, grade);
         getReviews(currentPage, pageSize)
     };

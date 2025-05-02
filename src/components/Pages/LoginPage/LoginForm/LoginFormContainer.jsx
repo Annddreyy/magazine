@@ -5,8 +5,7 @@ import { authUser } from '../../../../redux/auth/authThunks';
 import { getIsAuth } from '../../../../redux/auth/authSelectors';
 import { getLastPage } from '../../../../redux/app/appSelectors';
 
-const LoginFormContainer = (props) => {
-    let { isAuth, lastPage, authUser, ...other } = {...props};
+const LoginFormContainer = ({ isAuth, authUser, lastPage, ...other }) => {
     const onSubmit = (formData) => {
         let { login, password } = formData;
         authUser(login, password);

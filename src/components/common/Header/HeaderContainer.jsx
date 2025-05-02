@@ -4,12 +4,6 @@ import { links } from '../../../config/links';
 import { getImg, getIsAuth, getName, getPatronymic, getSurname } from '../../../redux/auth/authSelectors';
 import { logout } from '../../../redux/auth/authThunks';
 
-const HeaderContainer = (props) => {
-    return (
-        <Header {...props} />
-    )
-};
-
 const mapStateToPpops = (state) => {
     return {
         links: links.filter(link => link.elem.includes('HEADER')),
@@ -21,4 +15,4 @@ const mapStateToPpops = (state) => {
     }
 };
 
-export default connect(mapStateToPpops, { logout })(HeaderContainer);
+export default connect(mapStateToPpops, { logout })(Header);

@@ -19,9 +19,7 @@ class ReviewsContainer extends React.Component {
     }
 
     render() {
-        return (
-            <Reviews reviews={ this.props.reviews } />
-        )
+        return <Reviews reviews={ this.props.reviews } />
     }
 }
 

@@ -19,7 +19,6 @@ const Footer = ({ links }) => {
                             <img src={ logo } className={ classes.logo } alt="Логотип" />
                         </div>
                     </div>
-
                 </div>
                 <p className={ classes.copyright }>© 2025 - Emilia, все права защищены</p>
             </div>

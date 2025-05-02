@@ -6,11 +6,11 @@ import classes from './Header.module.css';
 import { logo } from '../../../config/images';
 import { personDefault } from '../../../config/images';
 
-const Header = ({ links, isAuth, logout, surname, name, patronymic, img }) => {
+const Header = ({ links, isAuth, logout, ...user }) => {
     let { leftLinks, rightLinks } = {...getLinks(links)};
     
-    const photo = choosePhoto(img, personDefault, PERSON_DEFAULT_URL);
-    const fullName = isAuth && generateFullName(surname, name, patronymic);
+    const photo = choosePhoto(user.img, personDefault, PERSON_DEFAULT_URL);
+    const fullName = isAuth && generateFullName(user.surname, user.name, user.patronymic);
 
     return (
         <header className={ classes.header }>

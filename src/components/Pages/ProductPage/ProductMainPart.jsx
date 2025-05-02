@@ -9,11 +9,11 @@ const ProductMainPart = ({ title, description, producer, img, compound }) => {
                 <img src={ img || defaultImg } className={ classes.img } alt="" />
                 <div className={ classes.text }>
                     <p className={ classes.title }>Описание:</p>
-                    <p>{ description }</p>
+                    <p>{ description || 'Описание отсутствует' }</p>
                     <p className={ classes.title }>Производитель:</p>
-                    <p>{ producer }</p>
+                    <p>{ producer || 'Производитель отсутствует' }</p>
                     <p className={ classes.title }>Состав:</p>
-                    <p>{ compound }</p>
+                    <p>{ compound || 'Состав отсутствует' }</p>
                 </div>
             </div>
         </section>

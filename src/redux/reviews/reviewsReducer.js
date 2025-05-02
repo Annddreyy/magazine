@@ -4,12 +4,10 @@ const SET_IS_FETCHING = 'magazine/reviews/SET_IS_FETCHING';
 const SET_CURRENT_PAGE = 'magazine/reviews/SET_CURRENT_PAGE';
 
 const initialState = {
+    reviews: [],
     totalReviewsCount: 0,
     pageSize: 10,
     currentPage: 1,
-
-    reviews: [],
-
     isFetching: false
 };
 
