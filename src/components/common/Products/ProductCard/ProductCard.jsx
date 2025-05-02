@@ -12,7 +12,7 @@ const ProductCard = ({ setFavority, deleteFavority, addProduct, ...product }) =>
 
     let stars = createStars(product.grade);
 
-    const setFavorityStatusHandler = () => setFavority(product.id);
+    const setFavorityStatusHandler = () => setFavority({...product, favority: true });
     const deleteFavorityStatusHandler = () => deleteFavority(product.id);
 
     const addProductHandler = () => addProduct({ id: product.id, title: product.title, price: product.price, count: 1 });

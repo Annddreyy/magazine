@@ -2,10 +2,6 @@ export const getProductsSelector = (state) => {
     return state.products.products;
 };
 
-export const getFavority = (state) => {
-    return state.products.favorityProducts;
-};
-
 export const getTotalProductsCount = (state) => {
     return state.products.totalProductsCount;
 };

@@ -6,8 +6,6 @@ export const withRouter = (Component) => {
         const navigate = useNavigate();
         const location = useLocation();
         const params = useParams();
-
-        debugger;
         
         return (
             <Component

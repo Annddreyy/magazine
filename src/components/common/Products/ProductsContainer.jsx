@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Products from './Products';
-import { setFavority, getProducts, deleteFavority } from '../../../redux/products/productsThunks';
+import { getProducts } from '../../../redux/products/productsThunks';
+import { setFavority, deleteFavority } from '../../../redux/favority/favorityThunks';
 import { addProduct } from '../../../redux/bin/binThunks';
 import { getIsFetching, getProductsSelector } from '../../../redux/products/productsSelectors';
 
