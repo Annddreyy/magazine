@@ -3,9 +3,8 @@ import ProductCard from './ProductCard/ProductCard';
 import withLoader from '../../../hoc/withLoader';
 import classes from './Products.module.css';
 import { noProducts } from '../../../config/images';
-import Sort from './Sort/Sort';
 
-const Products = ({ products, setFavority, deleteFavority, addProduct, title }) => {
+const Products = ({ products, setFavority, deleteFavority, addProduct }) => {
     let productsCards = products.map(product => 
         <ProductCard 
             { ...product } 
@@ -17,9 +16,7 @@ const Products = ({ products, setFavority, deleteFavority, addProduct, title }) 
     );
 
     return (
-        <section className='container'>
-            <h2>{ title }</h2>
-            <Sort />
+        <div>
             { 
                 productsCards.length > 0 
                 ?
@@ -29,7 +26,7 @@ const Products = ({ products, setFavority, deleteFavority, addProduct, title }) 
                 :
                 <img src={ noProducts } alt="" className={ classes.img } />
             }
-        </section>
+        </div>
     )
 }
 

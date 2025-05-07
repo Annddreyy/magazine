@@ -5,12 +5,16 @@ const ADD_FAVORITY_PRODUCT = 'magazine/favority/ADD_FAVORITY_PRODUCT';
 const SET_IS_FETCHING = 'magazine/favority/SET_IS_FETCHING';
 const SET_FAVORITY_PRODUCTS_INFORMATION = 'magazine/favority/SET_FAVORITY_PRODUCTS_INFORMATION';
 const DELETE_FAVORITY_PRODUCT = 'magazine/favority/DELETE_FAVORITY_PRODUCT';
+const SET_CATEGORY = 'magazine/favority/SET_CATEGORY';
+const SET_SORT_BY = 'magazine/favority/SET_SORT_BY';
 
 const initialState = {
     favority: getFavorityProducts(),
     pageSize: 12,
     currentPage: 1,
-    totalFavorityCount: 0
+    totalFavorityCount: 0,
+    category: null,
+    sortBy: null
 };
 
 const favorityReducer = (state = initialState, action) => {
@@ -22,7 +26,6 @@ const favorityReducer = (state = initialState, action) => {
             totalFavorityCount: action.totalFavorityCount
         };
     case SET_CURRENT_PAGE:
-        debugger;
         return {
             ...state,
             currentPage: action.currentPage
@@ -42,6 +45,16 @@ const favorityReducer = (state = initialState, action) => {
             ...state,
             isFetching: action.isFetching
         };
+    case SET_CATEGORY:
+        return {
+            ...state,
+            category: action.category
+        };
+    case SET_SORT_BY:
+        return {
+            ...state,
+            sortBy: action.sortBy
+        };
     default:
         return state;
     }
@@ -54,5 +67,8 @@ export const addFavorityProduct = (product) => ({ type: ADD_FAVORITY_PRODUCT, pr
 export const deleteFavorityProduct = (productId) => ({ type: DELETE_FAVORITY_PRODUCT, productId });
 
 export const setFavorityProductsAC = (favorityProducts, totalFavorityCount) => ({ type: SET_FAVORITY_PRODUCTS_INFORMATION, favorityProducts, totalFavorityCount });
+
+export const setCategory = (category) => ({ type: SET_CATEGORY, category });
+export const setSortBy = (sortBy) => ({ type: SET_SORT_BY, sortBy });
 
 export default favorityReducer;

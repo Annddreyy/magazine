@@ -1,6 +1,6 @@
 import { productsAPI } from '../../api/api';
 import { getFavorityProducts } from '../../utils/workingWithLocalStorage';
-import { setIsFecthing, setProductInformation, setProductsInformation } from './productsReducer';
+import { setIsFecthing, setProductInformation, setProductsInformation, setCategory } from './productsReducer';
 
 export const getProduct = (productId) => async(dispatch) => {
     dispatch(setIsFecthing(true));
@@ -9,11 +9,17 @@ export const getProduct = (productId) => async(dispatch) => {
     dispatch(setProductInformation(product));
 };
 
-export const getProducts = (page, size) => async(dispatch) => {
+export const getProducts = (page, size) => async(dispatch, getState) => {
     dispatch(setIsFecthing(true));
-    let products = await productsAPI.getProducts(page, size);
+    let category = getState().products.category;
+    let sortBy = getState().products.sortBy;
+    let products = await productsAPI.getProducts({page, size, category, sortBy});
     let favorityProducts = getFavorityProducts();
     products.products.forEach(product => favorityProducts.find(p => p.id === product.id ) ? product.favority = true : product.favority = false);
     dispatch(setIsFecthing(false));
     dispatch(setProductsInformation(products));
+};
+
+export const setCategoryThunk = (category) => (dispatch) => {
+    dispatch(setCategory(category));
 };

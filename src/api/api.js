@@ -31,8 +31,15 @@ export const usersAPI = {
 };
 
 export const productsAPI = {
-    async getProducts(page, size) {
-        let response = await instance.get(`products?page=${page}&size=${size}`);
+    async getProducts({page, size, category, sortBy}) {
+        let queryString = `products?page=${page}&size=${size}`;
+        if (category) {
+            queryString += `&category=${category}`;
+        }
+        if (sortBy) {
+            queryString += `&sortBy=${sortBy}`;
+        }
+        let response = await instance.get(queryString);
         return response.data;
     },
     async getProduct(productId) {

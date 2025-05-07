@@ -3,6 +3,8 @@ const SET_PRODUCT_INFORMATION = 'magazine/products/SET_PRODUCT_INFORMATION';
 const SET_PRODUCTS_INFORMATION = 'magazine/products/SET_PRODUCTS_INFORMATION';
 const SET_CURRENT_PAGE = 'magazine/products/SET_CURRENT_PAGE';
 const SET_IS_FETCHING = 'magazine/products/SET_IS_FETCHING';
+const SET_CATEGORY = 'magazine/products/SET_CATEGORY';
+const SET_SORT_BY = 'magazine/products/SET_SORT_BY';
 
 const initialState = {
     products: [],
@@ -10,7 +12,9 @@ const initialState = {
     pageSize: 12,
     currentPage: 1,
     product: null,
-    isFetching: false
+    isFetching: false,
+    category: null,
+    sortBy: null
 };
 
 const productsReducer = (state = initialState, action) => {
@@ -45,6 +49,18 @@ const productsReducer = (state = initialState, action) => {
             ...state,
             isFetching: action.isFetching
         };
+    case SET_CATEGORY:
+        debugger;
+        return {
+            ...state,
+            category: action.category
+        };
+    case SET_SORT_BY:
+        console.log( 2 );
+        return {
+            ...state,
+            sortBy: action.sortBy
+        };
     default:
         return state;
     }
@@ -56,5 +72,8 @@ export const setFavorityStatus = (productId) => ({ type: SET_FAVORITY, productId
 
 export const setIsFecthing = (isFetching) => ({ type: SET_IS_FETCHING, isFetching });
 export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
+
+export const setCategory = (category) => ({ type: SET_CATEGORY, category });
+export const setSortBy = (sortBy) => ({ type: SET_SORT_BY, sortBy });
 
 export default productsReducer;

@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Products from './Products';
-import { getProducts } from '../../../redux/products/productsThunks';
+import Sort from './Sort/Sort';
+import { getProducts, setCategoryThunk } from '../../../redux/products/productsThunks';
 import { setFavority, deleteFavority } from '../../../redux/favority/favorityThunks';
 import { addProduct } from '../../../redux/bin/binThunks';
 import { getIsFetching, getProductsSelector } from '../../../redux/products/productsSelectors';
+import { setCategory, setSortBy } from '../../../redux/products/productsReducer';
 
 class ProductsContainer extends React.Component {
     componentDidMount() {
@@ -19,13 +21,16 @@ class ProductsContainer extends React.Component {
     
     render() {
         return (
-            <Products 
-                products={ this.props.products }
-                setFavority={ this.props.setFavority }
-                addProduct={ this.props.addProduct }
-                deleteFavority={ this.props.deleteFavority }
-                title={ this.props.title }
-            />
+            <div className="container">
+                <h2>Каталог товаров</h2>
+                <Sort setCategoryThunk={ this.props.setCategoryThunk} setSortBy={ this.props.setPropsBy } />
+                <Products 
+                    products={ this.props.products }
+                    setFavority={ this.props.setFavority }
+                    addProduct={ this.props.addProduct }
+                    deleteFavority={ this.props.deleteFavority }
+                />
+            </div>
         )
     }
 }
@@ -37,4 +42,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, { setFavority, addProduct, getProducts, deleteFavority })(ProductsContainer);
+export default connect(mapStateToProps, { setFavority, addProduct, getProducts, deleteFavority, setCategoryThunk, setSortBy })(ProductsContainer);

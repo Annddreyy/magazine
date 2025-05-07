@@ -7,60 +7,29 @@ const AboutMainPart = () => {
             <h2>О нас</h2>
             <div className={ classes.column }>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dignissimos odit 
-                    possimus harum illo doloribus consequuntur minus modi. Fugiat similique iure 
-                    consectetur nam reiciendis repellat esse. Vel explicabo debitis atque ipsum 
-                    commodi voluptates voluptatum quam itaque est vitae accusamus iure dolor 
-                    deleniti, laudantium ad illum dignissimos molestiae labore quasi architecto 
-                    placeat dolorem impedit quis corporis. Quam placeat, soluta distinctio a, sint 
-                    ratione eius fuga eaque tempora excepturi iste consequatur magnam?
+                    Emilia professional cosmetics — это специализированный бренд профессиональной 
+                    косметики, разработанный косметологом. Он предлагает эффективные средства по 
+                    уходу за кожей, доступные как для домашнего использования, так и для применения 
+                    в салонах красоты. В основе бренда лежит сочетание научных исследований, 
+                    современных технологий и эстетического подхода, что позволяет поддерживать 
+                    здоровье, сияние и молодость кожи.
                 </p>
                 <div className={ classes.row }>
                     <div className={ classes.column }>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium 
-                            quas nesciunt temporibus, amet repellendus atque quis quibusdam nam nobis
-                            perspiciatis soluta, facilis aliquam. Corporis ipsa, quae iure odio 
-                            laborum accusantium!
-                        </p>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, 
-                            assumenda eum eaque commodi atque obcaecati, maiores impedit sint, eius 
-                            necessitatibus voluptas voluptate? Numquam voluptatum quidem vero hic 
-                            quod porro ipsa.
+                            Ключевым ингредиентом всей серии средств для лица и тела является фукус — морская водоросль, 
+                            обладающая свойствами укреплять защитный барьер кожи, снижать отечность, 
+                            улучшать тонус и эластичность. Она эффективно успокаивает раздражения и признаки усталости, 
+                            способствует поддержанию оптимального уровня увлажненности и придает коже свежий и здоровый вид.
                         </p>
                     </div>
-                    <img src={ product1 } className={ classes.img } alt="" />
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dignissimos odit 
-                    possimus harum illo doloribus consequuntur minus modi. Fugiat similique iure 
-                    consectetur nam reiciendis repellat esse. Vel explicabo debitis atque ipsum 
-                    commodi voluptates voluptatum quam itaque est vitae accusamus iure dolor 
-                    deleniti, laudantium ad illum dignissimos molestiae labore quasi architecto 
-                    placeat dolorem impedit quis corporis. 
-                </p>
-                <div className={ classes.row }>
                     <img src={ product2 } className={ classes.img } alt="" />
-                    <div className={ classes.column }>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium 
-                            quas nesciunt temporibus, amet repellendus atque quis quibusdam nam nobis
-                            perspiciatis soluta, facilis aliquam. Corporis ipsa, quae iure odio 
-                            laborum accusantium!
-                        </p>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, 
-                            assumenda eum eaque commodi atque obcaecati, maiores impedit sint, eius 
-                            necessitatibus voluptas voluptate? Numquam voluptatum quidem vero hic 
-                            quod porro ipsa.
-                        </p>
-                    </div>
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi illum sint est 
-                    officiis praesentium inventore voluptatibus. Consequatur explicabo, distinctio 
-                    harum, eos sunt recusandae provident quasi numquam excepturi, quibusdam odio? Dolore?
+                    Данная косметическая линия идеально подходит для кожи, испытывающей стресс из-за негативного
+                    воздействия окружающей среды, неблагоприятных климатических условий, излучения от экранов 
+                    гаджетов, частых перелетов, недостатка сна и витаминов. Это отличный выбор для продления эффекта 
+                    косметологических процедур и быстрой реабилитации после аппаратных или инвазивных вмешательств.
                 </p>
             </div>
         </div>
