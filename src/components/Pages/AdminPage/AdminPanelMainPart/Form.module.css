@@ -1,0 +1,18 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.redStar {
+    color: var(--red);
+}
+
+.button {
+    width: max-content;
+    padding: 8px 2em;
+    border: none;
+    background-color: var(--dark-orange);
+    color: var(--white);
+    border-radius: 100px;
+}

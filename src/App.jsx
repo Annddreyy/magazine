@@ -18,6 +18,7 @@ const Favority = React.lazy(() => import('./pages/Favority'));
 const Login = React.lazy(() => import('./pages/Login'));
 const Product = React.lazy(() => import('./pages/Product'));
 const Registration = React.lazy(() => import('./pages/Registration'));
+const AdminPanel = React.lazy(() => import('./pages/AdminPanel'));
 
 class App extends React.Component {
     componentDidMount() {
@@ -75,6 +76,11 @@ class App extends React.Component {
                 <Route path='/registration' element={ 
                     <React.Suspense fallback={<Loading />}>
                         <Registration />
+                    </React.Suspense>
+                }/>
+                <Route path='/admin' element={ 
+                    <React.Suspense fallback={<Loading />}>
+                        <AdminPanel />
                     </React.Suspense>
                 }/>
                 <Route path='/product/:productId' element={ 

@@ -17,6 +17,13 @@ export const maxLengthCreator = (maxLength) => (value) => {
     return undefined;
 };
 
+export const minValue = value => {
+    if (value && value <= 0) {
+        return 'Манимальное значение: 1';
+    }
+    return undefined;
+};
+
 export const correctPassword = value => {
     let passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
     if (passwordRegex.test(value)) {
