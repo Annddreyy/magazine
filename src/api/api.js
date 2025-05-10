@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { BASE_URL } from '../config/vars';
 import { categories, sortByCategories } from '../config/sort';
+import { BASE_URL } from '../config/vars';
 
 const instance = axios.create({
     withCredentials: true,
@@ -12,13 +12,16 @@ export const usersAPI = {
         let response = await instance.get(`users/${userId}`);
         return response.data;
     },
+
     async auth(login, password) {
         let response = await instance.post('auth', { login, password });
         return response.data;
     },
+
     logout() {
         return instance.delete('auth');
     },
+
     registration(surname, name, patronymic, login, password, img_path) {
         const data = { surname, name, login, password };
         if (patronymic) {
@@ -52,9 +55,30 @@ export const productsAPI = {
 
         return response.data;
     },
+
     async getProduct(productId) {
         let response = await instance.get(`products/${productId}`);
         return response.data;
+    },
+
+    async getAllProducts() {
+        let response = await instance.get('all-products');
+        return response.data;
+    },
+
+    async deleteProduct(productTitle) {
+        let response = await instance.delete(`product?title=${productTitle}`);
+        return response.data;
+    },
+
+    // TODO: add new product API method
+    async addProduct() {
+        
+    },
+
+    // TODO: update product API method
+    async updateProduct() {
+
     }
 };
 
@@ -63,6 +87,7 @@ export const reviewsAPI = {
         let response = await instance.get(`reviews?page=${page}&size=${size}`);
         return response.data;
     },
+
     addReview(id, comment, grade) {
         return instance.post('review', { id, comment, grade });
     }

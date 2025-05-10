@@ -4,7 +4,6 @@ import NewProductForm from "./NewProductForm"
 const NewProductFormContainer = () => {
     const onSubmit = (formData) => {
         console.log( formData );
-
     }
     return (
         <NewProductForm onSubmit={ onSubmit } />

@@ -19,3 +19,12 @@ export const getProducts = (page, size) => async(dispatch, getState) => {
     dispatch(setIsFecthing(false));
     dispatch(setProductsInformation(products));
 };
+
+export const deleteProduct = (title) => async(dispatch) => {
+    let response = await productsAPI.deleteProduct(title);
+    if (response.code === 200) {
+        alert('Товар успешно удален!');
+    } else {
+        console.log( response );
+    }
+};

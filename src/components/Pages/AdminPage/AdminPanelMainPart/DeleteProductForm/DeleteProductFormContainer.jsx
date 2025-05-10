@@ -1,14 +1,15 @@
-import { reduxForm } from "redux-form";
-import DeleteProductForm from "./DeleteProductForm"
+import { connect } from "react-redux";
+import { deleteProduct } from "../../../../../redux/products/productsThunks";
+import DeleteProductForm from "./DeleteProductForm";
 
-const DeleteProductFormContainer = () => {
-    const onSubmit = (formData) => {
-        console.log( formData );
-
+const DeleteProductFormContainer = ({ deleteProduct }) => {
+    const onSubmit = ({ title }) => {
+        debugger;
+        deleteProduct(title);
     }
     return (
         <DeleteProductForm onSubmit={ onSubmit } />
     )
 };
 
-export default reduxForm({ form: 'deleteProduct' })(DeleteProductFormContainer);
+export default connect(null, { deleteProduct })(DeleteProductFormContainer);
