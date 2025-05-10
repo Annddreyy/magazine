@@ -8,6 +8,6 @@ export const categories = [
 export const sortByCategories = [
     { id: 1, value: 'По цене: по убыванию' },
     { id: 2, value: 'По цене: по возрастанию' },
-    { id: 3, value: 'По оценке: по убванию' },
+    { id: 3, value: 'По оценке: по убыванию' },
     { id: 4, value: 'По оценке: по возрастанию' }
 ];

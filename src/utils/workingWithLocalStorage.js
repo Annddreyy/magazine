@@ -15,10 +15,8 @@ export function addFavorityProductLS(product) {
 }
 
 export function deleteFavorityProductLS(productId) {
-    
     let products = getFavorityProducts();
     products = products.filter(product => product.id !== productId);
-    console.log( productId );
     localStorage.setItem(FAVORITY, JSON.stringify(products));
 }
 

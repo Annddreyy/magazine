@@ -1,21 +1,19 @@
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { categories, sortByCategories } from "../../../../config/sort";
 import classes from './Sort.module.css';
-import { setCategory, setSortBy } from "../../../../redux/favority/favorityReducer";
 
-const Sort = ({ category, sortBy, setCategoryThunk, setSortBy }) => {
-    debugger;
+const Sort = ({ category, sortBy, setCategory, setSortBy }) => {
     const categories = category.map(c => <option value={ c.value } key={ c.id }></option>);
     const sortByCategories = sortBy.map(s => <option value={ s.value } key={ s.id }></option>);
 
+    const dispatch = useDispatch();
+
     const onCategoryChange = (event) => {
-        debugger;
-        setCategoryThunk(event.target.value);
-        debugger;
+        dispatch(setCategory(event.target.value));
     }
 
     const onSortByChange = (event) => {
-        setSortBy(event.target.value);
+        dispatch(setSortBy(event.target.value));
     }
 
     return (
@@ -45,4 +43,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, { setCategory, setSortBy })(Sort);
+export default connect(mapStateToProps)(Sort);

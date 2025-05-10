@@ -46,11 +46,13 @@ const favorityReducer = (state = initialState, action) => {
             isFetching: action.isFetching
         };
     case SET_CATEGORY:
+        debugger;
         return {
             ...state,
             category: action.category
         };
     case SET_SORT_BY:
+        debugger;
         return {
             ...state,
             sortBy: action.sortBy

@@ -50,13 +50,11 @@ const productsReducer = (state = initialState, action) => {
             isFetching: action.isFetching
         };
     case SET_CATEGORY:
-        debugger;
         return {
             ...state,
             category: action.category
         };
     case SET_SORT_BY:
-        console.log( 2 );
         return {
             ...state,
             sortBy: action.sortBy

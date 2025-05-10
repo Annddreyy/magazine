@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Products from './Products';
 import Sort from './Sort/Sort';
-import { getProducts, setCategoryThunk } from '../../../redux/products/productsThunks';
+import { getProducts } from '../../../redux/products/productsThunks';
 import { setFavority, deleteFavority } from '../../../redux/favority/favorityThunks';
 import { addProduct } from '../../../redux/bin/binThunks';
 import { getIsFetching, getProductsSelector } from '../../../redux/products/productsSelectors';
-import { setCategory, setSortBy } from '../../../redux/products/productsReducer';
+import { setSortBy, setCategory } from '../../../redux/products/productsReducer';
 
 class ProductsContainer extends React.Component {
     componentDidMount() {
@@ -14,16 +14,21 @@ class ProductsContainer extends React.Component {
     }
 
     componentDidUpdate(prevState) {
-        if (prevState.currentPage !== this.props.currentPage) {
-            this.props.getProducts(this.props.currentPage, this.props.pageSize);
+        let { currentPage, pageSize, category, sortBy } = this.props;
+        if (prevState.currentPage !== currentPage || prevState.category !== category || prevState.sortBy !== sortBy) {
+            this.updateProductsList(currentPage, pageSize, category, sortBy);
         }
+    }
+
+    updateProductsList(currentPage, pageSize, category = undefined, sortBy = undefined) {
+        this.props.getProducts(currentPage, pageSize, category, sortBy);
     }
     
     render() {
         return (
             <div className="container">
                 <h2>Каталог товаров</h2>
-                <Sort setCategoryThunk={ this.props.setCategoryThunk} setSortBy={ this.props.setPropsBy } />
+                <Sort setCategory={ this.props.setCategory } setSortBy={ this.props.setSortBy } />
                 <Products 
                     products={ this.props.products }
                     setFavority={ this.props.setFavority }
@@ -37,9 +42,11 @@ class ProductsContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
+        category: state.products.category,
+        sortBy: state.products.sortBy,
         products: getProductsSelector(state),
         isFetching: getIsFetching(state)
     }
 };
 
-export default connect(mapStateToProps, { setFavority, addProduct, getProducts, deleteFavority, setCategoryThunk, setSortBy })(ProductsContainer);
+export default connect(mapStateToProps, { setFavority, addProduct, getProducts, deleteFavority, setCategory, setSortBy })(ProductsContainer);

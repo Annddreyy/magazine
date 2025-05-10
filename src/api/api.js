@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { BASE_URL } from '../config/vars';
+import { categories, sortByCategories } from '../config/sort';
 
 const instance = axios.create({
     withCredentials: true,
@@ -33,13 +34,22 @@ export const usersAPI = {
 export const productsAPI = {
     async getProducts({page, size, category, sortBy}) {
         let queryString = `products?page=${page}&size=${size}`;
-        if (category) {
-            queryString += `&category=${category}`;
+
+        const categoriesMap = new Map(categories.map(c => [c.value, c.id]));
+        const categoryID = categoriesMap.get(category);
+
+        const sortTypes = new Map(sortByCategories.map(c => [c.value, c.id]));
+        const sortTypeID = sortTypes.get(sortBy);
+
+        if (categoryID) {
+            queryString += `&category=${categoryID}`;
         }
-        if (sortBy) {
-            queryString += `&sortBy=${sortBy}`;
+        if (sortTypeID) {
+            queryString += `&sortBy=${sortTypeID}`;
         }
+        
         let response = await instance.get(queryString);
+
         return response.data;
     },
     async getProduct(productId) {

@@ -15,7 +15,7 @@ const ProductCard = ({ setFavority, deleteFavority, addProduct, ...product }) =>
     const setFavorityStatusHandler = () => setFavority({...product, favority: true });
     const deleteFavorityStatusHandler = () => deleteFavority(product.id);
 
-    const addProductHandler = () => addProduct({ id: product.id, title: product.title, price: product.price, count: 1 });
+    const addProductHandler = () => addProduct({ id: product.id, title: product.title, price: product.price, count: 1, category: product.category });
 
     return (
         <div className={ classes.card }>

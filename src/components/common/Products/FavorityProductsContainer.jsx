@@ -11,21 +11,21 @@ import { setCategory, setCurrentPage, setSortBy } from '../../../redux/favority/
 
 class FavorityProductsContainer extends React.Component {
     componentDidMount() {
-        this.props.getFavorityThunk(this.props.currentPage, this.props.pageSize);
+        this.props.getFavorityThunk(this.props.currentPage, this.props.pageSize, this.props.category, this.props.sortBy);
     }
 
     componentDidUpdate(prevState) {
-        if (prevState.currentPage !== this.props.currentPage) {
-            this.props.getFavorityThunk(this.props.currentPage, this.props.pageSize);
+        let { currentPage, pageSize, category, sortBy } = this.props;
+        if (prevState.currentPage !== currentPage || prevState.category !== category || prevState.sortBy !== sortBy) {
+            this.props.getFavorityThunk(currentPage, pageSize, category, sortBy);
         }
     }
 
     render() {
-        debugger;
         return (
             <div className="container">
                 <h2>Избранные товары</h2>
-                <Sort />
+                <Sort setCategory={ setCategory } setSortBy={ setSortBy }/>
                 <Products {...this.props} />
             </div>
         )
@@ -38,11 +38,13 @@ const mapStateToProps = (state) => {
         currentPage: getCurrentPage(state),
         pageSize: getPageSize(state),
         products: getFavority(state),
-        isFetching: getIsFetching(state)
+        isFetching: getIsFetching(state),
+        category: state.favority.category,
+        sortBy: state.favority.sortBy
     }
 };
 
 export default compose(
     connect(mapStateToProps, { setFavority, addProduct, getFavorityThunk, deleteFavority, setCurrentPage, setCategory, setSortBy }),
     withPaginator
-)(FavorityProductsContainer);
+)(FavorityProductsContainer); 
