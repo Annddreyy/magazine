@@ -11,7 +11,6 @@ const DeleteProductForm = ({ handleSubmit, error }) => {
     useEffect(() => {
         async function getProducts() {
             let response = await productsAPI.getAllProducts();
-            console.log( response );
             setAllProducts(response);
         }
         getProducts();
@@ -29,9 +28,8 @@ const DeleteProductForm = ({ handleSubmit, error }) => {
                 validate={[ requiredField ]}
             />
             <datalist name="products" id="products">
-                {
-                    console.log( allProducts, 1 )}
-                    {allProducts.map(product => (
+                {   
+                    allProducts.map(product => (
                         <option key={product.id} value={product.title} />
                     ))
                 }

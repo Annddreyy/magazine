@@ -10,7 +10,6 @@ const NewProductFormContainer = ({ addProduct }) => {
             img_path = await readFile (photo);
             img_path = img_path.split(',')[1];
         }
-        debugger;
         addProduct({title, price, status, category, description, compound, img_path});
     }
     return (

@@ -2,6 +2,7 @@ import { Field } from "redux-form";
 import { FileInput, Input, Textarea } from "../../../../common/FormControls/FormControls";
 import { minValue, requiredField } from "../../../../../utils/validators/validators";
 import classes from './../Form.module.css';
+import { formTextareaBaseStyle } from './../AdminPanelMainPart';
 
 const UpdateProductForm = ({ handleSubmit, error }) => {
     return (
@@ -42,6 +43,7 @@ const UpdateProductForm = ({ handleSubmit, error }) => {
                 name='description'
                 component={ Textarea }
                 validate={[ requiredField ]}
+                style={ formTextareaBaseStyle }
             />
             <label htmlFor="compound">Состав <span className={ classes.redStar }>*</span></label>
             <Field 
@@ -49,6 +51,7 @@ const UpdateProductForm = ({ handleSubmit, error }) => {
                 name='compound'
                 component={ Textarea }
                 validate={[ requiredField ]}
+                style={ formTextareaBaseStyle }
             />
             <label htmlFor="photo">Фотография </label>
             <Field 

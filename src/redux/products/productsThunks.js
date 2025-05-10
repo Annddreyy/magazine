@@ -30,7 +30,6 @@ export const deleteProduct = (title) => async(dispatch) => {
 };
 
 export const addProduct = (product) => async(dispatch) => {
-    debugger;
     let response = await productsAPI.addProduct(product);
     if (response.code === 200) {
         alert('Товар успешно добавлен!');

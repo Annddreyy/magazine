@@ -3,6 +3,7 @@ import { FileInput, Input, Textarea } from "../../../../common/FormControls/Form
 import { minValue, requiredField } from "../../../../../utils/validators/validators";
 import classes from './../Form.module.css';
 import { categories } from "../../../../../config/sort";
+import { formTextareaBaseStyle } from "../AdminPanelMainPart";
 
 const NewProductForm = ({ handleSubmit, error }) => {
     return (
@@ -37,7 +38,7 @@ const NewProductForm = ({ handleSubmit, error }) => {
                 validate={[ requiredField ]}
             />
             <datalist id="categories">
-                { categories.map(category => <option value={category.value}></option>) }
+                { categories.map(category => <option value={category.value} key={ category.id }></option>) }
             </datalist>
             <label htmlFor="description">Описание <span className={ classes.redStar }>*</span></label>
             <Field 
@@ -45,6 +46,7 @@ const NewProductForm = ({ handleSubmit, error }) => {
                 name='description'
                 component={ Textarea }
                 validate={[ requiredField ]}
+                style={ formTextareaBaseStyle }
             />
             <label htmlFor="compound">Состав <span className={ classes.redStar }>*</span></label>
             <Field 
@@ -52,6 +54,7 @@ const NewProductForm = ({ handleSubmit, error }) => {
                 name='compound'
                 component={ Textarea }
                 validate={[ requiredField ]}
+                style={ formTextareaBaseStyle }
             />
             <label htmlFor="photo">Фотография </label>
             <Field 
