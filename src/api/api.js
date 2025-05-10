@@ -72,8 +72,17 @@ export const productsAPI = {
     },
 
     // TODO: add new product API method
-    async addProduct() {
-        
+    async addProduct({title, img_path = null, price, status, description, compound, category}) {
+        let response = await instance.post('product', {
+            title,
+            img_path,
+            price,
+            status,
+            description,
+            compound,
+            category
+        });
+        return response.data;
     },
 
     // TODO: update product API method

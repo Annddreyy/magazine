@@ -4,7 +4,6 @@ import DeleteProductForm from "./DeleteProductForm";
 
 const DeleteProductFormContainer = ({ deleteProduct }) => {
     const onSubmit = ({ title }) => {
-        debugger;
         deleteProduct(title);
     }
     return (

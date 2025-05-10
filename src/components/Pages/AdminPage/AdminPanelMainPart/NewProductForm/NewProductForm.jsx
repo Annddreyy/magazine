@@ -1,7 +1,8 @@
-import { Field } from "redux-form";
+import { Field, reduxForm } from "redux-form";
 import { FileInput, Input, Textarea } from "../../../../common/FormControls/FormControls";
 import { minValue, requiredField } from "../../../../../utils/validators/validators";
 import classes from './../Form.module.css';
+import { categories } from "../../../../../config/sort";
 
 const NewProductForm = ({ handleSubmit, error }) => {
     return (
@@ -21,20 +22,23 @@ const NewProductForm = ({ handleSubmit, error }) => {
                 component={ Input }
                 validate={[ requiredField, minValue ]}
             />
-            <label htmlFor="status">Статус <span className={ classes.redStar }>*</span></label>
+            <label htmlFor="status">Статус</label>
             <Field 
                 id='status'
                 name='status'
                 component={ Input }
-                validate={[ requiredField ]}
             />
             <label htmlFor="category">Категория <span className={ classes.redStar }>*</span></label>
             <Field 
                 id='category'
                 name='category'
+                list='categories'
                 component={ Input }
                 validate={[ requiredField ]}
             />
+            <datalist id="categories">
+                { categories.map(category => <option value={category.value}></option>) }
+            </datalist>
             <label htmlFor="description">Описание <span className={ classes.redStar }>*</span></label>
             <Field 
                 id='description'
@@ -61,4 +65,4 @@ const NewProductForm = ({ handleSubmit, error }) => {
     )
 }
 
-export default NewProductForm;
+export default reduxForm({ form: 'newProduct' })(NewProductForm);
