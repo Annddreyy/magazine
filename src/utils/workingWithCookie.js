@@ -5,6 +5,7 @@ export function getCookie(name) {
 
 export function deleteCookie(name) {
     if (getCookie(name)) {
-        document.cookie = name + '=; Max-Age=-1; path=/magazine';
+        // FIXME: перед деплоем заменить на path=/magazine
+        document.cookie = name + '=; Max-Age=-1; path=/';
     }
 };

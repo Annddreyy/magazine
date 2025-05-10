@@ -2,6 +2,10 @@ export const getIsAuth = (state) => {
     return state.auth.isAuth;
 };
 
+export const getIsAdmin = (state) => {
+    return state.auth.is_admin;
+};
+
 export const getId = (state) => {
     return state.auth.id;
 };

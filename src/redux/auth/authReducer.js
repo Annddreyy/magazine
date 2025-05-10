@@ -8,7 +8,8 @@ const initialState = {
     surname: null,
     name: null,
     patronymic: null,
-    img: null
+    img: null,
+    is_admin: 0
 };
 
 const authReducer = (state = initialState, action) => {
@@ -22,7 +23,8 @@ const authReducer = (state = initialState, action) => {
             surname: action.userInformation.surname,
             name: action.userInformation.name,
             patronymic: action.userInformation.patronymic,
-            img: action.userInformation['img_path']
+            img: action.userInformation['img_path'],
+            is_admin: action.userInformation.is_admin || 0
         };
     case LOGOUT_USER:
         return {
@@ -33,7 +35,8 @@ const authReducer = (state = initialState, action) => {
             surname: null,
             name: null,
             patronymic: null,
-            img: null
+            img: null,
+            is_admin: 0
         };
     default:
         return state;
