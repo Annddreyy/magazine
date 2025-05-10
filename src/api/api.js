@@ -84,9 +84,18 @@ export const productsAPI = {
         return response.data;
     },
 
-    // TODO: update product API method
-    async updateProduct() {
-
+    async updateProduct({ selected: oldTitle, title, img_path, price, status = '', description, compound, category }) {
+        let response = await instance.patch('product', {
+            oldTitle,
+            title,
+            img_path,
+            price,
+            status,
+            description,
+            compound,
+            category
+        });
+        return response.data;
     }
 };
 

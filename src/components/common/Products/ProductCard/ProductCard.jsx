@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import classes from './ProductCard.module.css';
 import { unfillHeart, fillHeart, productImg, binLogo } from '../../../../config/images';
 import createStars from '../../../../utils/createStars';
+import choosePhoto from '../../../../utils/choosePhoto';
 
 const ProductCard = ({ setFavority, deleteFavority, addProduct, ...product }) => {
     let statusClasses = new Map([
@@ -20,7 +21,7 @@ const ProductCard = ({ setFavority, deleteFavority, addProduct, ...product }) =>
     return (
         <div className={ classes.card }>
             <NavLink to={ '/product/' + product.id }>
-                <img src={ productImg } className={ classes.img } alt="" />
+                <img src={ choosePhoto(product.imgSrc, productImg, 'https://raw.githubusercontent.com/Annddreyy/magazine-images/refs/heads/master/products/' ) } className={ classes.img } alt="" />
             </NavLink>
             <div className={ classes.isFavourity } onClick={ product.favority ? deleteFavorityStatusHandler : setFavorityStatusHandler }>
                 <img src={ product.favority ? fillHeart : unfillHeart } alt="Добавить в избранное" />

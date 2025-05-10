@@ -37,3 +37,13 @@ export const addProduct = (product) => async(dispatch) => {
         console.log( response );
     }
 };
+
+export const updateProduct = (product) => async(dispatch) => {
+    console.log( 2 );
+    let response = await productsAPI.updateProduct(product);
+    if (response.code === 200) {
+        alert('Товар успешно обновлен!');
+    } else {
+        console.log( response );
+    }
+};
