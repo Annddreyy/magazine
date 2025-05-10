@@ -1,10 +1,10 @@
-import HeaderContainer from './../components/common/Header/HeaderContainer';
 import FooterContainer from './../components/common/Footer/FooterContainer';
+import HeaderContainer from './../components/common/Header/HeaderContainer';
 
-import ProductsContainer from './../components/common/Products/ProductsContainer';
-import TopPart from './../components/Pages/MainPage/TopPart/TopPart';
+import MainPageProductsContainer from '../components/common/Products/MainPageProductsContainer';
 import AboutMini from './../components/Pages/MainPage/AboutMini/AboutMini';
 import BottomPart from './../components/Pages/MainPage/BottomPart/BottomPart';
+import TopPart from './../components/Pages/MainPage/TopPart/TopPart';
 
 
 const Main = () => {
@@ -13,7 +13,7 @@ const Main = () => {
             <HeaderContainer />
             <TopPart />
             <AboutMini />
-            <ProductsContainer title='Товары' />
+            <MainPageProductsContainer />
             <BottomPart />
             <FooterContainer />
         </div>
