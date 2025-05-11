@@ -52,12 +52,14 @@ const productsReducer = (state = initialState, action) => {
     case SET_CATEGORY:
         return {
             ...state,
-            category: action.category
+            category: action.category,
+            currentPage: 1
         };
     case SET_SORT_BY:
         return {
             ...state,
-            sortBy: action.sortBy
+            sortBy: action.sortBy,
+            currentPage: 1
         };
     default:
         return state;

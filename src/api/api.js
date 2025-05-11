@@ -71,7 +71,7 @@ export const productsAPI = {
         return response.data;
     },
 
-    async addProduct({title, img_path = null, price, status, description, compound, category}) {
+    async addProduct({title, img_path = '', price, status, description, compound, category}) {
         let response = await instance.post('product', {
             title,
             img_path,
